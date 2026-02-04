@@ -148,9 +148,7 @@ const SchoolManagement: React.FC = () => {
         </div>
         <button className="export-button">
           <div className="export-icon">
-            <div className="vector vector1"></div>
-            <div className="vector vector2"></div>
-            <div className="vector vector3"></div>
+            <img   src="/icons/export.png" alt="export"  />
           </div>
           <span className="export-text">Export</span>
         </button>
@@ -161,8 +159,11 @@ const SchoolManagement: React.FC = () => {
         <div className="controls-row">
           <div className="search-container">
             <div className="search-icon">
-              <div className="search-vector search-vector1"></div>
-              <div className="search-vector search-vector2"></div>
+              {/* <div className="search-vector search-vector1"></div>
+              <div className="search-vector search-vector2"></div> */}
+
+                <img src="/icons/search-normal.png" alt="search-icon" />
+
             </div>
             <span className="search-text">search</span>
           </div>
@@ -170,10 +171,7 @@ const SchoolManagement: React.FC = () => {
           <div className="filter-container">
             <div className="filter-item filter-icon-container">
               <div className="filter-icon">
-                <div className="filter-path"></div>
-                <div className="filter-path filter-path-444"></div>
-                <div className="filter-path filter-path-445"></div>
-                <div className="filter-path filter-path-446"></div>
+            <img  src="/icons/Vector(Stroke).png" alt="filter" />
               </div>
             </div>
             <div className="filter-item">
@@ -182,19 +180,18 @@ const SchoolManagement: React.FC = () => {
             <div className="filter-item">
               <span className="filter-label">Status</span>
               <div className="direction-down">
-                <div className="direction-down-vector"></div>
+                <img  src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item">
               <span className="filter-label">Subscription Type</span>
               <div className="direction-down">
-                <div className="direction-down-vector"></div>
+                 <img  src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item reset-filter">
               <div className="reset-icon">
-                <div className="reset-path"></div>
-                <div className="reset-path reset-path-colored"></div>
+                <img src="/icons/reset.png" alt="reset-path" />
               </div>
               <span className="reset-text">Reset Filter</span>
             </div>
