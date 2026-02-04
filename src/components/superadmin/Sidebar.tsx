@@ -1,33 +1,35 @@
 import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+
 
 // Icons
 const DashboardIcon = ({ active }: { active?: boolean }) => (
   <img src={active ? '/icons/dashboard.png' : '/icons/dashboard.png'} alt="Dashboard" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SchoolsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/briefcase-active.png' : '/icons/briefcase.png'} alt="Schools" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/briefcase.png' : '/icons/briefcase.png'} alt="Schools" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SubscriptionIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/cards-active.png' : '/icons/cards.png'} alt="Subscription" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/cards.png' : '/icons/cards.png'} alt="Subscription" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const CommunicationsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/announcement-active.png' : '/icons/announcement.png'} alt="Communications" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/announcement.png' : '/icons/announcement.png'} alt="Communications" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SupportIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/24-support-active.png' : '/icons/24-support.png'} alt="Support" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/24-support.png' : '/icons/24-support.png'} alt="Support" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const AuditLogsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/assignment-active.png' : '/icons/assignment.png'} alt="Audit Logs" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/assignment.png' : '/icons/assignment.png'} alt="Audit Logs" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const AnalyticsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/status-up-active.png' : '/icons/status-up.png'} alt="Analytics" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/status-up.png' : '/icons/status-up.png'} alt="Analytics" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const ResourcesIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/carbon_software-resource-resource-active.png' : '/icons/carbon_software-resource-resource.png'} alt="Resources" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/carbon_software-resource-resource.png' : '/icons/carbon_software-resource-resource.png'} alt="Resources" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SettingsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/setting-active.png' : '/icons/setting.png'} alt="Settings" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/setting.png' : '/icons/setting.png'} alt="Settings" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const LogoutIcon = () => (
   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -37,30 +39,67 @@ const LogoutIcon = () => (
   </svg>
 );
 
-interface MenuItem {
-  icon: React.ReactNode;
-  label: string;
-}
 
 interface SidebarProps {
   isOpen?: boolean;
   onClose?: () => void;
-  activeItem?: string;
-  onItemClick?: (item: string) => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose, activeItem = 'Dashboard', onItemClick }) => {
-  const menuItems: MenuItem[] = [
-    { icon: <DashboardIcon active={activeItem === 'Dashboard'} />, label: 'Dashboard' },
-    { icon: <SchoolsIcon active={activeItem === 'Schools'} />, label: 'Schools' },
-    { icon: <SubscriptionIcon active={activeItem === 'PricingPlane'} />, label: 'PricingPlane' },
-    { icon: <CommunicationsIcon active={activeItem === 'Communications'} />, label: 'Communications' },
-    { icon: <SupportIcon active={activeItem === 'Support'} />, label: 'Support' },
-    { icon: <AuditLogsIcon active={activeItem === 'Audit Logs'} />, label: 'Audit Logs' },
-    { icon: <AnalyticsIcon active={activeItem === 'Analytics'} />, label: 'Analytics' },
-    { icon: <ResourcesIcon active={activeItem === 'Resources'} />, label: 'Resources' },
-    { icon: <SettingsIcon active={activeItem === 'Settings'} />, label: 'Settings' },
+const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
+  const location = useLocation();
+  
+  const menuItems = [
+    { 
+      icon: <DashboardIcon active={location.pathname === '/dashboard'} />, 
+      label: 'Dashboard', 
+      path: '/dashboard' 
+    },
+    { 
+      icon: <SchoolsIcon active={location.pathname.includes('/dashboard/schools')} />, 
+      label: 'Schools', 
+      path: '/dashboard/schools' 
+    },
+    { 
+      icon: <SubscriptionIcon active={location.pathname.includes('/dashboard/subscription')} />, 
+      label: 'Subscription', 
+      path: '/dashboard/subscription' 
+    },
+    { 
+      icon: <CommunicationsIcon active={location.pathname.includes('/dashboard/communications')} />, 
+      label: 'Communications', 
+      path: '/dashboard/communications' 
+    },
+    { 
+      icon: <SupportIcon active={location.pathname.includes('/dashboard/support')} />, 
+      label: 'Support', 
+      path: '/dashboard/support' 
+    },
+    { 
+      icon: <AuditLogsIcon active={location.pathname.includes('/dashboard/audit-logs')} />, 
+      label: 'Audit Logs', 
+      path: '/dashboard/audit-logs' 
+    },
+    { 
+      icon: <AnalyticsIcon active={location.pathname.includes('/dashboard/analytics')} />, 
+      label: 'Analytics', 
+      path: '/dashboard/analytics' 
+    },
+    { 
+      icon: <ResourcesIcon active={location.pathname.includes('/dashboard/resources')} />, 
+      label: 'Resources', 
+      path: '/dashboard/resources' 
+    },
+    { 
+      icon: <SettingsIcon active={location.pathname.includes('/dashboard/settings')} />, 
+      label: 'Settings', 
+      path: '/dashboard/settings' 
+    },
   ];
+
+  const handleLogout = () => {
+    // Logout logic here
+    window.location.href = '/';
+  };
 
   return (
     <>
@@ -73,18 +112,19 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose, activeItem = 
 
         <nav className="sidebar__nav">
           {menuItems.map((item, index) => (
-            <button
+            <Link
               key={index}
-              className={`sidebar__nav-item ${activeItem === item.label ? 'sidebar__nav-item--active' : ''}`}
-              onClick={() => onItemClick?.(item.label)}
+              to={item.path}
+              className={`sidebar__nav-item ${location.pathname === item.path ? 'sidebar__nav-item--active' : ''}`}
+              onClick={onClose}
             >
               <span className="sidebar__nav-icon">{item.icon}</span>
               <span className="sidebar__nav-label">{item.label}</span>
-            </button>
+            </Link>
           ))}
         </nav>
 
-        <button className="sidebar__logout">
+        <button className="sidebar__logout" onClick={handleLogout}>
           <span className="sidebar__logout-icon"><LogoutIcon /></span>
           <span className="sidebar__logout-label">Log Out</span>
         </button>

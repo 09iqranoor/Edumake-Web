@@ -1,9 +1,9 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import './TopNav.css';
 import profileImg from '../../assets/profile-img.png';
 
-
-// SVG Icons
+// SVG Icons - EXACTLY SAME AS YOURS
 const SearchIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#292D32" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -41,29 +41,78 @@ const MenuIcon = () => (
 );
 
 interface TopNavProps {
-    title?: string;
     userName?: string;
     userRole?: string;
-    // userAvatar?: string;
     onMenuClick?: () => void;
 }
 
 const TopNav: React.FC<TopNavProps> = ({
-    title = 'Dashboard',
     userName = 'Lead British',
     userRole = 'Admin',
-    // userAvatar,
     onMenuClick
 }) => {
+    const location = useLocation();
+    
+    // Function to get page title from current URL - EXACT SAME LOGIC
+    const getPageTitle = () => {
+        const path = location.pathname;
+        
+        // Check exact matches first
+        if (path === '/dashboard' || path === '/dashboard/') {
+            return 'Dashboard';
+        }
+        
+        // Check for sub-paths
+        if (path.includes('/dashboard/schools')) {
+            return 'Schools';
+        }
+        
+        if (path.includes('/dashboard/subscription')) {
+            return 'Subscription';
+        }
+        
+        if (path.includes('/dashboard/communications')) {
+            return 'Communications';
+        }
+        
+        if (path.includes('/dashboard/support')) {
+            return 'Support';
+        }
+        
+        if (path.includes('/dashboard/audit-logs')) {
+            return 'Audit Logs';
+        }
+        
+        if (path.includes('/dashboard/analytics')) {
+            return 'Analytics';
+        }
+        
+        if (path.includes('/dashboard/resources')) {
+            return 'Resources';
+        }
+        
+        if (path.includes('/dashboard/settings')) {
+            return 'Settings';
+        }
+        
+        // Default title
+        return 'Dashboard';
+    };
+
+    const pageTitle = getPageTitle();
+
     return (
         <header className="topnav">
             <div className="topnav__content">
+                {/* Menu Button - EXACTLY SAME */}
                 <button className="topnav__menu-btn" onClick={onMenuClick}>
                     <MenuIcon />
                 </button>
 
-                <h1 className="topnav__title">{title}</h1>
+                {/* Dynamic Title - Now gets from URL */}
+                <h1 className="topnav__title">{pageTitle}</h1>
 
+                {/* Search Bar - EXACTLY SAME */}
                 <div className="topnav__search">
                     <span className="topnav__search-icon">
                         <SearchIcon />
@@ -75,6 +124,7 @@ const TopNav: React.FC<TopNavProps> = ({
                     />
                 </div>
 
+                {/* Actions Section - EXACTLY SAME */}
                 <div className="topnav__actions">
                     <div className="topnav__icons">
                         <button className="topnav__icon-btn">
@@ -87,12 +137,9 @@ const TopNav: React.FC<TopNavProps> = ({
 
                     <div className="topnav__user">
                         <div className="topnav__user-info">
-                            
-
-
                             <div className="topnav__avatar">
-  <img src={profileImg} alt={userName} />
-</div>
+                                <img src={profileImg} alt={userName} />
+                            </div>
                             <div className="topnav__user-details">
                                 <span className="topnav__user-name">{userName}</span>
                                 <span className="topnav__user-role">{userRole}</span>
