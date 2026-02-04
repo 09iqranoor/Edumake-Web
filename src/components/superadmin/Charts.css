@@ -1,0 +1,355 @@
+.charts {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 26px;
+    width: 100%;
+}
+
+.chart-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 24px;
+    flex: 1;
+    background: #FFFFFF;
+    border-radius: 12px;
+    min-height: 527px;
+}
+
+.chart-card__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 97px;
+    width: 100%;
+}
+
+.chart-card__title-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.chart-card__title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    color: #000000;
+    margin: 0;
+}
+
+.chart-card__subtitle {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+/* Bar Chart Styles */
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 16px 16px;
+    width: 100%;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.bar-chart__main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    height: 308px;
+}
+
+.bar-chart__y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 4px;
+    width: 29px;
+    height: 100%;
+}
+
+.bar-chart__y-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.bar-chart__area {
+    flex: 1;
+    height: 100%;
+    position: relative;
+}
+
+.bar-chart__grid {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6px 1px;
+}
+
+.bar-chart__grid-line {
+    width: 100%;
+    height: 0;
+    border: 1px dashed rgba(0, 0, 26, 0.15);
+}
+
+.bar-chart__grid-line--solid {
+    border: 1px solid rgba(0, 0, 26, 0.3);
+}
+
+.bar-chart__bars {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 6px;
+    bottom: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.bar-chart__bar-group {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 0 18px;
+    gap: 2px;
+    flex: 1;
+    height: 100%;
+}
+
+.bar-chart__bar-wrapper {
+    position: relative;
+    flex: 1;
+    height: 100%;
+}
+
+.bar-chart__bar-bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(214, 219, 237, 0.4);
+    opacity: 0.8;
+}
+
+.bar-chart__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.3s ease;
+}
+
+.bar-chart__x-axis {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 8px 0 8px 29px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.bar-chart__x-label {
+    flex: 1;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.bar-chart__legends {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0 8px;
+    gap: 8px;
+    width: 100%;
+    margin-top: 16px;
+}
+
+.bar-chart__legend {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 4px;
+    gap: 4px;
+}
+
+.bar-chart__legend-color {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #FFFFFF;
+}
+
+.bar-chart__legend-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+/* Pie Chart Styles */
+.pie-chart {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px 8px 8px;
+    width: 100%;
+    background: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.pie-chart__container {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-chart__circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-chart__inner {
+    width: 40%;
+    height: 40%;
+    background: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pie-chart__center-value {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.pie-chart__labels {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.pie-chart__label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.pie-chart__label-name {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.pie-chart__label-values {
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.pie-chart__label-value {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.pie-chart__label-percent {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FFFFFF;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 1100px) {
+    .charts {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .chart-card {
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .chart-card__title {
+        font-size: 20px;
+        line-height: 26px;
+    }
+
+    .chart-card__subtitle {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .pie-chart__circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .pie-chart__center-value {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .bar-chart__bar-group {
+        padding: 0 8px;
+    }
+}

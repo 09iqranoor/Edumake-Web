@@ -1,0 +1,21 @@
+/* Progress Bar Styles */
+.progress-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 10px;
+    width: 100%;
+}
+
+.progress-bar__step {
+    height: 8px;
+    background: rgba(16, 67, 122, 0.1);
+    border-radius: 100px;
+    flex: 1;
+    transition: background-color 0.3s ease;
+}
+
+.progress-bar__step--active {
+    background: #10437A;
+}

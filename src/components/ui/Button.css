@@ -1,0 +1,80 @@
+/* Button Base Styles */
+.btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 18px;
+  gap: 8px;
+  height: 44px;
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+}
+
+.btn--full-width {
+  width: 100%;
+}
+
+/* Primary Button */
+.btn--primary {
+  background: #10437A;
+  border: 1px solid #10437A;
+  color: #FFFFFF;
+}
+
+.btn--primary:hover {
+  background: #0d3662;
+  border-color: #0d3662;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(16, 67, 122, 0.3);
+}
+
+.btn--primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(16, 67, 122, 0.2);
+}
+
+.btn--primary:disabled {
+  background: rgba(16, 67, 122, 0.5);
+  border-color: rgba(16, 67, 122, 0.5);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Secondary Button */
+.btn--secondary {
+  background: #FFFFFF;
+  border: 1px solid rgba(204, 204, 204, 0.5);
+  color: #333333;
+}
+
+.btn--secondary:hover {
+  background: #f8f9fa;
+  border-color: rgba(204, 204, 204, 0.8);
+}
+
+/* Link Button */
+.btn--link {
+  background: transparent;
+  border: none;
+  padding: 0;
+  height: auto;
+  color: #10437A;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.btn--link:hover {
+  text-decoration: underline;
+  color: #0d3662;
+}

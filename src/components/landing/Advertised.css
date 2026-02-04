@@ -1,0 +1,38 @@
+/* Advertised.css - Complete */
+
+.image-section {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+/* Desktop: Centered with max-width */
+@media (min-width: 768px) {
+  .image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+  }
+  
+  .center-image {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Mobile: Full width with padding */
+@media (max-width: 767px) {
+  .image-section {
+    padding: 1rem 16px; /* Thoda padding sides se */
+    box-sizing: border-box;
+  }
+  
+  .center-image {
+    width: 100%; /* Container ki full width lega */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional - thoda rounded corners */
+  }
+}

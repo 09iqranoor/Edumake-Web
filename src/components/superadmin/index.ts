@@ -1,0 +1,8 @@
+export { default as Sidebar } from './Sidebar';
+export { default as TopNav } from './TopNav';
+export { default as Stats } from './Stats';
+export { default as Charts } from './Charts';
+export { default as QuickActions } from './QuickActions';
+export { default as RecentActivities } from './RecentActivities';
+export {default as SchoolManagement } from './SchoolManagement';
+export {default as PricingPlane} from './PricingPlane';

@@ -1,0 +1,56 @@
+/* Support Email Styles */
+.support-email {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+    gap: 8px;
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.support-email:hover {
+    opacity: 0.7;
+}
+
+.support-email__icon {
+    width: 16px;
+    height: 16px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.support-email__text {
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888888;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.support-email:hover .support-email__text {
+    color: #666666;
+}
+
+/* Responsive Design */
+@media (max-width: 576px) {
+    .support-email {
+        gap: 6px;
+        margin-top: 24px;
+    }
+
+    .support-email__text {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .support-email__icon {
+        width: 14px;
+        height: 14px;
+    }
+}

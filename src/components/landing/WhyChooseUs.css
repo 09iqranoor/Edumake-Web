@@ -1,0 +1,298 @@
+/* WhyChooseUs.css */
+
+/* General Section */
+.edu-section {
+  padding: 5rem 1.5rem;
+  background: #ffffff;
+  max-width: 1500px;
+  margin: auto;
+  font-family: "Mulish", sans-serif;
+  overflow: hidden;
+}
+
+.edu-images-container {
+  display: flex;
+  gap: 0;
+  /* Remove explicit gap */
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.edu-choose-image {
+  height: 424px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  margin: 0 -10px;
+  /* Negative margin to pull images closer and overlap whitespace */
+}
+
+/* Header */
+.edu-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.edu-header h2 {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.edu-header p {
+  max-width: 600px;
+  margin: auto;
+  color: #888888;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+
+
+@media (min-width: 1024px) {
+  .edu-choose-image {
+    max-width: 358px;
+    height: 424px;
+    width: auto;
+  }
+}
+
+
+/* Tablet: 2 images per row */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .edu-images-container {
+    flex-wrap: wrap;
+  }
+
+  .edu-choose-image {
+    flex: 0 0 50%;
+    /* Fill half width when wrapping on tablet */
+    max-width: 350px;
+  }
+}
+
+/* Mobile: Scrollable carousel */
+@media (max-width: 767px) {
+  .edu-images-container {
+    scroll-behavior: smooth;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 1rem 0;
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .edu-images-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .edu-choose-image {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+  }
+}
+
+
+
+/* Removed old card styles */
+
+
+
+
+
+.stat-value-container {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  color: #000000;
+}
+
+.stat-modifier {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #000000;
+  margin-top: 2px;
+  text-transform: lowercase;
+}
+
+/* ARROW BUTTONS */
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  position: relative;
+  z-index: 5;
+}
+
+/* Arrow buttons */
+.arrow-btn {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-btn:hover {
+  opacity: 0.7;
+}
+
+/* Arrow images */
+.arrow-img {
+  width: 43px;
+  height: 43px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Responsive arrow sizes */
+@media (max-width: 480px) {
+  .arrow-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carousel-controls {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .arrow-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .carousel-controls {
+    gap: 1rem;
+  }
+}
+
+/* Hide arrows on desktop and tablet */
+@media (min-width: 768px) {
+  .carousel-controls {
+    display: none;
+  }
+}
+
+/* Stats */
+.edu-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  text-align: center;
+  margin: 3rem auto 0;
+  max-width: 900px;
+}
+
+
+.stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.dot.blue {
+  background: #0b3c6f;
+}
+
+.dot.orange {
+  background: #f59e0b;
+}
+
+.dot.red {
+  background: #ef4444;
+}
+
+.dot.green {
+  background: #2CAF69;
+}
+
+.stat h4 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.stat p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Responsive Stats */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .edu-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .edu-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .edu-header h2 {
+    font-size: 2rem;
+  }
+
+  .edu-header p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .edu-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .edu-stats .stat+.stat::before {
+    content: '';
+    position: absolute;
+    left: -0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 50px;
+    background-color: #2c2f33;
+  }
+
+  .edu-stats .stat:not(:last-child) {
+    border-right: 1px solid #88888866;
+  }
+}
