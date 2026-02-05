@@ -6,6 +6,6 @@ export { default as SigninPage } from './SigninPage';
 export { default as ForgotPasswordPage } from './ForgotPasswordPage';
 
 // Superadmin Pages
-export { DashboardPage } from './superadmin';
-export {SchoolPage} from './superadmin';
-export{SubscriptionPage} from './superadmin';
+// export { DashboardPage } from './superadmin';
+// export {SchoolPage} from './superadmin';
+// export{SubscriptionPage} from './superadmin';

@@ -1,4 +1,4 @@
-// App.tsx - ONLY THIS FILE NEEDS CHANGES
+// App.tsx -
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 import { SignupPage, SigninPage, ForgotPasswordPage, OtpVerificationPage, SetPasswordPage } from './pages';

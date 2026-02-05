@@ -1,7 +1,7 @@
 // components/layout/DashboardLayout.tsx
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import './DashboardPage.css'; // Keep your existing styles
+import './DashboardPage.css'; 
 import { Sidebar, TopNav } from '../superadmin';
 
 // Import dashboard components
@@ -27,31 +27,71 @@ const DashboardLayout = () => {
       />
 
       <main className="dashboard__main">
-        <Routes>
-          {/* Dashboard Home */}
-          <Route index element={
-            <>
-              <Stats />
-              <Charts />
-              <QuickActions />
-              <RecentActivities />
-            </>
-          } />
-          
-          {/* Schools Page */}
-          <Route path="schools" element={<SchoolManagement />} />
-          
-          {/* Subscription Page */}
-          <Route path="subscription" element={<Subscription />} />
-          
-          {/* Other Pages */}
-          <Route path="communications" element={<div>Communications Page</div>} />
-          <Route path="support" element={<div>Support Page</div>} />
-          <Route path="audit-logs" element={<div>Audit Logs Page</div>} />
-          <Route path="analytics" element={<div>Analytics Page</div>} />
-          <Route path="resources" element={<div>Resources Page</div>} />
-          <Route path="settings" element={<div>Settings Page</div>} />
-        </Routes>
+        <div className="dashboard__content">
+          <Routes>
+            {/* Dashboard Home */}
+            <Route index element={
+              <>
+                <div className="dashboard__section dashboard__section--stats">
+                  <Stats />
+                </div>
+                
+                <div className="dashboard__section dashboard__section--charts">
+                  <Charts />
+                </div>
+                
+                <div className="dashboard__section dashboard__section--bottom">
+                  <QuickActions />
+                  <RecentActivities />
+                </div>
+              </>
+            } />
+            
+            {/* Other routes - yahan pe aap chahein to normal render kar sakte hain */}
+            <Route path="schools" element={
+              <div className="dashboard__section dashboard__section--full">
+                <SchoolManagement />
+              </div>
+            } />
+            
+            <Route path="subscription" element={
+              <div className="dashboard__section dashboard__section--full">
+                <Subscription />
+              </div>
+            } />
+            
+            <Route path="communications" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Communications Page</div>
+              </div>
+            } />
+            <Route path="support" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Support Page</div>
+              </div>
+            } />
+            <Route path="audit-logs" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Audit Logs Page</div>
+              </div>
+            } />
+            <Route path="analytics" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Analytics Page</div>
+              </div>
+            } />
+            <Route path="resources" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Resources Page</div>
+              </div>
+            } />
+            <Route path="settings" element={
+              <div className="dashboard__section dashboard__section--full">
+                <div>Settings Page</div>
+              </div>
+            } />
+          </Routes>
+        </div>
       </main>
     </div>
   );

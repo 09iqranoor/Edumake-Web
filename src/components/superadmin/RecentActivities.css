@@ -4,11 +4,11 @@
     align-items: flex-start;
     padding: 20px;
     gap: 24px;
-    flex: 1;
     background: #FFFFFF;
     border-radius: 12px;
-    min-height: 426px;
     box-sizing: border-box;
+    height: 100%;
+    min-height: 426px; 
 }
 
 .recent-activities__title {
@@ -91,8 +91,8 @@
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
-    .recent-activities {
-        min-height: auto;
+   .recent-activities {
+        min-height: auto; 
         padding: 16px;
     }
 

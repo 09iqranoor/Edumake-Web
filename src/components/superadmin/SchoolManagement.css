@@ -1,33 +1,25 @@
 /* SchoolsManagement.css */
 .schools-management-container {
-  /* Frame 2147224977 */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 32px;
-  position: absolute;
-  width: 1110px;
-  height: 803px;
-  left: 290px;
-  top: 139px;
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F5F5;
+  box-sizing: border-box;
 }
 
 /* Header Section */
 .header-section {
-  /* Frame 2147224965 */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0px;
-  gap: 492px;
-  width: 1110px;
+  width: 100%;
   height: 68px;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .title-section {
@@ -38,9 +30,6 @@
   gap: 8px;
   width: 490px;
   height: 68px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .title {
@@ -53,10 +42,6 @@
   line-height: 35px;
   color: #000000;
   margin: 0;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .subtitle {
@@ -69,10 +54,6 @@
   line-height: 25px;
   color: rgba(0, 0, 0, 0.6);
   margin: 0;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .export-button {
@@ -98,36 +79,15 @@
 .export-icon {
   width: 24px;
   height: 24px;
-  position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.vector {
-  position: absolute;
-  border: 1.5px solid #292D32;
-}
-
-.vector1 {
-  left: 54.17%;
-  right: 11.67%;
-  top: 11.67%;
-  bottom: 54.17%;
-}
-
-.vector2 {
-  left: 71.66%;
-  right: 8.34%;
-  top: 8.33%;
-  bottom: 71.67%;
-}
-
-.vector3 {
-  left: 8.33%;
-  right: 8.33%;
-  top: 8.33%;
-  bottom: 8.33%;
+.export-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .export-text {
@@ -158,9 +118,6 @@
   gap: 24px;
   width: 944px;
   height: 70px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
 .controls-row {
@@ -170,12 +127,8 @@
   align-items: center;
   padding: 0px;
   gap: 6px;
-  margin: 0 auto;
   width: 944px;
   height: 70px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .search-container {
@@ -185,58 +138,42 @@
   align-items: center;
   padding: 12px;
   gap: 12px;
-  margin: 0 auto;
   width: 340px;
   height: 70px;
   background: #F5F5F5;
   border: 1px solid #E1E1E1;
   border-radius: 12px;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .search-icon {
   width: 24px;
   height: 24px;
-  position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.search-vector {
-  position: absolute;
-  border: 1.5px solid #292D32;
+.search-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
-.search-vector1 {
-  left: 8.33%;
-  right: 12.5%;
-  top: 8.33%;
-  bottom: 12.5%;
-}
-
-.search-vector2 {
-  left: 83.33%;
-  right: 8.33%;
-  top: 83.33%;
-  bottom: 8.33%;
-}
-
-.search-text {
-  width: 44px;
-  height: 18px;
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
   color: rgba(0, 0, 0, 0.7);
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+}
+
+.search-input::placeholder {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .filter-container {
@@ -245,14 +182,11 @@
   align-items: center;
   padding: 0px;
   gap: 1px;
-  margin: 0 auto;
   width: 570px;
   height: 70px;
   background: #FFFFFF;
   border-radius: 8px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  border: 1px solid #E1E1E1;
 }
 
 .filter-item {
@@ -265,9 +199,13 @@
   gap: 10px;
   height: 70px;
   border-right: 0.5px solid #888888;
-  flex: none;
-  align-self: stretch;
-  flex-grow: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-item:last-child {
+  border-right: none;
 }
 
 .filter-icon-container {
@@ -277,33 +215,15 @@
 .filter-icon {
   width: 24px;
   height: 24px;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.filter-path {
-  position: absolute;
-  background: #000000;
-}
-
-.filter-path-444 {
-  left: 55.21%;
-  right: 38.54%;
-  top: 17.71%;
-  bottom: 67.71%;
-}
-
-.filter-path-445 {
-  left: 38.54%;
-  right: 55.21%;
-  top: 26.04%;
-  bottom: 63.54%;
-}
-
-.filter-path-446 {
-  left: 38.54%;
-  right: 55.21%;
-  top: 5.21%;
-  bottom: 80.21%;
+.filter-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .filter-label {
@@ -313,96 +233,64 @@
   font-size: 14px;
   line-height: 18px;
   color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.filter-item:nth-child(2) {
-  width: 86px;
-}
-
-.filter-item:nth-child(3) {
-  width: 109px;
-}
-
-.filter-item:nth-child(4) {
-  width: 182px;
+  white-space: nowrap;
 }
 
 .direction-down {
   width: 24px;
   height: 24px;
-  position: relative;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.direction-down-vector {
-  position: absolute;
-  left: 29.17%;
-  right: 29.17%;
-  top: 41.67%;
-  bottom: 41.67%;
-  border: 1.5px solid #000000;
+.direction-down img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
 }
 
 .reset-filter {
   width: 133px;
-  border-right: none;
 }
 
 .reset-icon {
   width: 18px;
   height: 18px;
-  position: relative;
-  flex: none;
-  align-self: center;
-  flex-grow: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.reset-path {
-  position: absolute;
-}
-
-.reset-path-colored {
-  left: 14.29%;
-  right: 76.69%;
-  top: 38.21%;
-  bottom: 40.36%;
-  background: #EA0234;
+.reset-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .reset-text {
-  width: 73px;
-  height: 18px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 18px;
   color: #EA0234;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
-/* Table Container */
+/* Table Container - Figma के exact measurements के according */
 .table-container {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 32px 20px;
   gap: 24px;
-  width: 1110px;
-  height: 601px;
+  width: 100%;
+  max-width: 1110px;
+  min-height: 601px;
   background: #FFFFFF;
   border-radius: 12px;
-  flex: none;
-  order: 2;
-  align-self: stretch;
-  flex-grow: 0;
+  position: relative;
+  overflow-x: auto;
 }
 
 .table-header {
@@ -413,21 +301,18 @@
   gap: 20px;
   width: 1070px;
   height: 43px;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
+  min-width: 1070px;
 }
 
+/* Table Header Row - Figma के exact positions के according */
 .header-row {
   width: 1055px;
   height: 23px;
   position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  display: block;
 }
 
+/* Header Cells with exact positions */
 .header-cell {
   position: absolute;
   height: 23px;
@@ -443,29 +328,70 @@
   color: #000000;
 }
 
+.school-header {
+  width: 55px;
+  left: 0px;
+  text-align: left;
+}
+
+.admin-header {
+  width: 55px;
+  left: 181px;
+  text-align: left;
+}
+
+.plan-header {
+  width: 38px;
+  left: 341px;
+  text-align: left;
+}
+
+.status-header {
+  width: 54px;
+  left: 455px;
+  text-align: left;
+}
+
+.students-header {
+  width: 74px;
+  left: 579px;
+  text-align: left;
+}
+
+.join-date-header {
+  width: 75px;
+  left: 712px;
+  text-align: left;
+}
+
+.last-active-header {
+  width: 91px;
+  left: 847px;
+  text-align: left;
+}
+
+.actions-header {
+  width: 62px;
+  left: 993px;
+  text-align: left;
+}
+
 .header-line {
   width: 1070px;
   height: 0px;
   border: 1px solid #E1E1E1;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
+/* Table Body */
 .table-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0px;
   gap: 24px;
-  isolation: isolate;
   width: 1070px;
-  height: 416px;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
+  height: auto;
+  min-width: 1070px;
 }
 
 .table-row-container {
@@ -476,21 +402,17 @@
   gap: 24px;
   width: 1070px;
   height: 64px;
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
+/* Table Row with exact positioning - Figma के according */
 .table-row {
   width: 1036px;
   height: 40px;
   position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  display: block;
 }
 
+/* School Cell */
 .school-cell {
   display: flex;
   flex-direction: row;
@@ -509,9 +431,7 @@
   height: 28px;
   background: #D9D9D9;
   border-radius: 50%;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .school-name {
@@ -526,11 +446,12 @@
   align-items: center;
   letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.7);
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
+/* Admin Cell */
 .admin-cell {
   display: flex;
   flex-direction: column;
@@ -556,10 +477,6 @@
   align-items: center;
   letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.7);
-  flex: none;
-  order: 0;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
 .admin-email {
@@ -574,12 +491,9 @@
   align-items: center;
   letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.5);
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
+/* Plan Badge */
 .plan-badge {
   display: flex;
   flex-direction: row;
@@ -589,6 +503,7 @@
   gap: 10px;
   position: absolute;
   height: 19px;
+  left: 341px;
   top: 11px;
   border-radius: 4px;
   font-family: 'Mulish', sans-serif;
@@ -600,11 +515,10 @@
   align-items: center;
   text-align: center;
   letter-spacing: -0.32px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  min-width: 46px;
 }
 
+/* Status Badge */
 .status-badge {
   display: flex;
   flex-direction: row;
@@ -613,35 +527,21 @@
   padding: 2px 8px 2px 4px;
   gap: 9.1px;
   position: absolute;
-  width: 62.39px;
+  width: auto;
+  min-width: 62.39px;
   height: 23px;
+  left: 455px;
   top: 9px;
   border-radius: 4px;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
-
-.status-point {
-  width: 10.92px;
-  height: 10.92px;
-  position: relative;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .status-point-circle {
-  position: absolute;
   width: 7.28px;
   height: 7.28px;
-  left: 1.82px;
-  top: 5.86px;
   border-radius: 50%;
 }
 
 .status-text {
-  width: 34px;
   height: 19px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
@@ -649,17 +549,14 @@
   font-size: 12px;
   line-height: 18px;
   letter-spacing: -0.18207px;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
 }
 
-.students-cell,
-.join-date-cell,
-.last-active-cell {
+/* Students Cell */
+.students-cell {
   position: absolute;
   width: 38px;
   height: 20px;
+  left: 579px;
   top: 10px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
@@ -672,77 +569,107 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+/* Join Date Cell */
 .join-date-cell {
+  position: absolute;
   width: 84px;
+  height: 20px;
+  left: 712px;
+  top: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
+/* Last Active Cell */
 .last-active-cell {
+  position: absolute;
   width: 86px;
+  height: 20px;
+  left: 847px;
+  top: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-.more-button {
+/* Actions Cell */
+.actions-cell {
   position: absolute;
   width: 24px;
   height: 24px;
+  left: 1012px;
   top: 8px;
+}
+
+.more-button {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .more-icon {
   width: 24px;
   height: 24px;
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.more-dot {
-  position: absolute;
-  left: 38.54%;
-  right: 38.54%;
-  background: #000000;
-}
-
-.more-dot1 {
-  top: 38.54%;
-  bottom: 38.54%;
-}
-
-.more-dot2 {
-  top: 5.21%;
-  bottom: 71.88%;
-}
-
-.more-dot3 {
-  top: 71.88%;
-  bottom: 5.21%;
+.more-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .row-line {
   width: 1070px;
   height: 0px;
   border: 1px solid #E1E1E1;
-  flex: none;
-  order: 1;
-  align-self: stretch;
-  flex-grow: 0;
 }
 
-/* Action Menu */
+/* Action Menu - Figma के exactly according */
 .action-menu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
   gap: 16px;
-  position: absolute;
+  position: fixed;
   width: 163px;
   height: 102px;
   background: #FFFFFF;
   box-shadow: 0px 13px 61px rgba(0, 0, 0, 0.366);
   border-radius: 20px;
-  z-index: 5;
+  z-index: 1000;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 115px;
+  height: 54px;
 }
 
 .menu-item {
@@ -753,10 +680,14 @@
   gap: 8px;
   width: 115px;
   height: 19px;
+  background: none;
+  border: none;
   cursor: pointer;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  text-align: left;
+}
+
+.menu-item:hover {
+  opacity: 0.8;
 }
 
 .menu-text {
@@ -769,14 +700,20 @@
   line-height: 121.2%;
   letter-spacing: -0.24px;
   color: #000000;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
 .remove-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
   width: 115px;
   height: 19px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
 }
 
 .remove-text {
@@ -789,24 +726,22 @@
   line-height: 121.2%;
   letter-spacing: -0.24px;
   color: #E82D2D;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
 }
 
-/* Pagination */
+/* Pagination - UPDATED with proper alignment */
 .pagination-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   align-items: center;
   padding: 0px;
-  gap: 906px;
-  width: 1110px;
+ 
   height: 30px;
-  flex: none;
-  order: 2;
-  flex-grow: 0;
+  position: relative;
+  width: 100%;
+    height: 30px;
+    position: relative;
+    justify-content: space-between
 }
 
 .pagination-text {
@@ -820,76 +755,36 @@
   color: rgba(0, 0, 0, 0.6);
   mix-blend-mode: normal;
   opacity: 0.6;
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  flex-shrink: 0;
 }
 
-.pagination-indicator {
-  width: 86px;
+.pagination-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
   height: 30px;
-  position: relative;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
+  margin-left: auto;
 }
 
-.indicator-bg {
-  box-sizing: border-box;
-  position: absolute;
-  left: 92.25%;
-  right: 0%;
-  top: 0%;
-  bottom: 0%;
-  background: #FAFBFD;
-  border: 0.6px solid #D5D5D5;
-  border-radius: 8px;
+.pagination-btn {
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.indicator-arrow {
-  position: absolute;
-  mix-blend-mode: normal;
-}
 
-.left-arrow {
-  left: 93.15%;
-  right: 4.68%;
-  top: 11.6%;
-  bottom: 11.6%;
-  opacity: 0.6;
-}
 
-.right-arrow {
-  left: 97.03%;
-  right: 0.81%;
-  top: 11.6%;
-  bottom: 11.6%;
-  opacity: 0.9;
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.arrow-path {
-  position: absolute;
-  left: 97.8%;
-  right: 1.53%;
-  top: 30.8%;
-  bottom: 30.8%;
-  background: #000000;
-}
-
-.right-arrow .arrow-path {
-  transform: matrix(-1, 0, 0, 1, 0, 0);
-}
-
-.indicator-line {
-  position: absolute;
-  left: 96.13%;
-  right: 3.78%;
-  top: 0%;
-  bottom: 0%;
-  mix-blend-mode: normal;
-  opacity: 0.7;
-  border: 0.4px solid #888888;
+.pagination-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Menu Backdrop */
@@ -900,5 +795,128 @@
   right: 0;
   bottom: 0;
   background: transparent;
-  z-index: 4;
+  z-index: 999;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .schools-management-container {
+    padding: 24px;
+  }
+  
+  .header-section,
+  .controls-section,
+  .table-container,
+  .pagination-section {
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .controls-row {
+    flex-direction: column;
+    height: auto;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .search-container {
+    width: 100%;
+  }
+  
+  .filter-container {
+    width: 100%;
+    justify-content: space-between;
+    overflow-x: auto;
+  }
+  
+  .filter-item {
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .schools-management-container {
+    padding: 16px;
+    gap: 24px;
+  }
+  
+  .header-section {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+  }
+  
+  .title-section {
+    width: 100%;
+    height: auto;
+  }
+  
+  .title {
+    width: 100%;
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .subtitle {
+    width: 100%;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .export-button {
+    align-self: flex-start;
+  }
+  
+  .table-container {
+    padding: 16px;
+    overflow-x: auto;
+  }
+  
+  .table-header,
+  .table-body {
+    min-width: 800px;
+  }
+  
+  .pagination-section {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    align-items: stretch;
+  }
+  
+  .pagination-controls {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .filter-container {
+    flex-wrap: wrap;
+    height: auto;
+    border: none;
+    background: transparent;
+    gap: 8px;
+  }
+  
+  .filter-item {
+    border: 1px solid #E1E1E1;
+    border-radius: 8px;
+    background: #FFFFFF;
+    padding: 12px 16px;
+  }
+  
+  .filter-icon-container {
+    width: auto;
+  }
+  
+  .table-container {
+    padding: 12px;
+  }
+  
+  .action-menu {
+    width: 140px;
+    right: 16px;
+    left: auto !important;
+  }
 }

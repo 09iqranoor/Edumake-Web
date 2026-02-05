@@ -1,5 +1,4 @@
-// SchoolsManagement.tsx
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './SchoolManagement.css';
 
 interface School {
@@ -29,6 +28,10 @@ const SchoolManagement: React.FC = () => {
     schoolId: null,
     position: { x: 0, y: 0 }
   });
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 5;
+  const actionMenuRef = useRef<HTMLDivElement>(null);
 
   const initialSchools: School[] = [
     {
@@ -85,17 +88,77 @@ const SchoolManagement: React.FC = () => {
       joinDate: '15/01/2025',
       lastActive: '6 hours ago',
       avatarColor: '#D9D9D9'
+    },
+    {
+      id: 6,
+      name: 'Sunshine High School',
+      admin: { name: 'David Wilson', email: 'd.wilson@sunshine.edu' },
+      plan: 'Standard',
+      status: 'Active',
+      students: 980,
+      joinDate: '10/01/2025',
+      lastActive: '1 day ago',
+      avatarColor: '#D9D9D9'
+    },
+    {
+      id: 7,
+      name: 'Mountain View Academy',
+      admin: { name: 'Lisa Anderson', email: 'l.anderson@mountainview.edu' },
+      plan: 'Premium',
+      status: 'Active',
+      students: 1450,
+      joinDate: '05/01/2025',
+      lastActive: '4 hours ago',
+      avatarColor: '#D9D9D9'
+    },
+    {
+      id: 8,
+      name: 'Ocean Side School',
+      admin: { name: 'Thomas Lee', email: 't.lee@oceanside.edu' },
+      plan: 'Basic',
+      status: 'Inactive',
+      students: 760,
+      joinDate: '20/01/2025',
+      lastActive: '5 days ago',
+      avatarColor: '#D9D9D9'
     }
   ];
 
   const [schools, setSchools] = useState<School[]>(initialSchools);
 
+  // Click outside to close menu
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (actionMenuRef.current && !actionMenuRef.current.contains(event.target as Node)) {
+        handleCloseMenu();
+      }
+    };
+
+    if (actionMenu.isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [actionMenu.isOpen]);
+
   const handleMoreClick = (e: React.MouseEvent, schoolId: number) => {
+    e.stopPropagation();
     const rect = e.currentTarget.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    
+    // Calculate position - ensure it doesn't go off screen
+    let x = rect.right - 163;
+    if (x + 163 > viewportWidth) {
+      x = viewportWidth - 180;
+    }
+    if (x < 0) x = 10;
+    
     setActionMenu({
       isOpen: true,
       schoolId,
-      position: { x: rect.left - 163, y: rect.top + 40 }
+      position: { x, y: rect.bottom + 5 }
     });
   };
 
@@ -107,7 +170,7 @@ const SchoolManagement: React.FC = () => {
     if (actionMenu.schoolId) {
       setSchools(schools.map(school => 
         school.id === actionMenu.schoolId 
-          ? { ...school, status: 'Inactive' }
+          ? { ...school, status: school.status === 'Active' ? 'Inactive' : 'Active' }
           : school
       ));
       handleCloseMenu();
@@ -138,40 +201,64 @@ const SchoolManagement: React.FC = () => {
     }
   };
 
+  // Pagination logic
+  const totalPages = Math.ceil(schools.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentSchools = schools.slice(startIndex, endIndex);
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleExport = () => {
+    // Export functionality
+    console.log('Exporting school data...');
+    alert('Export functionality will be implemented!');
+  };
+
   return (
     <div className="schools-management-container">
-      {/* Frame 2147224965 */}
+      {/* Header Section */}
       <div className="header-section">
         <div className="title-section">
           <h1 className="title">Schools Management</h1>
           <p className="subtitle">Manage all registered schools and their subscriptions</p>
         </div>
-        <button className="export-button">
+        <button className="export-button" onClick={handleExport}>
           <div className="export-icon">
-            <img   src="/icons/export.png" alt="export"  />
+            <img src="/icons/export.png" alt="export" />
           </div>
           <span className="export-text">Export</span>
         </button>
       </div>
 
-      {/* Frame 2147224664 */}
+      {/* Controls Section */}
       <div className="controls-section">
         <div className="controls-row">
           <div className="search-container">
             <div className="search-icon">
-              {/* <div className="search-vector search-vector1"></div>
-              <div className="search-vector search-vector2"></div> */}
-
-                <img src="/icons/search-normal.png" alt="search-icon" />
-
+              <img src="/icons/search-normal.png" alt="search-icon" />
             </div>
-            <span className="search-text">search</span>
+            <input 
+              type="text" 
+              className="search-input" 
+              placeholder="Search schools..." 
+            />
           </div>
 
           <div className="filter-container">
             <div className="filter-item filter-icon-container">
               <div className="filter-icon">
-            <img  src="/icons/Vector(Stroke).png" alt="filter" />
+                <img src="/icons/Vector(Stroke).png" alt="filter" />
               </div>
             </div>
             <div className="filter-item">
@@ -180,13 +267,13 @@ const SchoolManagement: React.FC = () => {
             <div className="filter-item">
               <span className="filter-label">Status</span>
               <div className="direction-down">
-                <img  src="/icons/down-arrow.png" alt="status"/>
+                <img src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item">
               <span className="filter-label">Subscription Type</span>
               <div className="direction-down">
-                 <img  src="/icons/down-arrow.png" alt="status"/>
+                <img src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item reset-filter">
@@ -199,26 +286,26 @@ const SchoolManagement: React.FC = () => {
         </div>
       </div>
 
-      {/* Frame 2147224976 */}
+      {/* Table Container */}
       <div className="table-container">
         {/* Table Header */}
         <div className="table-header">
           <div className="header-row">
-            <span className="header-cell" style={{ left: '0px' }}>School</span>
-            <span className="header-cell" style={{ left: '181px' }}>Admin</span>
-            <span className="header-cell" style={{ left: '341px' }}>Plan</span>
-            <span className="header-cell" style={{ left: '455px' }}>Status</span>
-            <span className="header-cell" style={{ left: '579px' }}>Students</span>
-            <span className="header-cell" style={{ left: '712px' }}>Join Date</span>
-            <span className="header-cell" style={{ left: '847px' }}>Last Active</span>
-            <span className="header-cell" style={{ left: '993px' }}>Actions</span>
+            <span className="header-cell school-header">School</span>
+            <span className="header-cell admin-header">Admin</span>
+            <span className="header-cell plan-header">Plan</span>
+            <span className="header-cell status-header">Status</span>
+            <span className="header-cell students-header">Students</span>
+            <span className="header-cell join-date-header">Join Date</span>
+            <span className="header-cell last-active-header">Last Active</span>
+            <span className="header-cell actions-header">Actions</span>
           </div>
           <div className="header-line"></div>
         </div>
 
         {/* Table Body */}
         <div className="table-body">
-          {schools.map((school) => {
+          {currentSchools.map((school) => {
             const planColor = getPlanColor(school.plan);
             const statusColor = getStatusColor(school.status);
             
@@ -242,8 +329,7 @@ const SchoolManagement: React.FC = () => {
                     className="plan-badge"
                     style={{
                       backgroundColor: planColor.bg,
-                      color: planColor.text,
-                      left: '341px'
+                      color: planColor.text
                     }}
                   >
                     {school.plan}
@@ -253,39 +339,40 @@ const SchoolManagement: React.FC = () => {
                     className="status-badge"
                     style={{
                       backgroundColor: statusColor.bg,
-                      color: statusColor.text,
-                      left: '455px'
+                      color: statusColor.text
                     }}
                   >
-                    <div className="status-point">
-                      <div className="status-point-circle"></div>
-                    </div>
+                    <div 
+                      className="status-point-circle"
+                      style={{ 
+                        backgroundColor: school.status === 'Active' ? '#11A75C' : '#E82D2D' 
+                      }}
+                    ></div>
                     <span className="status-text">{school.status}</span>
                   </div>
 
-                  <div className="students-cell" style={{ left: '579px' }}>
+                  <div className="students-cell">
                     {school.students.toLocaleString()}
                   </div>
 
-                  <div className="join-date-cell" style={{ left: '712px' }}>
+                  <div className="join-date-cell">
                     {school.joinDate}
                   </div>
 
-                  <div className="last-active-cell" style={{ left: '847px' }}>
+                  <div className="last-active-cell">
                     {school.lastActive}
                   </div>
 
-                  <button 
-                    className="more-button"
-                    style={{ left: '1012px' }}
-                    onClick={(e) => handleMoreClick(e, school.id)}
-                  >
-                    <div className="more-icon">
-                      <div className="more-dot more-dot1"></div>
-                      <div className="more-dot more-dot2"></div>
-                      <div className="more-dot more-dot3"></div>
-                    </div>
-                  </button>
+                  <div className="actions-cell">
+                    <button 
+                      className="more-button"
+                      onClick={(e) => handleMoreClick(e, school.id)}
+                    >
+                      <div className="more-icon">
+                       <img src="/icons/more.png" alt="more-icon"/>
+                      </div>
+                    </button>
+                  </div>
                 </div>
                 <div className="row-line"></div>
               </div>
@@ -296,35 +383,48 @@ const SchoolManagement: React.FC = () => {
         {/* Action Menu */}
         {actionMenu.isOpen && (
           <div 
+            ref={actionMenuRef}
             className="action-menu"
             style={{
               left: `${actionMenu.position.x}px`,
               top: `${actionMenu.position.y}px`
             }}
-            onClick={(e) => e.stopPropagation()}
           >
-            <div className="menu-item" onClick={handleSuspendSchool}>
-              <span className="menu-text">Suspend School</span>
-            </div>
-            <div className="menu-item remove-item" onClick={handleRemoveSchool}>
-              <span className="remove-text">Remove School</span>
+            <div className="menu-header"></div>
+            <div className="menu-items">
+              <button className="menu-item" onClick={handleSuspendSchool}>
+                <span className="menu-text">Suspend School</span>
+              </button>
+              <button className="menu-item remove-item" onClick={handleRemoveSchool}>
+                <span className="remove-text remove-item">Remove School</span>
+              </button>
             </div>
           </div>
         )}
       </div>
 
-      {/* Pagination */}
+      {/* Pagination - UPDATED */}
       <div className="pagination-section">
-        <span className="pagination-text">Showing 1-5 of 78</span>
-        <div className="pagination-indicator">
-          <div className="indicator-bg"></div>
-          <div className="indicator-arrow left-arrow">
-            <div className="arrow-path"></div>
-          </div>
-          <div className="indicator-arrow right-arrow">
-            <div className="arrow-path"></div>
-          </div>
-          <div className="indicator-line"></div>
+        <span className="pagination-text">
+          Showing {startIndex + 1}-{Math.min(endIndex, schools.length)} of {schools.length}
+        </span>
+        
+        <div className="pagination-controls">
+          <button 
+            className="pagination-btn" 
+            onClick={handlePrevPage}
+            disabled={currentPage === 1}
+          >
+            <img src="/icons/arrow-left.png" alt="Previous" />
+          </button>
+          
+          <button 
+            className="pagination-btn" 
+            onClick={handleNextPage}
+            disabled={currentPage === totalPages}
+          >
+            <img src="/icons/arrow-right.png" alt="Next" />
+          </button>
         </div>
       </div>
 

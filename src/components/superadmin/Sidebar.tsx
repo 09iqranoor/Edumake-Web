@@ -5,16 +5,16 @@ import './Sidebar.css';
 
 // Icons
 const DashboardIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/dashboard.png' : '/icons/dashboard.png'} alt="Dashboard" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/dashboard.png' : '/icons/dashboard-active.png'} alt="Dashboard" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SchoolsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/briefcase.png' : '/icons/briefcase.png'} alt="Schools" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/briefcase-active.png' : '/icons/briefcase.png'} alt="Schools" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SubscriptionIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/cards.png' : '/icons/cards.png'} alt="Subscription" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/cards-active.png' : '/icons/cards.png'} alt="Subscription" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const CommunicationsIcon = ({ active }: { active?: boolean }) => (
-  <img src={active ? '/icons/announcement.png' : '/icons/announcement.png'} alt="Communications" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
+  <img src={active ? '/icons/announcement-active.png' : '/icons/announcement.png'} alt="Communications" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />
 );
 const SupportIcon = ({ active }: { active?: boolean }) => (
   <img src={active ? '/icons/24-support.png' : '/icons/24-support.png'} alt="Support" className={`sidebar-icon ${active ? 'sidebar-icon--active' : ''}`} />

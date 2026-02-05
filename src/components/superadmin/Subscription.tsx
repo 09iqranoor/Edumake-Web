@@ -2,19 +2,16 @@ import React, { useState, useEffect } from 'react';
 import './Subscription.css';
 import PlanEditModal from './PlanEditModel';
 
-// Add icon component
+
 const AddIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 12H18" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M12 18V6" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
-  </svg>
+  <img src="/icons/add.png" alt="addicon" />
 );
 
 const Subscription: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'standard' | 'premium' | null>(null);
 
-  // Handle body scroll when modal opens
+  
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add('modal-open');

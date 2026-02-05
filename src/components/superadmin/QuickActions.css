@@ -4,11 +4,11 @@
     align-items: flex-start;
     padding: 20px;
     gap: 24px;
-    flex: 1;
     background: #FFFFFF;
     border-radius: 12px;
-    min-height: 426px;
     box-sizing: border-box;
+    height: 100%; 
+    min-height: 426px; 
 }
 
 .quick-actions__title {
@@ -82,7 +82,7 @@
 
 /* Mobile Responsive Styles */
 @media screen and (max-width: 768px) {
-    .quick-actions {
+     .quick-actions {
         min-height: auto;
         padding: 16px;
     }
