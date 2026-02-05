@@ -4,7 +4,7 @@ import PlanEditModal from './PlanEditModel';
 
 
 const AddIcon = () => (
-  <img src="/icons/add.png" alt="addicon" />
+  <img src="/icons/add-2.png" alt="addicon" />
 );
 
 const Subscription: React.FC = () => {
@@ -39,7 +39,7 @@ const Subscription: React.FC = () => {
     setSelectedPlan(null);
   };
 
-  // Mock plan data for each plan type
+
   const getPlanData = () => {
     switch (selectedPlan) {
       case 'basic':
