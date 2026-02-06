@@ -11,6 +11,7 @@ import QuickActions from '../superadmin/QuickActions';
 import RecentActivities from '../superadmin/RecentActivities';
 import SchoolManagement from '../superadmin/SchoolManagement';
 import Subscription from '../superadmin/Subscription';
+import Communication from '../superadmin/Communication';
 
 const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -62,7 +63,7 @@ const DashboardLayout = () => {
             
             <Route path="communications" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Communications Page</div>
+                <Communication/>
               </div>
             } />
             <Route path="support" element={

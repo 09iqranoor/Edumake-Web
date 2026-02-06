@@ -6,3 +6,4 @@ export { default as QuickActions } from './QuickActions';
 export { default as RecentActivities } from './RecentActivities';
 export {default as SchoolManagement } from './SchoolManagement';
 export {default as Subscription} from './Subscription';
+export {default as Communication} from './Communication';
