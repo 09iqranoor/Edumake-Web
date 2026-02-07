@@ -1,0 +1,80 @@
+/* Input Field Styles */
+.input-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: 100%;
+}
+
+.input-field__label {
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333333;
+}
+
+.input-field__required {
+    color: #333333;
+    margin-left: 2px;
+}
+
+.input-field__wrapper {
+    width: 100%;
+    position: relative;
+}
+
+.input-field__input {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 14px;
+    gap: 8px;
+    width: 100%;
+    height: 44px;
+    background: #FFFFFF;
+    border: 1px solid rgba(208, 213, 221, 0.5);
+    border-radius: 6px;
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    outline: none;
+}
+
+.input-field__input::placeholder {
+    color: #888888;
+}
+
+.input-field__input:focus {
+    border-color: #10437A;
+    box-shadow: 0 0 0 3px rgba(16, 67, 122, 0.1);
+}
+
+.input-field__input:disabled {
+    background: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Error State */
+.input-field--error .input-field__input {
+    border-color: #dc3545;
+}
+
+.input-field--error .input-field__input:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
+}
+
+.input-field__error {
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    color: #dc3545;
+}

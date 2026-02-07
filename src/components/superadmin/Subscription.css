@@ -1,0 +1,397 @@
+/* Subscription.css */
+.subscription-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+.subscription-header {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .subscription-header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.header-left {
+  flex: 1;
+}
+
+.page-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  color: #000000;
+  margin: 0 0 8px 0;
+}
+
+.page-subtitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.create-plan-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  width: 178px;
+  height: 48px;
+  background: #10437A;
+  box-shadow: 0px 17px 7px rgba(0, 0, 0, 0.01),
+              0px 9px 6px rgba(0, 0, 0, 0.05),
+              0px 4px 4px rgba(0, 0, 0, 0.09),
+              0px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.create-plan-btn:hover {
+  background: #0d3560;
+  transform: translateY(-2px);
+}
+
+.create-plan-btn span {
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #FFFFFF;
+}
+
+/* Pricing Plans Container */
+.pricing-plans-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .pricing-plans-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+/* Plan Card Common Styles */
+.plan-card {
+  background: #FFFFFF;
+  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 6px 6px 64px rgba(0, 0, 0, 0.1);
+}
+
+/* Background Pattern */
+.plan-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -5.59%;
+  right: 42.29%;
+  bottom: 0;
+  mix-blend-mode: normal;
+  opacity: 0.04;
+  pointer-events: none;
+}
+
+.standard-plan::before {
+  left: 28.63%;
+  right: 8.07%;
+}
+
+.premium-plan::before {
+  left: 62.85%;
+  right: -26.15%;
+}
+
+.plan-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Plan Header */
+.plan-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 28px;
+  color: #202224;
+  text-align: center;
+  margin: 0 0 8px 0;
+}
+
+.plan-subtitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: #212121;
+  opacity: 0.8;
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.plan-price {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 58px;
+  color: #10437A;
+  text-align: center;
+  margin: 0 0 32px 0;
+}
+
+/* Divider */
+.plan-divider {
+  height: 1px;
+  background: #212121;
+  opacity: 0.1;
+  margin: 32px 0;
+  width: 100%;
+}
+
+/* Features */
+.plan-features {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.feature-item {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  align-items:center;
+  line-height: 23px;
+  text-align: center;
+  color: #212121;
+  position: relative;
+  padding: 0 20px;
+}
+
+.feature-item.disabled {
+  color: #212121;
+  opacity: 0.4;
+}
+
+
+
+/* Plan Footer */
+.plan-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+.edit-plan-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 12px;
+  gap: 8px;
+  width: 100%;
+  max-width: 238px;
+  height: 53px;
+  border: 1px solid #10437A;
+  filter: drop-shadow(0px 17px 7px rgba(0, 0, 0, 0.01))
+          drop-shadow(0px 9px 6px rgba(0, 0, 0, 0.05))
+          drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.09))
+          drop-shadow(0px 1px 2px rgba(0, 0, 0, 0.1));
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-plan-btn:hover {
+  background: #10437A;
+  color: #FFFFFF;
+}
+
+.edit-plan-btn:hover span {
+  color: #FFFFFF;
+}
+
+.edit-plan-btn span {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: -0.32px;
+  color: #10437A;
+}
+
+.schools-count {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.schools-count span {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.count-badge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px;
+  gap: 10px;
+  background: rgba(0, 178, 255, 0.2);
+  border-radius: 20px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.32px;
+  color: #00B2FF;
+  min-width: 37px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1023px) {
+  .plan-card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+  
+  .plan-price {
+    font-size: 40px;
+    line-height: 50px;
+  }
+  
+  .feature-item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .subscription-container {
+    padding: 16px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  
+  .page-subtitle {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  
+  .create-plan-btn {
+    width: 100%;
+  }
+  
+  .plan-card {
+    padding: 24px;
+  }
+  
+  .plan-price {
+    font-size: 36px;
+    line-height: 45px;
+  }
+  
+  .feature-item {
+    font-size: 14px;
+    line-height: 18px;
+  }
+}
+
+/* Animation for cards */
+
+
+.plan-card {
+  animation-delay:  0.1s ;
+}
+
+.basic-plan {
+  animation-delay: 0.1s;
+}
+
+.standard-plan {
+  animation-delay: 0.1s;
+}
+
+.premium-plan {
+  animation-delay: 0.1s;
+}
+
+
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Subscription.css - Modal State */
+
+/* When modal is open, prevent subscription container from scrolling */
+.subscription-container.modal-open {
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+/* PlanEditModal overlay should appear above subscription but below sidebar */
+.plan-edit-overlay {
+  z-index: 999; /* Below sidebar (1000+) but above subscription */
+}
+
+/* Ensure modal appears centered over subscription section */
+@media (min-width: 1024px) {
+  .plan-edit-overlay {
+    margin-left: 250px; /* Adjust based on your sidebar width */
+    width: calc(100% - 250px); /* Adjust based on your sidebar width */
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}

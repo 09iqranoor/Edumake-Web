@@ -1,0 +1,29 @@
+/* Form Heading Styles */
+.form-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-heading__title {
+    margin: 0;
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 36px;
+    color: #333333;
+}
+
+.form-heading__subtitle {
+    margin: 0;
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #888888;
+    max-width: 448px;
+}

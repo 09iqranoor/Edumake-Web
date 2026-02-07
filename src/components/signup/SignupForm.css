@@ -1,0 +1,95 @@
+/* Signup Form Styles */
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 32px;
+    width: 100%;
+    max-width: 481px;
+}
+
+.signup-form__header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 12px;
+    width: 100%;
+}
+
+.signup-form__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    gap: 24px;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.signup-form__form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+    width: 100%;
+}
+
+/* Actions Section */
+.signup-form__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 16px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+/* Divider */
+.signup-form__divider {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 12px;
+    width: 100%;
+}
+
+.signup-form__divider-line {
+    flex: 1;
+    height: 0;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+.signup-form__divider-text {
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888888;
+}
+
+/* Footer */
+.signup-form__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0;
+    gap: 4px;
+    width: 100%;
+}
+
+.signup-form__footer-text {
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #888888;
+}

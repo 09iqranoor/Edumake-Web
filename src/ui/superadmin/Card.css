@@ -1,0 +1,29 @@
+.card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.card--none {
+    padding: 0;
+}
+
+.card--small {
+    padding: 12px;
+}
+
+.card--medium {
+    padding: 20px;
+}
+
+.card--large {
+    padding: 24px;
+}
+
+.card--default {
+    border: none;
+}
+
+.card--bordered {
+    border: 0.5px solid #E1E1E1;
+}

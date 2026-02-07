@@ -1,0 +1,68 @@
+/* OTP Input Styles */
+.otp-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0;
+    gap: 12px;
+    width: 100%;
+    max-width: 481px;
+}
+
+.otp-input__field {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 8px;
+    gap: 8px;
+    width: 80px;
+    height: 80px;
+    background: #FFFFFF;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    border-radius: 8px;
+
+    font-family: 'Geist', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #333333;
+
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.otp-input__field:focus {
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    box-shadow: 0px 1px 2px rgba(51, 51, 51, 0.05), 0px 0px 0px 4px #F6FBFC;
+    border-color: #10437A;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+    .otp-input {
+        gap: 8px;
+    }
+
+    .otp-input__field {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 380px) {
+    .otp-input {
+        gap: 6px;
+    }
+
+    .otp-input__field {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+        padding: 5px;
+    }
+}
