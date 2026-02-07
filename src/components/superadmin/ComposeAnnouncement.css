@@ -1,0 +1,354 @@
+/* ComposeAnnouncement.css */
+.compose-page {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 24px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #292D32;
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #F5F5F5;
+}
+
+.compose-header {
+    margin-bottom: 32px;
+}
+
+.compose-header h1 {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #000000;
+    margin: 0 0 8px 0;
+}
+
+.compose-header p {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.6);
+    margin: 0;
+}
+
+.compose-form-container {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 32px;
+    box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #10437A;
+    margin: 0 0 32px 0;
+}
+
+.form-group {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+/* Custom Select styling to match image */
+/* Custom Select styling to match image */
+.compose-page select,
+.compose-page input[type="text"],
+.compose-page textarea {
+    width: 100%;
+    padding: 16px;
+    background: #F8F8F8;
+    border: 1px solid #F8F8F8;
+    border-radius: 8px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.compose-page select {
+    appearance: none;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.select-wrapper::after {
+    content: '';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 7px;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    pointer-events: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+textarea {
+    resize: vertical;
+}
+
+.helper-text {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-top: 4px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.left-actions {
+    display: flex;
+    gap: 16px;
+}
+
+.btn-cancel,
+.btn-draft {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-cancel {
+    background: #F5F5F5;
+    color: #000000;
+}
+
+.btn-draft {
+    background: #F5F5F5;
+    color: #000000;
+    /* Assuming similar style, text might differ */
+}
+
+.btn-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 32px;
+    background: #10437A;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+}
+
+/* Radio and Checkbox Styling */
+.radio-group.vertical,
+.checkbox-group.vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+.radio-option,
+.checkbox-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.radio-option input,
+.checkbox-option input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Custom Radio */
+.radio-custom {
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1px solid #D0D5DD;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.radio-option:hover input~.radio-custom {
+    border-color: #10437A;
+}
+
+.radio-option input:checked~.radio-custom {
+    border: 1px solid #D0D5DD;
+}
+
+/* Create the indicator (dot) */
+.radio-custom:after {
+    content: "";
+    display: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #E6EAEF;
+    /* Light gray fill for unchecked? No, checked needs distinct look */
+}
+
+/* Override for checked state based on typical design */
+.radio-option input:checked~.radio-custom:after {
+    display: block;
+    background: #E8E8E8;
+    /* Placeholder color, adjust if needed */
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* Actually, standard radio is dot inside. Let's make it a blue dot. */
+    background: #10437A;
+    width: 12px;
+    /* size of dot */
+    height: 12px;
+}
+
+
+/* Custom Checkbox */
+.checkbox-custom {
+    height: 24px;
+    width: 24px;
+    background-color: #fff;
+    border: 1px solid #D0D5DD;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    box-sizing: border-box;
+}
+
+.checkbox-option:hover input~.checkbox-custom {
+    border-color: #10437A;
+}
+
+.checkbox-option input:checked~.checkbox-custom {
+    background-color: #10437A;
+    border-color: #10437A;
+}
+
+/* Checkmark */
+.checkbox-custom:after {
+    content: "";
+    display: none;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    margin-bottom: 3px;
+}
+
+.checkbox-option input:checked~.checkbox-custom:after {
+    display: block;
+}
+
+.radio-label,
+.checkbox-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #1D2939;
+    /* Darker gray/black for text */
+}
+
+/* Custom Select Dropdown Styles */
+.custom-select-container {
+    position: relative;
+    width: 100%;
+}
+
+.custom-select-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #F8F8F8;
+    border: 1px solid #F8F8F8;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Mulish', sans-serif;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    user-select: none;
+    transition: all 0.2s;
+}
+
+.custom-select-trigger:hover {
+    background: #F0F0F0;
+}
+
+.custom-select-trigger.open {
+    border: 1px solid #10437A;
+    background: #FFFFFF;
+}
+
+.custom-options-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
+    border-radius: 8px;
+    padding: 24px;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

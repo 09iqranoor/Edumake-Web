@@ -1,0 +1,487 @@
+/* SupportTickets.css */
+
+.support-tickets-page {
+
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Stats Styles */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 32px;
+    max-width: 1110px;
+
+    width: 100%;
+}
+
+.stat-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
+    height: 97px;
+
+    box-sizing: border-box;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.stat-value {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #000000;
+}
+
+.stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon-wrapper.red {
+    background: rgba(255, 77, 79, 0.1);
+}
+
+.stat-icon-wrapper.yellow {
+    background: rgba(250, 173, 20, 0.1);
+}
+
+.stat-icon-wrapper.green {
+    background: rgba(82, 196, 26, 0.1);
+}
+
+.stat-icon-wrapper.pink {
+    background: rgba(247, 89, 171, 0.1);
+}
+
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 249px);
+    gap: 16px;
+    /* Reduced gap */
+    max-width: 1110px;
+    width: 100%;
+}
+
+.ticket-column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.column-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    justify-content: space-between;
+}
+
+.column-header h3 {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #000000;
+    margin: 0;
+}
+
+.count-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    gap: 0;
+    width: 24px;
+    height: 24px;
+    background: rgba(0, 178, 255, 0.2);
+    border-radius: 50%;
+    color: #00B2FF;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 1;
+    /* Center text vertically */
+    text-align: center;
+    letter-spacing: -0.32px;
+}
+
+/* Ticket Card */
+.ticket-card {
+    background: #FFFFFF;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 249px;
+    height: 225px;
+    box-sizing: border-box;
+    margin-top: 12px;
+}
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+.ticket-id {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #000000;
+}
+
+.priority-badge {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 2px 8px;
+    gap: 10px;
+    height: 19px;
+    border-radius: 4px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    letter-spacing: -0.32px;
+}
+
+.priority-badge.red {
+    background: rgba(232, 45, 45, 0.2);
+    color: #E82D2D;
+}
+
+.priority-badge.yellow {
+    background: rgba(250, 173, 20, 0.2);
+    color: #FAAD14;
+}
+
+.priority-badge.green {
+    background: rgba(82, 196, 26, 0.2);
+    color: #52C41A;
+}
+
+.ticket-title {
+    font-family: 'Mulish', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0;
+    width: 100%;
+}
+
+.school-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 8px;
+    width: 100%;
+
+}
+
+.avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #D9D9D9;
+}
+
+.school-name {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.7);
+    letter-spacing: -0.32px;
+}
+
+.ticket-footer {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 0px 0px;
+    gap: 10px;
+    width: 100%;
+    height: 28px;
+    border-top: 1px solid #E1E1E1;
+    margin-top: auto;
+    /* Ensure it stays at the bottom */
+}
+
+.time-ago {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgba(0, 0, 0, 0.5);
+    letter-spacing: -0.32px;
+}
+
+/* Responsive adjustments */
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kanban-board {
+        grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
+        gap: 16px;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(2px);
+}
+
+.ticket-modal {
+    background: #FFFFFF;
+    width: 600px;
+    max-width: 90%;
+    border-radius: 12px;
+    padding: 32px;
+    position: relative;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: #F8F8F8;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.modal-close:hover {
+    background: #E1E1E1;
+}
+
+.modal-header {
+    margin-bottom: 24px;
+    border-bottom: 1px solid #E1E1E1;
+    padding-bottom: 24px;
+}
+
+.modal-header-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ticket-id-large {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #000000;
+}
+
+.modal-title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.8);
+    margin: 0 0 16px 0;
+}
+
+.school-info-large {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.avatar-large {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #D9D9D9;
+}
+
+.avatar-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.school-name-large {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 24px;
+    padding-right: 8px;
+}
+
+/* Custom Scrollbar for modal content */
+.modal-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.comment-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.comment-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.comment-author-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.comment-author-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #10437A;
+    /* Admin color */
+}
+
+.comment-author {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #000000;
+}
+
+.comment-time {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.comment-message {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 0;
+    padding-left: 32px;
+    /* Align with text start, skipping avatar */
+}
+
+.modal-footer {
+    width: 100%;
+}
+
+.reply-input {
+    width: 100%;
+    padding: 16px;
+    background: #E8E8E8;
+    /* Light gray from image */
+    border: none;
+    border-radius: 8px;
+    font-family: 'Mulish', sans-serif;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.7);
+    resize: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.reply-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.ticket-card {
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.ticket-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
+}

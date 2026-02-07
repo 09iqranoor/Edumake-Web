@@ -1,0 +1,826 @@
+/* Analytics - same layout pattern as SchoolManagement */
+.analytics-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 32px;
+  width: 100%;
+  min-height: 100vh;
+  background: #F5F5F5;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.analytics-header-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  width: 100%;
+  height: 68px;
+}
+
+.analytics-title-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 8px;
+}
+
+.analytics-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 35px;
+  color: #000000;
+  margin: 0;
+}
+
+.analytics-subtitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+.analytics-header-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.analytics-period-select {
+  box-sizing: border-box;
+  padding: 12px 16px;
+  height: 48px;
+  min-width: 140px;
+  background: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+  cursor: pointer;
+}
+
+.analytics-export-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  gap: 8px;
+  height: 48px;
+  min-width: 100px;
+  background: #FAFAFA;
+  border: 1px solid #E1E1E1;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+}
+
+.analytics-export-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.analytics-export-text {
+  letter-spacing: -0.32px;
+}
+
+/* Tabs */
+.analytics-tabs {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  border-bottom: 1px solid #E1E1E1;
+  padding: 0;
+}
+
+.analytics-tab {
+  padding: 12px 20px;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.6);
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  cursor: pointer;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.analytics-tab:hover {
+  color: #000000;
+}
+
+.analytics-tab--active {
+  color: #1890FF;
+  border-bottom-color: #1890FF;
+}
+
+/* Tab content */
+.analytics-tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.analytics-tab-content--subscription {
+  gap: 24px;
+}
+
+/* Metric cards - 4 in a row */
+.analytics-metric-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+}
+
+.analytics-metric-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px;
+  gap: 16px;
+  background: #FFFFFF;
+  border: 0.5px solid #E1E1E1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.analytics-metric-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.analytics-metric-icon--blue {
+  background: rgba(0, 178, 255, 0.2);
+}
+
+.analytics-metric-icon--yellow {
+  background: rgba(251, 188, 4, 0.2);
+}
+
+.analytics-metric-icon--green {
+  background: rgba(52, 168, 83, 0.2);
+}
+
+.analytics-metric-icon--purple {
+  background: rgba(137, 121, 255, 0.2);
+}
+
+.analytics-metric-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.analytics-metric-label {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.analytics-metric-value {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.analytics-metric-change {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+}
+
+.analytics-metric-badge {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.analytics-metric-change--positive .analytics-metric-badge {
+  background: rgba(52, 168, 83, 0.2);
+  color: #34A853;
+}
+
+.analytics-metric-change--negative .analytics-metric-badge {
+  background: rgba(255, 77, 79, 0.15);
+  color: #FF4D4F;
+}
+
+.analytics-metric-change-text {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Chart cards */
+.analytics-chart-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 20px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 0.5px solid #E1E1E1;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.analytics-chart-card--full {
+  width: 100%;
+}
+
+.analytics-chart-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.analytics-chart-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0;
+}
+
+.analytics-chart-subtitle {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0;
+}
+
+/* Bar chart - Revenue Trend */
+.analytics-bar-chart {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 280px;
+}
+
+.analytics-bar-chart-y {
+  display: none; /* optional y-axis labels; we rely on bars */
+}
+
+.analytics-bar-chart-area {
+  flex: 1;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px 0;
+}
+
+.analytics-bar-chart-bars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 12px;
+  width: 100%;
+  height: 220px;
+}
+
+.analytics-bar-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 4px;
+  height: 100%;
+  flex: 1;
+  max-width: 80px;
+}
+
+.analytics-bar {
+  flex: 1;
+  min-width: 12px;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.analytics-bar--collected {
+  background: #8979FF;
+}
+
+.analytics-bar--pending {
+  background: #FF928A;
+}
+
+.analytics-bar--premium {
+  background: #7B9FFF;
+}
+
+.analytics-bar-chart-x {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 12px;
+  padding-top: 8px;
+  border-top: 1px solid #F0F0F0;
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.analytics-bar-chart-x span {
+  flex: 1;
+  max-width: 80px;
+  text-align: center;
+}
+
+.analytics-chart-legend {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.analytics-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.analytics-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+}
+
+.analytics-legend-dot--collected {
+  background: #8979FF;
+}
+
+.analytics-legend-dot--pending {
+  background: #FF928A;
+}
+
+.analytics-legend-dot--premium {
+  background: #7B9FFF;
+}
+
+/* Two charts in a row */
+.analytics-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+}
+
+.analytics-line-chart {
+  width: 100%;
+  height: 140px;
+  margin-top: 8px;
+}
+
+.analytics-line-chart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Subscription tab layout: donut + quick actions */
+.analytics-subscription-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  width: 100%;
+  align-items: start;
+}
+
+.analytics-donut-card {
+  max-width: 100%;
+}
+
+.analytics-donut-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.analytics-donut {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.analytics-donut-hole {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.analytics-donut-center-value {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+  color: #000000;
+}
+
+.analytics-donut-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.analytics-donut-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
+
+.analytics-donut-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.analytics-donut-legend-pct {
+  margin-left: auto;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Quick Actions card */
+.analytics-quick-actions-card {
+  max-width: 100%;
+}
+
+.analytics-quick-actions-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0 0 16px 0;
+}
+
+.analytics-quick-actions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.analytics-quick-action-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.analytics-quick-action-row:last-child {
+  border-bottom: none;
+}
+
+.analytics-quick-action-label {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.analytics-quick-action-value {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: #000000;
+}
+
+.analytics-quick-action-value--green {
+  color: #34A853;
+}
+
+.analytics-quick-action-value--red {
+  color: #E82D2D;
+}
+
+/* Section title (School Performance, Usage Statistics) */
+.analytics-section-title {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: #000000;
+  margin: 0 0 20px 0;
+}
+
+/* School Performance - Top Performing Schools table */
+.analytics-school-performance-card {
+  width: 100%;
+}
+
+.analytics-school-table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.analytics-school-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #E1E1E1;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.analytics-school-th--school {
+  padding-left: 0;
+}
+
+.analytics-school-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1.2fr;
+  gap: 24px;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #F0F0F0;
+  font-family: 'Mulish', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #202224;
+}
+
+.analytics-school-row:last-child {
+  border-bottom: none;
+}
+
+.analytics-school-cell {
+  display: flex;
+  align-items: center;
+}
+
+.analytics-school-cell--school {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.analytics-school-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  flex-shrink: 0;
+}
+
+.analytics-school-name {
+  font-weight: 500;
+  color: #202224;
+}
+
+.analytics-school-cell--progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.analytics-progress-track {
+  flex: 1;
+  min-width: 0;
+  height: 10px;
+  background: #F0F0F0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.analytics-progress-fill {
+  height: 100%;
+  background: #34A853;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.analytics-progress-pct {
+  font-weight: 600;
+  font-size: 14px;
+  color: #202224;
+  min-width: 36px;
+  text-align: right;
+}
+
+.analytics-school-cell--revenue {
+  font-weight: 600;
+  color: #202224;
+}
+
+/* Usage Statistics - Platform Usage Trends bar chart */
+.analytics-usage-card {
+  width: 100%;
+}
+
+.analytics-usage-chart {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  min-height: 260px;
+  margin-bottom: 8px;
+}
+
+.analytics-usage-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 12px 24px 0;
+  width: 48px;
+  flex-shrink: 0;
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.analytics-usage-chart-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.analytics-usage-bars {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 16px;
+  width: 100%;
+  height: 220px;
+}
+
+.analytics-usage-bar-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 6px;
+  height: 100%;
+  flex: 1;
+  max-width: 60px;
+}
+
+.analytics-usage-bar {
+  flex: 1;
+  min-width: 14px;
+  border-radius: 4px 4px 0 0;
+  transition: height 0.3s ease;
+}
+
+.analytics-usage-bar--active {
+  background: #8979FF;
+}
+
+.analytics-usage-bar--login {
+  background: #FF928A;
+}
+
+.analytics-usage-x-axis {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 16px;
+  padding-top: 8px;
+  border-top: 1px solid #F0F0F0;
+  font-family: 'Mulish', sans-serif;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.analytics-usage-x-axis span {
+  flex: 1;
+  max-width: 60px;
+  text-align: center;
+}
+
+.analytics-usage-legend--active {
+  background: #8979FF;
+}
+
+.analytics-usage-legend--login {
+  background: #FF928A;
+}
+
+/* Placeholder for other tabs (kept for consistency) */
+.analytics-placeholder {
+  width: 100%;
+  padding: 48px 24px;
+  text-align: center;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 0.5px solid #E1E1E1;
+  font-family: 'Mulish', sans-serif;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Responsive */
+@media screen and (max-width: 1200px) {
+  .analytics-metric-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .analytics-charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .analytics-subscription-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .analytics-header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 16px;
+  }
+
+  .analytics-header-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .analytics-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .analytics-tab {
+    white-space: nowrap;
+  }
+
+  .analytics-metric-cards {
+    grid-template-columns: 1fr;
+  }
+}

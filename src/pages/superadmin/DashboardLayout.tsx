@@ -13,7 +13,7 @@ import './DashboardPage.css';
 // import Subscription from '../superadmin/Subscription';
 // import Communication from '../superadmin/Communication';
 
-import { Stats } from '../../components/superadmin';
+import { AuditLogs, Analytics, Stats, SupportTickets, Settings, Resources } from '../../components/superadmin';
 import { Charts } from '../../components/superadmin';
 import { QuickActions } from '../../components/superadmin';
 import { RecentActivities } from '../../components/superadmin';
@@ -80,27 +80,27 @@ const DashboardLayout = () => {
             } />
             <Route path="support" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Support Page</div>
+                <SupportTickets />
               </div>
             } />
             <Route path="audit-logs" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Audit Logs Page</div>
+                <AuditLogs />
               </div>
             } />
             <Route path="analytics" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Analytics Page</div>
+                <Analytics />
               </div>
             } />
             <Route path="resources" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Resources Page</div>
+                <Resources />
               </div>
             } />
             <Route path="settings" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Settings Page</div>
+                <Settings />
               </div>
             } />
           </Routes>

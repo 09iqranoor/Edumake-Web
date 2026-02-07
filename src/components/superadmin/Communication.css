@@ -1,524 +1,237 @@
 /* Communication.css */
-
-/* Main Page Container */
 .communication-page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-/* Content Container */
 .communication-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 32px;
-  width: 100%;
-  max-width: 1109px;
-  margin: 0 auto;
-  box-sizing: border-box;
 }
 
-/* Tabs Section - Figma Frame 2147224982 */
-.tabs-section {
+/* Tabs */
+.tabs-container {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 8px 12px;
-  gap: 12px;
-  width: 406px;
-  height: 53px;
+}
+
+.tabs-wrapper {
+  display: flex;
   background: #E1E1E1;
+  padding: 8px 12px;
   border-radius: 20px;
-  flex-shrink: 0;
-  box-sizing: border-box;
+  gap: 8px;
 }
 
-.tab {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px;
-  gap: 10px;
-  height: 37px;
-  filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.05));
+.tab-btn {
+  background: transparent;
+  border: none;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #000000;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
+  color: #000;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
-.tab.active {
+.tab-btn.active {
   background: #FFFFFF;
-  box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05);
-}
-
-.tab:nth-child(1) {
-  width: 190px;
-}
-
-.tab:nth-child(2) {
-  width: 101px;
-}
-
-.tab:nth-child(3) {
-  width: 67px;
-}
-
-/* Table Container - Fixed for no overflow */
-.table-container {
-  background: #FFFFFF;
-  border-radius: 12px;
-  width: 100%;
-  max-width: 1109px;
-  box-sizing: border-box;
-  padding: 32px 20px;
-}
-
-/* Table Header */
-.table-header {
-  width: 100%;
-  margin-bottom: 20px;
-}
-
-.table-header-row {
-  display: grid;
-  grid-template-columns: 158px 115px 80px 102px 84px 126px;
-  gap: 20px;
-  width: 100%;
-  min-width: 985px;
-  box-sizing: border-box;
-  padding-bottom: 20px;
-}
-
-.header-column {
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
   font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  color: #000000;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.subjects-col {
-  width: 158px;
+.tab-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.5);
 }
 
-.recipients-col {
-  width: 115px;
-}
-
-.delivery-col {
-  width: 80px;
-}
-
-.status-col {
-  width: 102px;
-}
-
-.date-col {
-  width: 84px;
-}
-
-.actions-col {
-  width: 126px;
-}
-
-.header-divider {
-  width: 100%;
-  height: 0px;
-  border: 1px solid #E1E1E1;
-  margin-top: 20px;
-}
-
-/* Table Body */
-.table-body {
-  width: 100%;
+/* Table Container */
+.comm-table-container {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 6px 6px 54px rgba(0, 0, 0, 0.05);
   overflow-x: auto;
 }
 
-.announcement-row {
+/* Grid Layout */
+.comm-table-header,
+.comm-table-row {
   display: grid;
-  grid-template-columns: 158px 115px 80px 102px 84px 126px;
-  gap: 20px;
-  padding: 16px 0;
-  border-bottom: 1px solid #E1E1E1;
-  align-items: flex-start;
-  min-width: 985px;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
+  grid-template-columns: 2.5fr 2fr 1.2fr 1.2fr 0.8fr 1fr;
+  gap: 24px;
+  align-items: center;
+  min-width: 1000px;
+  /* Ensure scroll on small screens */
 }
 
-/* Row heights based on Figma */
-.row-1 {
-  min-height: 78px;
-  height: auto;
+.comm-table-header {
+  padding-bottom: 24px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #EEEEEE;
 }
 
-.row-2 {
-  min-height: 71px;
-  height: auto;
+.comm-table-row {
+  padding: 24px 0;
+  border-bottom: 1px solid #EEEEEE;
 }
 
-.row-3 {
-  min-height: 75px;
-  height: auto;
+.comm-table-row:last-child {
+  border-bottom: none;
 }
 
-/* Cells */
-.cell {
+/* Columns */
+.col {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+}
+
+.comm-table-header .col {
   font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  box-sizing: border-box;
-  min-height: inherit;
-  height: 100%;
-  padding: 4px 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #202224;
 }
 
-/* Subject Cell */
-.subject-cell {
-  justify-content: flex-start;
+.action-col {
+  align-items: center;
 }
 
-.subject-cell .subject-text {
+/* Cell Content */
+.subject-text {
+  font-family: 'Mulish', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
   color: rgba(0, 0, 0, 0.7);
-  word-break: break-word;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-}
-
-.row-3 .subject-cell .subject-text {
-  -webkit-line-clamp: 1;
-}
-
-/* Recipients Cell */
-.recipients-cell {
-  gap: 2px;
-  justify-content: flex-start;
 }
 
 .recipient-label {
-  font-weight: 500;
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
   font-size: 16px;
-  line-height: 20px;
   color: rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .recipient-count {
+  font-family: 'Mulish', sans-serif;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
   color: rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
+  margin-top: 4px;
 }
 
-/* Delivery Cell */
-.delivery-cell {
-  gap: 8px;
-  justify-content: flex-start;
-}
-
-.delivery-methods {
+.delivery-badges,
+.status-badges {
   display: flex;
   flex-direction: column;
   gap: 8px;
   align-items: flex-start;
 }
 
-.delivery-method {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.badge {
+  display: inline-flex;
   align-items: center;
-  padding: 2px 8px;
-  gap: 10px;
-  width: 79px;
-  height: 20px;
+  padding: 4px 12px;
   border-radius: 4px;
-  font-weight: 500;
+  gap: 8px;
+  font-family: 'Mulish', sans-serif;
   font-size: 12px;
-  line-height: 15px;
-  letter-spacing: -0.32px;
-  box-sizing: border-box;
+  font-weight: 500;
   white-space: nowrap;
 }
 
-.delivery-method.email {
+/* Delivery Badges */
+.delivery-badge.email {
   background: rgba(0, 178, 255, 0.2);
   color: #00B2FF;
 }
 
-.delivery-method.in-app {
+.delivery-badge.inapp {
   background: rgba(251, 188, 4, 0.2);
   color: #FBBC04;
 }
 
-.method-icon {
-  width: 16px;
-  height: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.method-text {
-  white-space: nowrap;
-}
-
-/* Status Cell */
-.status-cell {
-  gap: 8px;
-  justify-content: flex-start;
-}
-
-.status-badge {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 8px 2px 4px;
-  gap: 9.1px;
-  height: 23px;
-  border-radius: 4px;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.18207px;
-  box-sizing: border-box;
-  white-space: nowrap;
-}
-
-.status-badge.delivered {
+/* Status Badges */
+.status-success {
   background: rgba(29, 180, 105, 0.12);
   color: #11A75C;
-  width: 102.39px;
 }
 
-.status-badge.failed {
+.status-failed {
   background: rgba(232, 45, 45, 0.12);
   color: #E82D2D;
-  width: 69.39px;
 }
 
-.status-dot {
+.dot {
   width: 10.92px;
   height: 10.92px;
-  position: relative;
-  flex-shrink: 0;
-}
-
-.status-dot::before {
-  content: '';
-  position: absolute;
-  width: 7.28px;
-  height: 7.28px;
-  left: 1.82px;
-  top: 1.82px;
   border-radius: 50%;
 }
 
-.status-badge.delivered .status-dot::before {
-  background: #11A75C;
+.dot.success {
+  background-color: #11A75C;
 }
 
-.status-badge.failed .status-dot::before {
-  background: #E82D2D;
+.dot.failed {
+  background-color: #E82D2D;
 }
 
-/* Date Cell */
-.date-cell {
+.empty-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.empty-state p {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  color: #000;
+}
+
+.date-text {
+  font-family: 'Mulish', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px;
-  color: rgba(0, 0, 0, 0.7);
-  white-space: nowrap;
-  justify-content: flex-start;
+  color: #333;
 }
 
-/* Actions Cell */
-.actions-cell {
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
-.analytics-button {
+/* Actions */
+.analytics-btn {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
   align-items: center;
-  padding: 8px 12px;
   gap: 8px;
-  width: 126px;
-  height: 40px;
+  padding: 8px 16px;
   background: #FAFAFA;
   border: 1px solid #E1E1E1;
   border-radius: 8px;
   cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-  box-sizing: border-box;
-  white-space: nowrap;
-  margin: auto 0;
+  transition: all 0.2s;
 }
 
-.analytics-button:hover {
-  background: #F5F5F5;
-}
-
-.analytics-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.analytics-button span {
+.analytics-btn span {
+  font-family: 'Mulish', sans-serif;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  letter-spacing: -0.32px;
-  color: #000000;
+  font-size: 14px;
 }
 
-.row-divider {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  border-top: 1px solid #E1E1E1;
-}
-
-/* Responsive Styles */
-@media (max-width: 1200px) {
-  .communication-content {
-    padding: 0 20px;
-  }
-  
-  .table-container {
-    padding: 24px 16px;
-  }
-  
-  .table-header-row,
-  .announcement-row {
-    min-width: 985px;
-  }
+.analytics-btn:hover {
+  background: #F0F0F0;
+  border-color: #D0D0D0;
 }
 
 @media (max-width: 768px) {
   .communication-page {
-    gap: 24px;
+    padding: 16px;
   }
-  
-  .communication-content {
-    gap: 24px;
-    padding: 0 16px;
-  }
-  
-  .tabs-section {
+
+  .tabs-wrapper {
     width: 100%;
-    max-width: 406px;
     overflow-x: auto;
   }
-  
-  .table-container {
-    padding: 20px 16px;
-    overflow-x: auto;
-  }
-  
-  .table-body {
-    overflow-x: auto;
-  }
-}
-
-/* Fix for horizontal scroll */
-@media (max-width: 1109px) {
-  .table-body {
-    overflow-x: auto;
-  }
-  
-  .announcement-row {
-    min-width: 985px;
-  }
-}
-
-/* Fix for cell alignment in grid */
-.announcement-row > .cell {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Ensure content doesn't overflow */
-.announcement-row {
-  align-items: stretch;
-}
-
-/* Improve vertical alignment */
-.cell > * {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Delivery and Status cell specific fixes */
-.delivery-cell .delivery-methods,
-.status-cell {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  width: 100%;
-}
-
-/* Hide horizontal scrollbar for better UX */
-.table-body::-webkit-scrollbar {
-  height: 6px;
-}
-
-.table-body::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 3px;
-}
-
-.table-body::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 3px;
-}
-
-.table-body::-webkit-scrollbar-thumb:hover {
-  background: #555;
 }

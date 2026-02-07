@@ -7,3 +7,8 @@ export { default as RecentActivities } from './RecentActivities';
 export { default as SchoolManagement } from './SchoolManagement';
 export { default as Subscription } from './Subscription';
 export { default as Communication } from './Communication';
+export { default as SupportTickets } from './SupportTickets';
+export { default as AuditLogs } from './AuditLogs';
+export { default as Analytics } from './Analytics';
+export { default as Settings } from './Settings';
+export { default as Resources } from './Resources';
