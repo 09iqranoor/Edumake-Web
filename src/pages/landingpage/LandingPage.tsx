@@ -10,7 +10,6 @@ import Testimonials from '../../components/landing/Testimonials'
 import Footer from '../../components/landing/Footer'
 
 
-
 // interface LandingPageProps {
 //   onLoginClick: () => void;
 // }
