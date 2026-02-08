@@ -88,8 +88,48 @@ const WhyChooseUS: React.FC = () => {
           </div>
         )}
       </div>
+      {/* Stats Section */}
+      <div className="edu-stats-container">
+        <div className="edu-stat-item">
+          <div className="edu-stat-top">
+            <div className="edu-stat-box blue"></div>
+            <span className="edu-stat-value">2x</span>
+          </div>
+          <p className="edu-stat-label">Faster Accuracy</p>
+        </div>
 
+        <div className="edu-stat-divider"></div>
+
+        <div className="edu-stat-item">
+          <div className="edu-stat-top">
+            <div className="edu-stat-box orange"></div>
+            <span className="edu-stat-value">70% Increase</span>
+          </div>
+          <p className="edu-stat-label">Parent Involvement</p>
+        </div>
+
+        <div className="edu-stat-divider"></div>
+
+        <div className="edu-stat-item">
+          <div className="edu-stat-top">
+            <div className="edu-stat-box red"></div>
+            <span className="edu-stat-value">50% Reduction</span>
+          </div>
+          <p className="edu-stat-label">Administrative Workload</p>
+        </div>
+
+        <div className="edu-stat-divider"></div>
+
+        <div className="edu-stat-item">
+          <div className="edu-stat-top">
+            <div className="edu-stat-box green"></div>
+            <span className="edu-stat-value">35% Improvement</span>
+          </div>
+          <p className="edu-stat-label">Staff Productivity</p>
+        </div>
+      </div>
     </section>
+
   );
 };
 

@@ -201,9 +201,21 @@ const HeroSection: React.FC = () => {
 
 
           <div className="hero-content">
-            <h1 className="hero-title">
-              Empowering Schools & Simplifying <span>Educational Management</span>
-            </h1>
+            <div className="hero-title-wrapper">
+              {/* <div className="hero-badge hero-badge-students">
+                <span className="hero-badge-text">Students</span>
+                <div className="hero-badge-arrow"></div>
+              </div> */}
+              <h1 className="hero-title">
+                Empowering Schools & <br />
+                Simplifying <span>Educational <br />
+                  Management</span>
+              </h1>
+              {/* <div className="hero-badge hero-badge-parents">
+                <span className="hero-badge-text">Parents</span>
+                <div className="hero-badge-arrow"></div>
+              </div> */}
+            </div>
 
             <p className="hero-subtitle">
               Transform the way your school runs with intuitive tools that reduce administrative stress, improve collaboration, and boost overall efficiency.

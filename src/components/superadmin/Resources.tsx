@@ -36,8 +36,19 @@ const Resources: React.FC = () => {
     alert('Upload functionality will be implemented!');
   };
 
-  const getFileTypeLabel = (type: FileType) => type.toUpperCase();
-  const getFileTypeClass = (type: FileType) => `resources-file-icon resources-file-icon--${type}`;
+
+
+  const getFileTypeIcon = (type: FileType) => {
+    switch (type) {
+      case 'pdf': return '/icons/pdf-icon.png';
+      case 'doc': return '/icons/doc-icon.png';
+      case 'jpg': return '/icons/jpg-icon.png';
+      case 'mp4': return '/icons/mp4=icon.png'; // Using the exact filename found
+      default: return '/icons/doc-icon.png';
+    }
+  };
+
+
 
   return (
     <div className="resources-container">
@@ -48,11 +59,7 @@ const Resources: React.FC = () => {
         </div>
         <button type="button" className="resources-upload-btn" onClick={handleUpload}>
           <span className="resources-upload-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-              <polyline points="17 8 12 3 7 8" />
-              <line x1="12" y1="3" x2="12" y2="15" />
-            </svg>
+            <img src="/icons/upload-icon.png" alt="" />
           </span>
           <span className="resources-upload-text">Upload Files</span>
         </button>
@@ -74,7 +81,8 @@ const Resources: React.FC = () => {
       {showEmptyState ? (
         <div className="resources-empty">
           <div className="resources-empty-illustration">
-            <div className="resources-empty-magnifier" />
+            {/* <div className="resources-empty-magnifier" /> */}
+            <img src="/icons/empty-resource-img.png" alt="" />
             <span className="resources-empty-text">No Resources found</span>
           </div>
         </div>
@@ -82,8 +90,8 @@ const Resources: React.FC = () => {
         <div className="resources-grid">
           {filtered.map((item) => (
             <div key={item.id} className="resources-card">
-              <div className={getFileTypeClass(item.type)}>
-                <span>{getFileTypeLabel(item.type)}</span>
+              <div className="resources-file-icon">
+                <img src={getFileTypeIcon(item.type)} alt={item.type} />
               </div>
               <h3 className="resources-card-name">{item.name}</h3>
               <p className="resources-card-meta">{item.size}</p>

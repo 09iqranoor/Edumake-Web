@@ -229,70 +229,81 @@ const AuditLogs: React.FC = () => {
 
             {/* Table Container */}
             <div className="table-container">
-                {/* Table Header */}
-                <div className="table-header">
-                    <div className="header-row">
-                        <span className="header-cell timestamp-header">Timestamp</span>
-                        <span className="header-cell action-header">Action</span>
-                        <span className="header-cell actor-header">Actor</span>
-                        <span className="header-cell target-header">Target</span>
-                        <span className="header-cell status-header">Status</span>
-                        <span className="header-cell ip-header">IP Address</span>
+                <div className="table-wrapper">
+                    {/* Table Header */}
+                    <div className="table-header">
+                        <div className="header-row">
+                            <span className="header-cell col-timestamp">Timestamp</span>
+                            <span className="header-cell col-action">Action</span>
+                            <span className="header-cell col-actor">Actor</span>
+                            <span className="header-cell col-target">Target</span>
+                            <span className="header-cell col-status">Status</span>
+                            <span className="header-cell col-ip">IP Address</span>
+                            <span className="header-cell col-actions">Actions</span>
+                        </div>
+                        <div className="header-line"></div>
                     </div>
-                    <div className="header-line"></div>
-                </div>
 
-                {/* Table Body */}
-                <div className="table-body">
-                    {currentLogs.map((log) => {
-                        const statusColor = getStatusColor(log.status);
+                    {/* Table Body */}
+                    <div className="table-body">
+                        {currentLogs.map((log) => {
+                            const statusColor = getStatusColor(log.status);
 
-                        return (
-                            <div key={log.id} className="table-row-container">
-                                <div className="table-row">
-                                    <div className="timestamp-cell">
-                                        <div className="timestamp-date">{log.timestamp.split(' ')[0]}</div>
-                                        <div className="timestamp-time">{log.timestamp.split(' ')[1]}</div>
-                                    </div>
+                            return (
+                                <div key={log.id} className="table-row-container">
+                                    <div className="table-row">
+                                        <div className="timestamp-cell col-timestamp">
+                                            <div className="timestamp-date">{log.timestamp.split(' ')[0]}</div>
+                                            <div className="timestamp-time">{log.timestamp.split(' ')[1]}</div>
+                                        </div>
 
-                                    <div className="action-cell">
-                                        <div className="action-name">{log.action}</div>
-                                        <div className="action-category">{log.category}</div>
-                                    </div>
+                                        <div className="action-cell col-action">
+                                            <div className="action-name">{log.action}</div>
+                                            <div className="action-category">{log.category}</div>
+                                        </div>
 
-                                    <div className="actor-cell">
-                                        <div className="actor-name">{log.actor}</div>
-                                        <div className="actor-email">{log.email}</div>
-                                    </div>
+                                        <div className="actor-cell col-actor">
+                                            <div className="actor-name">{log.actor}</div>
+                                            <div className="actor-email">{log.email}</div>
+                                        </div>
 
-                                    <div className="target-cell">
-                                        {log.target}
-                                    </div>
+                                        <div className="target-cell col-target">
+                                            {log.target}
+                                        </div>
 
-                                    <div
-                                        className="status-badge"
-                                        style={{
-                                            backgroundColor: statusColor.bg,
-                                            color: statusColor.text
-                                        }}
-                                    >
-                                        <div
-                                            className="status-point-circle"
-                                            style={{
-                                                backgroundColor: log.status === 'Success' ? '#11A75C' : '#E82D2D'
-                                            }}
-                                        ></div>
-                                        <span className="status-text">{log.status}</span>
-                                    </div>
+                                        <div className="col-status">
+                                            <div
+                                                className="status-badge"
+                                                style={{
+                                                    backgroundColor: statusColor.bg,
+                                                    color: statusColor.text
+                                                }}
+                                            >
+                                                <div
+                                                    className="status-point-circle"
+                                                    style={{
+                                                        backgroundColor: log.status === 'Success' ? '#11A75C' : '#E82D2D'
+                                                    }}
+                                                ></div>
+                                                <span className="status-text">{log.status}</span>
+                                            </div>
+                                        </div>
 
-                                    <div className="ip-cell">
-                                        {log.ipAddress}
+                                        <div className="ip-cell col-ip">
+                                            {log.ipAddress}
+                                        </div>
+
+                                        <div className="actions-cell col-actions">
+                                            {/* For consistency, added actions cell if needed later */}
+                                            <button className="more-button">
+                                                <img src="/icons/more.png" alt="more" style={{ width: '24px' }} />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="row-line"></div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
+                    </div>
                 </div>
             </div>
 

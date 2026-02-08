@@ -277,353 +277,196 @@
   color: #EA0234;
 }
 
-/* Table Container - Figma के exact measurements के according */
+/* Table Container */
 .table-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 32px 20px;
   gap: 24px;
   width: 100%;
-  max-width: 1110px;
-  min-height: 601px;
   background: #FFFFFF;
   border-radius: 12px;
-  position: relative;
+  box-sizing: border-box;
+}
+
+.table-wrapper {
+  width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .table-header {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  width: 1070px;
-  height: 43px;
-  min-width: 1070px;
+  min-width: 900px;
+  /* Base width for table content */
 }
 
-/* Table Header Row - Figma के exact positions के according */
 .header-row {
-  width: 1055px;
-  height: 23px;
-  position: relative;
-  display: block;
-}
-
-/* Header Cells with exact positions */
-.header-cell {
-  position: absolute;
-  height: 23px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
   display: flex;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
-  letter-spacing: -0.32px;
+  padding: 0 16px;
+  height: 23px;
+}
+
+.header-cell {
+  font-family: 'Mulish', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23px;
   color: #000000;
+  white-space: nowrap;
 }
 
-.school-header {
-  width: 55px;
-  left: 0px;
-  text-align: left;
+/* Base flex values for columns */
+.col-school {
+  flex: 2;
+  min-width: 180px;
 }
 
-.admin-header {
-  width: 55px;
-  left: 181px;
-  text-align: left;
+.col-admin {
+  flex: 1.5;
+  min-width: 150px;
 }
 
-.plan-header {
-  width: 38px;
-  left: 341px;
-  text-align: left;
+.col-plan {
+  flex: 1;
+  min-width: 100px;
 }
 
-.status-header {
-  width: 54px;
-  left: 455px;
-  text-align: left;
+.col-status {
+  flex: 1;
+  min-width: 100px;
 }
 
-.students-header {
-  width: 74px;
-  left: 579px;
-  text-align: left;
+.col-students {
+  flex: 1;
+  min-width: 100px;
 }
 
-.join-date-header {
-  width: 75px;
-  left: 712px;
-  text-align: left;
+.col-join-date {
+  flex: 1.2;
+  min-width: 120px;
 }
 
-.last-active-header {
-  width: 91px;
-  left: 847px;
-  text-align: left;
+.col-last-active {
+  flex: 1.2;
+  min-width: 120px;
 }
 
-.actions-header {
-  width: 62px;
-  left: 993px;
-  text-align: left;
+.col-actions {
+  width: 50px;
+  text-align: right;
 }
 
 .header-line {
-  width: 1070px;
+  width: 100%;
   height: 0px;
-  border: 1px solid #E1E1E1;
+  border-bottom: 1px solid #E1E1E1;
 }
 
 /* Table Body */
 .table-body {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0px;
-  gap: 24px;
-  width: 1070px;
-  height: auto;
-  min-width: 1070px;
+  width: 100%;
+  min-width: 900px;
 }
 
 .table-row-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-  width: 1070px;
-  height: 64px;
+  width: 100%;
+  padding: 16px 0;
+  border-bottom: 1px solid #F0F0F0;
 }
 
-/* Table Row with exact positioning - Figma के according */
 .table-row {
-  width: 1036px;
-  height: 40px;
-  position: relative;
-  display: block;
-}
-
-/* School Cell */
-.school-cell {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0px;
-  gap: 8px;
-  position: absolute;
-  width: 147px;
-  height: 40px;
-  left: 0px;
-  top: 0px;
+  padding: 0 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.school-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .school-avatar {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   background: #D9D9D9;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .school-name {
-  width: 111px;
-  height: 40px;
   font-family: 'Mulish', sans-serif;
-  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: wrap;
 }
 
-/* Admin Cell */
 .admin-cell {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
   gap: 2px;
-  position: absolute;
-  width: 115px;
-  height: 40px;
-  left: 180px;
-  top: 0px;
 }
 
 .admin-name {
-  width: 115px;
-  height: 20px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
 
 .admin-email {
-  width: 115px;
-  height: 18px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
+  font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
 }
 
-/* Plan Badge */
 .plan-badge {
-  display: flex;
-  flex-direction: row;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
-  padding: 2px 8px;
-  gap: 10px;
-  position: absolute;
-  height: 19px;
-  left: 341px;
-  top: 11px;
+  padding: 4px 12px;
   border-radius: 4px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
   font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.32px;
-  min-width: 46px;
+  font-weight: 500;
 }
 
-/* Status Badge */
 .status-badge {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  display: inline-flex;
   align-items: center;
-  padding: 2px 8px 2px 4px;
-  gap: 9.1px;
-  position: absolute;
-  width: auto;
-  min-width: 62.39px;
-  height: 23px;
-  left: 455px;
-  top: 9px;
-  border-radius: 4px;
+  padding: 4px 8px;
+  gap: 6px;
+  border-radius: 40px;
 }
 
-.status-point-circle {
-  width: 7.28px;
-  height: 7.28px;
-  border-radius: 50%;
-}
-
-.status-text {
-  height: 19px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.18207px;
-}
-
-/* Students Cell */
-.students-cell {
-  position: absolute;
-  width: 38px;
-  height: 20px;
-  left: 579px;
-  top: 10px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-/* Join Date Cell */
-.join-date-cell {
-  position: absolute;
-  width: 84px;
-  height: 20px;
-  left: 712px;
-  top: 10px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-/* Last Active Cell */
+.students-cell,
+.join-date-cell,
 .last-active-cell {
-  position: absolute;
-  width: 86px;
-  height: 20px;
-  left: 847px;
-  top: 10px;
   font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
 }
 
-/* Actions Cell */
 .actions-cell {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 1012px;
-  top: 8px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .more-button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 4px;
 }
 
 .more-icon {
@@ -646,145 +489,83 @@
   border: 1px solid #E1E1E1;
 }
 
-/* Action Menu - Figma के exactly according */
+/* Action Menu */
 .action-menu {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 24px;
-  gap: 16px;
+  padding: 16px;
+  gap: 12px;
   position: fixed;
-  width: 163px;
-  height: 102px;
+  width: 180px;
   background: #FFFFFF;
-  box-shadow: 0px 13px 61px rgba(0, 0, 0, 0.366);
-  border-radius: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
   z-index: 1000;
-}
-
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
-  width: 115px;
-  height: 54px;
 }
 
 .menu-item {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 115px;
-  height: 19px;
+  align-items: center;
+  padding: 8px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
+  width: 100%;
+  border-radius: 6px;
+  transition: background 0.2s;
 }
 
 .menu-item:hover {
-  opacity: 0.8;
+  background: #F5F5F5;
 }
 
 .menu-text {
-  width: 115px;
-  height: 19px;
   font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 121.2%;
-  letter-spacing: -0.24px;
+  font-size: 14px;
   color: #000000;
 }
 
-.remove-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 115px;
-  height: 19px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
 .remove-text {
-  width: 111px;
-  height: 19px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 121.2%;
-  letter-spacing: -0.24px;
   color: #E82D2D;
 }
 
-/* Pagination - UPDATED with proper alignment */
+/* Pagination */
 .pagination-section {
   display: flex;
   flex-direction: row;
-  
+  justify-content: space-between;
   align-items: center;
-  padding: 0px;
- 
-  height: 30px;
-  position: relative;
   width: 100%;
-    height: 30px;
-    position: relative;
-    justify-content: space-between
+  margin-top: 24px;
 }
 
 .pagination-text {
-  width: 121px;
-  height: 18px;
   font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
   font-size: 14px;
-  line-height: 18px;
   color: rgba(0, 0, 0, 0.6);
-  mix-blend-mode: normal;
-  opacity: 0.6;
-  flex-shrink: 0;
 }
 
 .pagination-controls {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-  height: 30px;
-  margin-left: auto;
+  gap: 12px;
 }
 
 .pagination-btn {
-  width: 24px;
-  height: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid #E1E1E1;
+  border-radius: 6px;
+  background: #FAFAFA;
+  cursor: pointer;
 }
 
-
-
-.pagination-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* Menu Backdrop */
@@ -799,11 +580,89 @@
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 1024px) {
+  .header-section {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    gap: 16px;
+  }
+
+  .title-section,
+  .title,
+  .subtitle {
+    width: 100%;
+    height: auto;
+  }
+
+  .controls-row {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 16px;
+  }
+
+  .search-container,
+  .filter-container {
+    width: 100% !important;
+  }
+
+  .filter-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .schools-management-container {
+    padding: 16px;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .filter-item {
+    padding: 12px;
+  }
+
+  .table-container {
+    padding: 20px 12px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .export-button {
+    width: 100%;
+  }
+
+  .filter-container {
+    flex-wrap: nowrap;
+  }
+
+  .pagination-section {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .pagination-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Responsive Styles */
 @media screen and (max-width: 1200px) {
   .schools-management-container {
     padding: 24px;
   }
-  
+
   .header-section,
   .controls-section,
   .table-container,
@@ -811,24 +670,24 @@
     width: 100%;
     max-width: 100%;
   }
-  
+
   .controls-row {
     flex-direction: column;
     height: auto;
     gap: 16px;
     width: 100%;
   }
-  
+
   .search-container {
     width: 100%;
   }
-  
+
   .filter-container {
     width: 100%;
     justify-content: space-between;
     overflow-x: auto;
   }
-  
+
   .filter-item {
     flex-shrink: 0;
   }
@@ -839,51 +698,51 @@
     padding: 16px;
     gap: 24px;
   }
-  
+
   .header-section {
     flex-direction: column;
     gap: 16px;
     height: auto;
   }
-  
+
   .title-section {
     width: 100%;
     height: auto;
   }
-  
+
   .title {
     width: 100%;
     font-size: 24px;
     line-height: 30px;
   }
-  
+
   .subtitle {
     width: 100%;
     font-size: 16px;
     line-height: 20px;
   }
-  
+
   .export-button {
     align-self: flex-start;
   }
-  
+
   .table-container {
     padding: 16px;
     overflow-x: auto;
   }
-  
+
   .table-header,
   .table-body {
     min-width: 800px;
   }
-  
+
   .pagination-section {
     flex-direction: column;
     gap: 16px;
     height: auto;
     align-items: stretch;
   }
-  
+
   .pagination-controls {
     margin-left: 0;
     justify-content: center;
@@ -898,22 +757,22 @@
     background: transparent;
     gap: 8px;
   }
-  
+
   .filter-item {
     border: 1px solid #E1E1E1;
     border-radius: 8px;
     background: #FFFFFF;
     padding: 12px 16px;
   }
-  
+
   .filter-icon-container {
     width: auto;
   }
-  
+
   .table-container {
     padding: 12px;
   }
-  
+
   .action-menu {
     width: 140px;
     right: 16px;

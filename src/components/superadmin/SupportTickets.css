@@ -78,70 +78,66 @@
 
 .kanban-board {
     display: grid;
-    grid-template-columns: repeat(3, 249px);
-    gap: 16px;
-    /* Reduced gap */
-    max-width: 1110px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
     width: 100%;
+    align-items: flex-start;
 }
 
 .ticket-column {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
+    background: #F8F9FA;
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 500px;
 }
 
 .column-header {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     margin-bottom: 8px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 
 .column-header h3 {
     font-family: 'Mulish', sans-serif;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 18px;
     color: #000000;
     margin: 0;
 }
 
 .count-badge {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 0;
-    gap: 0;
-    width: 24px;
-    height: 24px;
-    background: rgba(0, 178, 255, 0.2);
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 178, 255, 0.15);
     border-radius: 50%;
     color: #00B2FF;
     font-family: 'Mulish', sans-serif;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 1;
-    /* Center text vertically */
-    text-align: center;
-    letter-spacing: -0.32px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 /* Ticket Card */
 .ticket-card {
     background: #FFFFFF;
-    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 12px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     gap: 16px;
-    width: 249px;
-    height: 225px;
+    width: 100%;
+    min-height: 200px;
     box-sizing: border-box;
-    margin-top: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .card-header {
@@ -254,15 +250,47 @@
 }
 
 /* Responsive adjustments */
-/* Responsive adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1024px) {
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 
     .kanban-board {
-        grid-template-columns: repeat(auto-fill, minmax(249px, 1fr));
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
         gap: 16px;
+        overflow-x: auto;
+        padding-bottom: 16px;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 768px) {
+    .support-tickets-page {
+        padding: 16px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kanban-board {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        overflow-x: visible;
+    }
+
+    .ticket-column {
+        min-height: auto;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .ticket-id-large {
+        font-size: 16px;
     }
 }
 
@@ -277,7 +305,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 3000;
     backdrop-filter: blur(2px);
 }
 
@@ -450,7 +478,6 @@
     color: rgba(0, 0, 0, 0.7);
     margin: 0;
     padding-left: 32px;
-    /* Align with text start, skipping avatar */
 }
 
 .modal-footer {
@@ -461,7 +488,6 @@
     width: 100%;
     padding: 16px;
     background: #E8E8E8;
-    /* Light gray from image */
     border: none;
     border-radius: 8px;
     font-family: 'Mulish', sans-serif;
@@ -476,12 +502,21 @@
     color: rgba(0, 0, 0, 0.5);
 }
 
-.ticket-card {
-    cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
+@media (max-width: 480px) {
+    .ticket-card {
+        padding: 16px;
+    }
 
-.ticket-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.08);
+    .card-header {
+        gap: 16px;
+    }
+
+    .modal-header {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+
+    .modal-content {
+        max-height: 300px;
+    }
 }

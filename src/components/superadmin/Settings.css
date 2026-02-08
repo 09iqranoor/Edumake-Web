@@ -296,7 +296,7 @@
   padding: 12px 24px;
   height: 48px;
   min-width: 160px;
-  background: #1890FF;
+  background: #10437A;
   border: none;
   border-radius: 8px;
   font-family: 'Mulish', sans-serif;
@@ -309,23 +309,90 @@
 }
 
 .settings-save-btn:hover {
-  background: #0d7de0;
+  background: #000000;
 }
 
-@media screen and (max-width: 768px) {
+/* Responsive Adjustments */
+@media screen and (max-width: 1024px) {
+  .settings-container {
+    padding: 0;
+    gap: 24px;
+  }
+
   .settings-header-row {
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
-    height: auto;
-    gap: 16px;
+    gap: 20px;
+  }
+
+  .settings-title-section {
+    max-width: 100%;
+  }
+
+  .settings-title {
+    font-size: 24px;
+  }
+
+  .settings-subtitle {
+    font-size: 18px;
   }
 
   .settings-tabs-pill {
     width: 100%;
-    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 6px;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .settings-tab {
+    font-size: 16px;
+    padding: 6px 12px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .settings-panel {
+    padding: 24px 16px;
+    gap: 24px;
+  }
+
+  .settings-label {
+    font-size: 18px;
   }
 
   .settings-field--toggle .settings-toggle-row {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .settings-field--toggle .settings-toggle-label-block {
+    max-width: 100%;
+  }
+
+  .settings-toggle-row {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .settings-save-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .settings-title {
+    font-size: 20px;
+  }
+
+  .settings-subtitle {
+    font-size: 16px;
+  }
+
+  .settings-helper {
+    font-size: 14px;
   }
 }

@@ -48,6 +48,18 @@ interface Announcement {
 const Communication: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'sent' | 'scheduled' | 'drafts'>('sent');
   const [isComposing, setIsComposing] = useState(false);
+  const [showAnalytics, setShowAnalytics] = useState(false);
+  const [selectedAnnouncement, setSelectedAnnouncement] = useState<Announcement | null>(null);
+
+  const handleOpenAnalytics = (announcement: Announcement) => {
+    setSelectedAnnouncement(announcement);
+    setShowAnalytics(true);
+  };
+
+  const handleCloseAnalytics = () => {
+    setShowAnalytics(false);
+    setSelectedAnnouncement(null);
+  };
 
   const announcements: Announcement[] = [
     // ... data
@@ -181,7 +193,10 @@ const Communication: React.FC = () => {
                     </div>
 
                     <div className="col action-col">
-                      <button className="analytics-btn">
+                      <button
+                        className="analytics-btn"
+                        onClick={() => handleOpenAnalytics(item)}
+                      >
                         <AnalyticsIcon />
                         <span>Analytics</span>
                       </button>
@@ -202,6 +217,47 @@ const Communication: React.FC = () => {
         </div>
 
       </div>
+
+      {/* Analytics Modal */}
+      {showAnalytics && selectedAnnouncement && (
+        <div className="modal-overlay" onClick={handleCloseAnalytics}>
+          <div className="analytics-modal" onClick={e => e.stopPropagation()}>
+            <button className="modal-close-x" onClick={handleCloseAnalytics}>×</button>
+
+            <div className="modal-header">
+              <div className="modal-logo-wrapper">
+                <img src="/logo.png" alt="Edu-Make Logo" />
+              </div>
+              <h2 className="modal-title">Announcement Analytics</h2>
+              <p className="modal-subtitle">{selectedAnnouncement.subject}</p>
+            </div>
+
+            <div className="analytics-grid">
+              <div className="analytic-card">
+                <span className="card-label">Delivered</span>
+                <span className="card-value">{selectedAnnouncement.deliveryStats.delivered}</span>
+                <span className="card-percent success">99.4%</span>
+              </div>
+
+              <div className="analytic-card">
+                <span className="card-label">Opened</span>
+                <span className="card-value">200</span>
+                <span className="card-percent info">83.6%</span>
+              </div>
+
+              <div className="analytic-card">
+                <span className="card-label">Failed</span>
+                <span className="card-value">{selectedAnnouncement.deliveryStats.failed}</span>
+                <span className="card-percent danger">0.6%</span>
+              </div>
+            </div>
+
+            <button className="modal-bottom-close" onClick={handleCloseAnalytics}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
