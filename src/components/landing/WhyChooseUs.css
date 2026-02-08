@@ -257,7 +257,9 @@
   font-size: 32px;
   line-height: 40px;
   color: #000000;
-  white-space: nowrap;
+  white-space: normal;
+  /* Allow wrapping on very small screens */
+  overflow-wrap: break-word;
 }
 
 .edu-stat-label {
@@ -301,10 +303,12 @@
 @media (max-width: 767px) {
   .edu-stats-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px 20px;
-    padding: 0 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 16px;
+    padding: 0 1rem;
     margin-top: 2rem;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .edu-stat-item {

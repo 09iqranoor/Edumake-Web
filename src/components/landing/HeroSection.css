@@ -583,8 +583,8 @@
 .icon-desktop {
   position: absolute;
 
-  top: 0%;
-  right: -20px;
+  top: 0;
+  right: -28px;
   transform: translateY(-50%);
 
 

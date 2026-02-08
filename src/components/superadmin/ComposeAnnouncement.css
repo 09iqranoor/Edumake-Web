@@ -352,3 +352,41 @@ textarea {
     flex-direction: column;
     gap: 16px;
 }
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .compose-page {
+        padding: 16px;
+    }
+
+    .compose-form-container {
+        padding: 20px;
+    }
+
+    .form-actions {
+        flex-direction: column-reverse;
+        gap: 16px;
+        align-items: stretch;
+    }
+
+    .left-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .btn-cancel,
+    .btn-draft,
+    .btn-send {
+        width: 100%;
+        padding: 14px;
+        justify-content: center;
+    }
+
+    .compose-header h1 {
+        font-size: 24px;
+    }
+
+    .compose-header p {
+        font-size: 16px;
+    }
+}

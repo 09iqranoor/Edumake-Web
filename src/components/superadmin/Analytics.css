@@ -19,7 +19,7 @@
   align-items: center;
   padding: 0;
   width: 100%;
-  height: 68px;
+  min-height: 68px;
 }
 
 .analytics-title-section {
@@ -151,8 +151,8 @@
 
 /* NEW Metric Cards Row */
 .analytics-metric-cards-row {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   gap: 36px;
   width: 100%;
@@ -1413,7 +1413,7 @@
 @media screen and (max-width: 1200px) {
   .analytics-metric-cards-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
   }
 
   .analytics-metric-card-new {
@@ -1465,7 +1465,7 @@
 
   .analytics-metric-cards-row {
     grid-template-columns: 1fr;
-    gap: 16px;
+    gap: 12px;
   }
 
   .analytics-chart-title-new {
@@ -1522,7 +1522,12 @@
   }
 
   .analytics-metric-card-new {
-    padding: 16px;
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .analytics-metric-value-new {
+    font-size: 16px;
   }
 
   .analytics-chart-card-full,

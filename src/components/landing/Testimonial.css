@@ -1,7 +1,10 @@
 .testimonials-section {
   background: #f9fafb;
   padding: 80px 20px;
-  overflow: hidden;
+  overflow-x: hidden;
+  /* Prevent page-level horizontal scroll */
+  overflow-y: visible;
+  /* Allow shadows/cards to breathe vertically */
   font-family: "Mulish", sans-serif;
 }
 
@@ -55,7 +58,8 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   height: 520px;
-  overflow: hidden;
+  overflow: visible;
+  /* Changed from hidden to prevent clipping animated cards */
 }
 
 /* Columns */
@@ -63,6 +67,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  overflow: visible;
+  /* Prevent clipping of animated cards and shadows */
 }
 
 /* Desktop Scroll animations */
@@ -78,6 +84,7 @@
   0% {
     transform: translateY(0);
   }
+
   100% {
     transform: translateY(-50%);
   }
@@ -87,6 +94,7 @@
   0% {
     transform: translateY(-50%);
   }
+
   100% {
     transform: translateY(0);
   }
@@ -102,7 +110,7 @@
   flex-direction: column;
   min-height: 180px;
   overflow: hidden;
-  width: 100%; 
+  width: 100%;
 }
 
 .testimonial-card .quote {
@@ -127,7 +135,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 12px;
-  flex-shrink: 0; 
+  flex-shrink: 0;
 }
 
 .user img {
@@ -139,7 +147,7 @@
 }
 
 .user-info {
-  min-width: 0; 
+  min-width: 0;
 }
 
 .user-info h4 {
@@ -147,7 +155,7 @@
   font-weight: 600;
   margin: 0 0 4px 0;
   color: #000000;
-  white-space: normal; 
+  white-space: normal;
   overflow: visible;
   text-overflow: clip;
 }
@@ -170,11 +178,11 @@
   word-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
-  white-space: normal; 
-  overflow: visible; 
+  white-space: normal;
+  overflow: visible;
   display: block;
   margin-top: auto;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 
@@ -189,16 +197,16 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
-  
+
   .left {
     align-items: center;
     text-align: center;
   }
-  
+
   .left h2 {
     font-size: 32px;
   }
-  
+
   .left p {
     font-size: 18px;
     max-width: 100%;
@@ -210,98 +218,104 @@
   .testimonials-section {
     padding: 60px 16px;
   }
-  
+
   .container {
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .left {
     width: 100%;
     align-items: center;
     text-align: center;
     margin-bottom: 30px;
   }
-  
+
   .left h2 {
     font-size: 28px;
   }
-  
+
   .left p {
     font-size: 16px;
     max-width: 100%;
   }
-  
+
   .grid {
     width: 100%;
     display: flex;
-    flex-direction: column; /* 2 rows vertically stacked */
+    flex-direction: column;
+    /* 2 rows vertically stacked */
     gap: 30px;
     height: auto;
     overflow: visible;
   }
-  
+
   .column {
     width: 100%;
-    flex-direction: row; 
+    flex-direction: row;
     gap: 20px;
-    overflow-x: auto; /* Horizontal scroll if needed */
-    overflow-y: hidden;
-    padding-bottom: 10px; /* Space for scrollbar */
-    scrollbar-width: none; /* Hide scrollbar for Firefox */
-    -ms-overflow-style: none; 
+    overflow-x: visible;
+    /* Changed from auto to prevent horizontal clipping */
+    overflow-y: visible;
+    /* Changed from hidden to prevent clipping of shadows */
+    padding: 24px 0;
+    /* Increased vertical padding for shadows */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  
+
   .column::-webkit-scrollbar {
-    display: none; 
+    display: none;
   }
-  
-  
+
+
   .column-up {
     animation: scrollLeft 30s linear infinite;
   }
-  
+
   .column-down {
     animation: scrollRight 30s linear infinite;
   }
-  
+
   @keyframes scrollLeft {
     0% {
       transform: translateX(0);
     }
+
     100% {
       transform: translateX(-50%);
     }
   }
-  
+
   @keyframes scrollRight {
     0% {
       transform: translateX(-50%);
     }
+
     100% {
       transform: translateX(0);
     }
   }
-  
+
   /* Card styling for mobile */
   .testimonial-card {
-    min-width: 300px; 
-    max-width: 300px; 
+    min-width: 300px;
+    max-width: 300px;
     min-height: 200px;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
   }
-  
-  
+
+
   .user-info h4,
   .user-info p {
     white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
-  
+
   .message {
     white-space: normal;
     word-wrap: break-word;
@@ -316,58 +330,58 @@
   .testimonials-section {
     padding: 50px 12px;
   }
-  
+
   .container {
     gap: 30px;
   }
-  
+
   .left {
     margin-bottom: 20px;
   }
-  
+
   .left h2 {
     font-size: 24px;
   }
-  
+
   .left p {
     font-size: 15px;
   }
-  
+
   .grid {
     gap: 25px;
   }
-  
+
   .column {
     gap: 16px;
   }
-  
+
   .testimonial-card {
     min-width: 280px;
     max-width: 280px;
     padding: 18px;
     min-height: 190px;
   }
-  
+
   .testimonial-card .quote {
     width: 32px;
     height: 32px;
     top: 10px;
     right: 10px;
   }
-  
+
   .user img {
     width: 36px;
     height: 36px;
   }
-  
+
   .message {
     font-size: 13px;
   }
-  
+
   .column-up {
     animation: scrollLeft 20s linear infinite;
   }
-  
+
   .column-down {
     animation: scrollRight 20s linear infinite;
   }
@@ -378,47 +392,47 @@
   .testimonials-section {
     padding: 40px 10px;
   }
-  
+
   .left h2 {
     font-size: 22px;
   }
-  
+
   .left p {
     font-size: 14px;
   }
-  
+
   .grid {
     gap: 20px;
   }
-  
+
   .column {
     gap: 12px;
   }
-  
+
   .testimonial-card {
     min-width: 260px;
     max-width: 260px;
     padding: 16px;
     min-height: 180px;
   }
-  
+
   .user {
     gap: 10px;
   }
-  
+
   .user img {
     width: 32px;
     height: 32px;
   }
-  
+
   .user-info h4 {
     font-size: 14px;
   }
-  
+
   .user-info p {
     font-size: 12px;
   }
-  
+
   .message {
     font-size: 12.5px;
     line-height: 1.4;
@@ -432,7 +446,7 @@
     max-width: 240px;
     padding: 14px;
   }
-  
+
   .message {
     font-size: 12px;
   }
