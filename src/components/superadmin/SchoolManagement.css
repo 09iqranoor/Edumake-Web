@@ -12,7 +12,7 @@
 }
 
 /* Header Section */
-.header-section {
+.schools-management-container .header-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,19 +22,22 @@
   height: 68px;
 }
 
-.title-section {
+.schools-management-container .title-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
-  width: 490px;
-  height: 68px;
+  width: 100%;
+  max-width: 490px;
+  height: auto;
 }
 
-.title {
-  width: 490px;
-  height: 35px;
+.schools-management-container .title {
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  min-height: 35px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -44,9 +47,11 @@
   margin: 0;
 }
 
-.subtitle {
-  width: 490px;
-  height: 25px;
+.schools-management-container .subtitle {
+  width: 100%;
+  max-width: 490px;
+  height: auto;
+  min-height: 25px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -56,7 +61,7 @@
   margin: 0;
 }
 
-.export-button {
+.schools-management-container .export-button {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -116,8 +121,9 @@
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
-  width: 944px;
-  height: 70px;
+  width: 100%;
+  max-width: 944px;
+  height: auto;
 }
 
 .controls-row {
@@ -127,11 +133,13 @@
   align-items: center;
   padding: 0px;
   gap: 6px;
-  width: 944px;
-  height: 70px;
+  width: 100%;
+  height: auto;
+  min-height: 70px;
+  flex-wrap: wrap;
 }
 
-.search-container {
+.schools-management-container .search-container {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -139,7 +147,8 @@
   padding: 12px;
   gap: 12px;
   width: 340px;
-  height: 70px;
+  min-height: 70px;
+  height: auto;
   background: #F5F5F5;
   border: 1px solid #E1E1E1;
   border-radius: 12px;
@@ -176,20 +185,22 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-.filter-container {
+.schools-management-container .filter-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 1px;
   width: 570px;
-  height: 70px;
+  min-height: 70px;
+  height: auto;
+  flex-wrap: wrap;
   background: #FFFFFF;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
 }
 
-.filter-item {
+.schools-management-container .filter-item {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -197,22 +208,23 @@
   align-items: center;
   padding: 16px;
   gap: 10px;
-  height: 70px;
+  height: 100%;
+  min-height: 70px;
   border-right: 0.5px solid #888888;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-.filter-item:last-child {
+.schools-management-container .filter-item:last-child {
   border-right: none;
 }
 
-.filter-icon-container {
+.schools-management-container .filter-icon-container {
   width: 56px;
 }
 
-.filter-icon {
+.schools-management-container .filter-icon {
   width: 24px;
   height: 24px;
   display: flex;
@@ -226,7 +238,7 @@
   object-fit: contain;
 }
 
-.filter-label {
+.schools-management-container .filter-label {
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -236,7 +248,7 @@
   white-space: nowrap;
 }
 
-.direction-down {
+.schools-management-container .direction-down {
   width: 24px;
   height: 24px;
   display: flex;
@@ -250,11 +262,11 @@
   object-fit: contain;
 }
 
-.reset-filter {
+.schools-management-container .reset-filter {
   width: 133px;
 }
 
-.reset-icon {
+.schools-management-container .reset-icon {
   width: 18px;
   height: 18px;
   display: flex;
@@ -262,13 +274,13 @@
   justify-content: center;
 }
 
-.reset-icon img {
+.schools-management-container .reset-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.reset-text {
+.schools-management-container .reset-text {
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -278,7 +290,7 @@
 }
 
 /* Table Container */
-.table-container {
+.schools-management-container .table-container {
   display: flex;
   flex-direction: column;
   padding: 32px 20px;
@@ -429,6 +441,8 @@
 .admin-email {
   font-size: 12px;
   color: rgba(0, 0, 0, 0.5);
+  word-break: break-all;
+  overflow-wrap: anywhere;
 }
 
 .plan-badge {
@@ -580,34 +594,49 @@
 }
 
 /* Responsive Styles */
+@media screen and (max-width: 1200px) {
+  .schools-management-container {
+    padding: 24px;
+    gap: 24px;
+  }
+
+  .schools-management-container .header-section,
+  .schools-management-container .controls-section,
+  .schools-management-container .table-container,
+  .schools-management-container .pagination-section {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
 @media screen and (max-width: 1024px) {
-  .header-section {
+  .schools-management-container .header-section {
     flex-direction: column;
     align-items: flex-start;
     height: auto;
     gap: 16px;
   }
 
-  .title-section,
-  .title,
-  .subtitle {
+  .schools-management-container .title-section,
+  .schools-management-container .title,
+  .schools-management-container .subtitle {
     width: 100%;
     height: auto;
   }
 
-  .controls-row {
+  .schools-management-container .controls-row {
     flex-direction: column;
     width: 100%;
     height: auto;
     gap: 16px;
   }
 
-  .search-container,
-  .filter-container {
+  .schools-management-container .search-container,
+  .schools-management-container .filter-container {
     width: 100% !important;
   }
 
-  .filter-container {
+  .schools-management-container .filter-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
@@ -619,138 +648,53 @@
     gap: 20px;
   }
 
-  .title {
-    font-size: 24px;
-  }
-
-  .subtitle {
-    font-size: 16px;
-  }
-
-  .filter-item {
-    padding: 12px;
-  }
-
-  .table-container {
-    padding: 20px 12px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .export-button {
-    width: 100%;
-  }
-
-  .filter-container {
-    flex-wrap: nowrap;
-  }
-
-  .pagination-section {
-    flex-direction: column;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .pagination-controls {
-    width: 100%;
-    justify-content: space-between;
-  }
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-  .schools-management-container {
-    padding: 24px;
-  }
-
-  .header-section,
-  .controls-section,
-  .table-container,
-  .pagination-section {
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .controls-row {
-    flex-direction: column;
-    height: auto;
-    gap: 16px;
-    width: 100%;
-  }
-
-  .search-container {
-    width: 100%;
-  }
-
-  .filter-container {
-    width: 100%;
-    justify-content: space-between;
-    overflow-x: auto;
-  }
-
-  .filter-item {
-    flex-shrink: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .schools-management-container {
-    padding: 16px;
-    gap: 24px;
-  }
-
-  .header-section {
-    flex-direction: column;
-    gap: 16px;
-    height: auto;
-  }
-
-  .title-section {
-    width: 100%;
-    height: auto;
-  }
-
-  .title {
-    width: 100%;
+  .schools-management-container .title {
     font-size: 24px;
     line-height: 30px;
   }
 
-  .subtitle {
-    width: 100%;
+  .schools-management-container .subtitle {
     font-size: 16px;
     line-height: 20px;
   }
 
-  .export-button {
+  .schools-management-container .export-button {
     align-self: flex-start;
   }
 
-  .table-container {
+  .schools-management-container .filter-item {
+    padding: 12px;
+  }
+
+  .schools-management-container .table-container {
     padding: 16px;
     overflow-x: auto;
   }
 
-  .table-header,
-  .table-body {
+  .schools-management-container .table-header,
+  .schools-management-container .table-body {
     min-width: 800px;
   }
 
-  .pagination-section {
+  .schools-management-container .pagination-section {
     flex-direction: column;
     gap: 16px;
     height: auto;
     align-items: stretch;
   }
 
-  .pagination-controls {
+  .schools-management-container .pagination-controls {
     margin-left: 0;
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .filter-container {
+  .schools-management-container .export-button {
+    width: 100%;
+  }
+
+  .schools-management-container .filter-container {
     flex-wrap: wrap;
     height: auto;
     border: none;
@@ -758,22 +702,28 @@
     gap: 8px;
   }
 
-  .filter-item {
+  .schools-management-container .filter-item {
     border: 1px solid #E1E1E1;
     border-radius: 8px;
     background: #FFFFFF;
     padding: 12px 16px;
+    flex-shrink: 0;
   }
 
-  .filter-icon-container {
+  .schools-management-container .filter-icon-container {
     width: auto;
   }
 
-  .table-container {
+  .schools-management-container .pagination-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .schools-management-container .table-container {
     padding: 12px;
   }
 
-  .action-menu {
+  .schools-management-container .action-menu {
     width: 140px;
     right: 16px;
     left: auto !important;
