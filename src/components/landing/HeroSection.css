@@ -318,7 +318,6 @@
   cursor: pointer;
   z-index: 2000;
   /* Ensure it's above the mobile nav overlay (900) */
-  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -629,7 +628,7 @@
   }
 
   .menu-icon {
-    display: block;
+    display: flex;
   }
 
   /* Hide desktop header actions on mobile */

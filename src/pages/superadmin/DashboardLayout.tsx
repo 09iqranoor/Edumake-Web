@@ -13,15 +13,22 @@ import './DashboardPage.css';
 // import Subscription from '../superadmin/Subscription';
 // import Communication from '../superadmin/Communication';
 
-import { AuditLogs, Analytics, Stats, SupportTickets, Settings, Resources } from '../../components/superadmin';
-import { Charts } from '../../components/superadmin';
-import { QuickActions } from '../../components/superadmin';
-import { RecentActivities } from '../../components/superadmin';
-import { SchoolManagement } from '../../components/superadmin';
-import { Subscription } from '../../components/superadmin';
-import { Communication } from '../../components/superadmin';
-import { Sidebar } from '../../components/superadmin';
-import { TopNav } from '../../components/superadmin';
+import {
+  AuditLogs,
+  Analytics,
+  Stats,
+  SupportTickets,
+  Settings,
+  Resources,
+  Charts,
+  QuickActions,
+  RecentActivities,
+  SchoolManagement,
+  Subscription,
+  Communication,
+  Sidebar,
+  TopNav
+} from '../../components/superadmin';
 
 
 

@@ -308,12 +308,37 @@
 
 @media (max-width: 600px) {
   .edu-stats-wrapper {
-    grid-template-columns: 1fr;
-    justify-items: flex-start;
-    padding-left: 10%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 15px;
+    justify-items: center;
+    padding: 0 15px;
   }
 
   .edu-stat-box-item {
-    width: auto;
+    width: 100%;
+    max-width: 160px;
+    gap: 8px;
+  }
+
+  .edu-stat-dot {
+    width: 16px;
+    height: 16px;
+    margin-top: 4px;
+  }
+
+  .edu-stat-number {
+    font-size: 24px;
+  }
+
+  .edu-stat-sub {
+    font-size: 12px;
+  }
+
+  .edu-stat-desc {
+    font-size: 13px;
+    margin-top: 4px;
+    white-space: normal;
+    line-height: 1.2;
   }
 }

@@ -33,7 +33,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: stretch;
 }
 
 .about-left p {
@@ -51,12 +51,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 .logo-box {
     background-color: #10437A;
     width: 100%;
-    aspect-ratio: 4 / 3;
+    height: 100%;
+    min-height: 400px;
     border-radius: 20px;
     display: flex;
     justify-content: center;
@@ -99,8 +101,8 @@
     }
 
     .about-right {
-        order: -1;
-        /* Image appears above text on mobile/tablet */
+        order: 1;
+        /* Image appears below text on mobile/tablet */
     }
 
     .logo-box {
