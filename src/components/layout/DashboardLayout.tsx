@@ -1,17 +1,23 @@
 // components/layout/DashboardLayout.tsx
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
-import './DashboardPage.css'; 
-import { Sidebar, TopNav } from '../superadmin';
-
-// Import dashboard components
-import Stats from '../superadmin/Stats';
-import Charts from '../superadmin/Charts';
-import QuickActions from '../superadmin/QuickActions';
-import RecentActivities from '../superadmin/RecentActivities';
-import SchoolManagement from '../superadmin/SchoolManagement';
-import Subscription from '../superadmin/Subscription';
-import Communication from '../superadmin/Communication';
+import './DashboardPage.css';
+import {
+  Sidebar,
+  TopNav,
+  Stats,
+  Charts,
+  QuickActions,
+  RecentActivities,
+  SchoolManagement,
+  Subscription,
+  Communication,
+  AuditLogs,
+  Analytics,
+  SupportTickets,
+  Settings,
+  Resources
+} from '../superadmin';
 
 const DashboardLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -36,59 +42,59 @@ const DashboardLayout = () => {
                 <div className="dashboard__section dashboard__section--stats">
                   <Stats />
                 </div>
-                
+
                 <div className="dashboard__section dashboard__section--charts">
                   <Charts />
                 </div>
-                
+
                 <div className="dashboard__section dashboard__section--bottom">
                   <QuickActions />
                   <RecentActivities />
                 </div>
               </>
             } />
-            
+
             {/* Other routes - yahan pe aap chahein to normal render kar sakte hain */}
             <Route path="schools" element={
               <div className="dashboard__section dashboard__section--full">
                 <SchoolManagement />
               </div>
             } />
-            
+
             <Route path="subscription" element={
               <div className="dashboard__section dashboard__section--full">
                 <Subscription />
               </div>
             } />
-            
+
             <Route path="communications" element={
               <div className="dashboard__section dashboard__section--full">
-                <Communication/>
+                <Communication />
               </div>
             } />
             <Route path="support" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Support Page</div>
+                <SupportTickets />
               </div>
             } />
             <Route path="audit-logs" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Audit Logs Page</div>
+                <AuditLogs />
               </div>
             } />
             <Route path="analytics" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Analytics Page</div>
+                <Analytics />
               </div>
             } />
             <Route path="resources" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Resources Page</div>
+                <Resources />
               </div>
             } />
             <Route path="settings" element={
               <div className="dashboard__section dashboard__section--full">
-                <div>Settings Page</div>
+                <Settings />
               </div>
             } />
           </Routes>
