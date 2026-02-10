@@ -9,10 +9,10 @@ const PricingPlan: React.FC = () => {
     <section id="pricing" className="pricing-section">
       {/* Header */}
       <div className="pricing-header">
-      <SectionBadge
-  text="Pricing Plan"
-  logo="/images/edu-make-logo.png"
-/>
+        <SectionBadge
+          text="Pricing Plan"
+          logo="/logo.png"
+        />
 
         <h2>Choose The Perfect Plan</h2>
         <p>
@@ -39,7 +39,7 @@ const PricingPlan: React.FC = () => {
       <div className="pricing-cards">
         {/* Basic */}
         <div className="pricing-card">
-          <div className="plan-icon"><img src="/icons/pricing-icon1.png" alt=""  /></div>
+          <div className="plan-icon"><img src="/icons/pricing-icon1.png" alt="" /></div>
           <h4>Basic Plan</h4>
           <h3>$10–15<span>/month</span></h3>
           <p className="billing">Billed Monthly</p>
@@ -55,7 +55,7 @@ const PricingPlan: React.FC = () => {
 
         {/* Standard */}
         <div className="pricing-card featured">
-          <div className="plan-icon"><img src="/icons/pricing-icon2.png" alt=""  /></div>
+          <div className="plan-icon"><img src="/icons/pricing-icon2.png" alt="" /></div>
           <h4>Standard Plan</h4>
           <h3>$20–25<span>/month</span></h3>
           <p className="billing">Billed Monthly</p>
@@ -73,7 +73,7 @@ const PricingPlan: React.FC = () => {
 
         {/* Premium */}
         <div className="pricing-card">
-          <div className="plan-icon"><img src="/icons/pricing-icon2.png" alt=""  /></div>
+          <div className="plan-icon"><img src="/icons/pricing-icon2.png" alt="" /></div>
           <h4>Premium Plan</h4>
           <h3>$35–50<span>/month</span></h3>
           <p className="billing">Billed Monthly</p>
@@ -85,7 +85,7 @@ const PricingPlan: React.FC = () => {
             <li>Certificates</li>
             <li>Priority Support</li>
             <li>Community Forum</li>
-            
+
           </ul>
 
           <button>Get Started</button>

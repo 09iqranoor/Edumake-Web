@@ -7,10 +7,10 @@ const WhoWeServe: React.FC = () => {
     <section className="who-section">
       {/* Header */}
       <div className="who-header">
-      <SectionBadge
-  text="Who We Serve"
-  logo="/images/edu-make-logo.png"
-/>
+        <SectionBadge
+          text="Who We Serve"
+          logo="/logo.png"
+        />
 
         <h2>Built for Schools, Designed for People</h2>
         <p>
@@ -34,7 +34,7 @@ const WhoWeServe: React.FC = () => {
               track performance, and maintain compliance all in one place.
             </p>
           </div>
- 
+
           <div className="who-item">
             <div className="icon-box"> <img src="/icons/profile2-user.png" alt="" /></div>
             <h4>Teachers & Staff</h4>

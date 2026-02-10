@@ -181,6 +181,7 @@
   }
 }
 
+/* VERY SMALL SCREENS */
 @media (max-width: 360px) {
   .arrow-img {
     width: 34px;
@@ -199,161 +200,120 @@
   }
 }
 
-/* Stats Section */
-.edu-stats-container {
+/* Design matched Stats Section */
+.edu-stats-wrapper {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0;
-  gap: 53px;
-  width: 100%;
-  max-width: 1082px;
+  gap: 60px;
   margin: 4rem auto 0;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
 }
 
-.edu-stat-item {
+.edu-stat-box-item {
   display: flex;
-  flex-direction: column;
   align-items: flex-start;
-  padding: 0;
-  gap: 14px;
-}
-
-.edu-stat-top {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0;
   gap: 16px;
 }
 
-.edu-stat-box {
-  width: 30px;
-  height: 30px;
+.edu-stat-dot {
+  width: 24px;
+  height: 24px;
   border-radius: 4px;
   flex-shrink: 0;
+  margin-top: 6px;
 }
 
-.edu-stat-box.blue {
-  background: #10437A;
+.edu-stat-dot.blue {
+  background-color: #10437A;
 }
 
-.edu-stat-box.orange {
-  background: #F99D06;
+.edu-stat-dot.orange {
+  background-color: #F8991D;
 }
 
-.edu-stat-box.red {
-  background: #F05366;
+.edu-stat-dot.red {
+  background-color: #F05366;
 }
 
-.edu-stat-box.green {
-  background: #2CAF69;
+.edu-stat-dot.green {
+  background-color: #2CAF69;
 }
 
-.edu-stat-value {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 700;
+.edu-stat-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.edu-stat-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.edu-stat-number {
   font-size: 32px;
-  line-height: 40px;
+  font-weight: 700;
   color: #000000;
-  white-space: normal;
-  /* Allow wrapping on very small screens */
-  overflow-wrap: break-word;
+  line-height: 1;
 }
 
-.edu-stat-label {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 23px;
+.edu-stat-sub {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.edu-stat-desc {
+  font-size: 16px;
   color: #888888;
-  margin: 0;
+  margin: 8px 0 0 0;
+  font-weight: 400;
+  white-space: nowrap;
 }
 
-.edu-stat-divider {
+.edu-stat-box-divider {
   width: 1px;
-  height: 73px;
-  background-color: rgba(136, 136, 136, 0.4);
+  height: 60px;
+  background-color: #EEEEEE;
   flex-shrink: 0;
 }
 
-/* Tablet & Smaller Desktop Refinements */
-@media (max-width: 1200px) {
-  .edu-stats-container {
+/* Responsive Stats */
+@media (max-width: 1100px) {
+  .edu-stats-wrapper {
     gap: 30px;
-    padding: 0 1.5rem;
   }
 }
 
-/* Tablet: 2x2 Grid or specific wrapping */
-@media (max-width: 991px) {
-  .edu-stats-container {
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-around;
-  }
-
-  .edu-stat-divider {
-    display: none;
-  }
-}
-
-/* Mobile: 2x2 Grid exactly as image */
-@media (max-width: 767px) {
-  .edu-stats-container {
+@media (max-width: 1024px) {
+  .edu-stats-wrapper {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px 16px;
-    padding: 0 1rem;
-    margin-top: 2rem;
-    width: 100%;
-    box-sizing: border-box;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    justify-items: center;
   }
 
-  .edu-stat-item {
-    gap: 8px;
-  }
-
-  .edu-stat-top {
-    gap: 12px;
-  }
-
-  .edu-stat-box {
-    width: 24px;
-    height: 24px;
-  }
-
-  .edu-stat-value {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .edu-stat-label {
-    font-size: 16px;
-    line-height: 20px;
-  }
-
-  .edu-stat-divider {
+  .edu-stat-box-divider {
     display: none;
   }
 
-  .carousel-controls {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .edu-stat-box-item {
+    width: 200px;
   }
 }
 
-@media (max-width: 480px) {
-  .edu-stats-container {
-    gap: 24px 15px;
+@media (max-width: 600px) {
+  .edu-stats-wrapper {
+    grid-template-columns: 1fr;
+    justify-items: flex-start;
+    padding-left: 10%;
   }
 
-  .edu-stat-value {
-    font-size: 20px;
-  }
-
-  .edu-stat-label {
-    font-size: 14px;
+  .edu-stat-box-item {
+    width: auto;
   }
 }

@@ -124,7 +124,7 @@ const Testimonials: React.FC = () => {
   // Split testimonials into two groups for two rows
   const firstRowTestimonials = testimonials.slice(0, Math.ceil(testimonials.length / 2));
   const secondRowTestimonials = testimonials.slice(Math.ceil(testimonials.length / 2));
-  
+
   // Duplicate testimonials for seamless animation
   const firstRowDuplicated = [...firstRowTestimonials, ...firstRowTestimonials];
   const secondRowDuplicated = [...secondRowTestimonials, ...secondRowTestimonials];
@@ -135,7 +135,7 @@ const Testimonials: React.FC = () => {
         <div className="left">
           <SectionBadge
             text="Testimonials"
-            logo="/images/edu-make-logo.png"
+            logo="/logo.png"
           />
           <h2>Trusted by Schools and Learners Everywhere</h2>
           <p>

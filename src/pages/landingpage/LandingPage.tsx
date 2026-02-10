@@ -1,6 +1,7 @@
 
 import HeroSection from '../../components/landing/HeroSection'
 import WhyChooseSection from '../../components/landing/WhyChooseUS'
+import AboutUs from '../../components/landing/AboutUs'
 import FeaturesSection from '../../components/landing/FeaturesSection'
 import WhoWeServe from '../../components/landing/WhoWeServe'
 import PricingPlan from '../../components/landing/PricingPlan'
@@ -10,16 +11,17 @@ import Testimonials from '../../components/landing/Testimonials'
 import Footer from '../../components/landing/Footer'
 
 
-// interface LandingPageProps {
-//   onLoginClick: () => void;
-// }
+interface LandingPageProps {
+  onLoginClick: () => void;
+}
 
 
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC<LandingPageProps> = ({ onLoginClick }) => {
   return (
     <>
-      <HeroSection />
+      <HeroSection onLoginClick={onLoginClick} />
       <WhyChooseSection />
+      <AboutUs />
       <FeaturesSection />
       <WhoWeServe />
       <PricingPlan />

@@ -1,0 +1,209 @@
+.school-sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.school-sidebar-overlay {
+    display: none;
+}
+
+.school-sidebar__logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 0;
+}
+
+.school-sidebar__logo-icon {
+    width: 58px;
+    height: 56.68px;
+}
+
+.school-sidebar__logo-text {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #10437A;
+}
+
+.school-sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 13px;
+    margin-top: 10px;
+}
+
+.school-sidebar__nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 12px;
+    width: 211px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.school-sidebar__nav-item:hover {
+    background: rgba(16, 67, 122, 0.1);
+}
+
+.school-sidebar__nav-item--active {
+    background: #10437A;
+}
+
+.school-sidebar__nav-item--active:hover {
+    background: #0d3a6a;
+}
+
+.school-sidebar__nav-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school-sidebar__nav-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.school-sidebar__nav-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #888888;
+}
+
+.school-sidebar__nav-item--active .school-sidebar__nav-label {
+    color: #FFFFFF;
+}
+
+.school-sidebar__logout {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 12px;
+    width: 211px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: auto 20px 32px;
+    transition: all 0.2s ease;
+}
+
+.school-sidebar__logout:hover {
+    background: rgba(232, 45, 45, 0.1);
+}
+
+.school-sidebar__logout-icon {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school-sidebar__logout-label {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #E82D2D;
+}
+
+/* Sidebar Promotion Card (Go Pro) */
+.sidebar-promo {
+    margin: 0 20px 20px;
+    padding: 16px;
+    background: linear-gradient(135deg, #10437A 0%, #1a6ab5 100%);
+    border-radius: 12px;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+
+.sidebar-promo__icon {
+    margin-bottom: 8px;
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar-promo__title {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.sidebar-promo__text {
+    font-family: 'Mulish', sans-serif;
+    font-size: 11px;
+    line-height: 14px;
+    opacity: 0.8;
+    margin-bottom: 12px;
+}
+
+.sidebar-promo__button {
+    width: 100%;
+    padding: 8px;
+    background: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    color: #10437A;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 1024px) {
+    .school-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .school-sidebar--open {
+        transform: translateX(0);
+    }
+
+    .school-sidebar-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 99;
+    }
+}

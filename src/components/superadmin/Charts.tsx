@@ -152,36 +152,35 @@ const PieChart: React.FC<PieChartProps> = ({ title, subtitle, data, centerValue 
                                 <span className="pie-chart__center-value">{centerValue}</span>
                             )}
                         </div>
+                    </div>
 
-                        {/* Pie Labels */}
-                        <div className="pie-chart__labels">
-                            {slices.map((slice, idx) => {
-                                // Calculate label position
-                                const midAngle = (slice.startAngle + slice.endAngle) / 2;
-                                // Adjusted radius for thicker ring (320px circle / 350px container)
-                                const labelRadius = 0.68;
-                                const x = 50 + labelRadius * 50 * Math.sin((midAngle * Math.PI) / 180);
-                                const y = 50 - labelRadius * 50 * Math.cos((midAngle * Math.PI) / 180);
+                    {/* Pie Labels */}
+                    <div className="pie-chart__labels">
+                        {slices.map((slice, idx) => {
+                            // Calculate label position
+                            const midAngle = (slice.startAngle + slice.endAngle) / 2;
+                            const labelRadius = 0.55;
+                            const x = 50 + labelRadius * 50 * Math.sin((midAngle * Math.PI) / 180);
+                            const y = 50 - labelRadius * 50 * Math.cos((midAngle * Math.PI) / 180);
 
-                                return (
-                                    <div
-                                        key={idx}
-                                        className="pie-chart__label"
-                                        style={{
-                                            left: `${x}%`,
-                                            top: `${y}%`,
-                                            transform: 'translate(-50%, -50%)'
-                                        }}
-                                    >
-                                        <span className="pie-chart__label-name">{slice.label}</span>
-                                        <div className="pie-chart__label-values">
-                                            <span className="pie-chart__label-value">{slice.value.toFixed(2)}</span>
-                                            <span className="pie-chart__label-percent">{slice.percent.toFixed(2)}%</span>
-                                        </div>
+                            return (
+                                <div
+                                    key={idx}
+                                    className="pie-chart__label"
+                                    style={{
+                                        left: `${x}%`,
+                                        top: `${y}%`,
+                                        transform: 'translate(-50%, -50%)'
+                                    }}
+                                >
+                                    <span className="pie-chart__label-name">{slice.label}</span>
+                                    <div className="pie-chart__label-values">
+                                        <span className="pie-chart__label-value">${slice.value.toFixed(2)}</span>
+                                        <span className="pie-chart__label-percent">({slice.percent.toFixed(1)}%)</span>
                                     </div>
-                                );
-                            })}
-                        </div>
+                                </div>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

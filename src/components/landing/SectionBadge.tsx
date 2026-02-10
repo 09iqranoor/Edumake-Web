@@ -6,11 +6,11 @@ interface SectionBadgeProps {
   logo: string;
 }
 
-const SectionBadge: React.FC<SectionBadgeProps> = ({ text}) => {
+const SectionBadge: React.FC<SectionBadgeProps> = ({ text, logo }) => {
   return (
     <div className="section-badge">
       <div className="badge-logo">
-        <img src='/logo.png' alt="logo" />
+        <img src={logo} alt="logo" />
       </div>
       <span>{text}</span>
     </div>

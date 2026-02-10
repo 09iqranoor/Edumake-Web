@@ -57,7 +57,7 @@ const FAQ = () => {
         <div className="faq-header">
           <SectionBadge
             text="FAQ"
-            logo="/images/edu-make-logo.png"
+            logo="/logo.png"
           />
 
           <h2>Frequently Asked Questions</h2>

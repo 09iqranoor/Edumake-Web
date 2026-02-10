@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import './App.css';
 import { SignupPage, SigninPage, ForgotPasswordPage, OtpVerificationPage, SetPasswordPage } from './pages';
 import LandingPage from './pages/landingpage/LandingPage';
-// import DashboardLayout from './components/layout/DashboardLayout';
-import DashboardLayout from './pages/superadmin/DashboardLayout';
+import DashboardLayout from './components/layout/DashboardLayout';
 
 function App() {
   return (
@@ -12,9 +11,9 @@ function App() {
       <Routes>
         {/* Route 1: Landing Page */}
         <Route path="/" element={
-          <LandingPage />
+          <LandingPage onLoginClick={() => window.location.href = '/signin'} />
         } />
-
+        
         {/* Route 2: Signin Page */}
         <Route path="/signin" element={
           <SigninPage
@@ -24,7 +23,7 @@ function App() {
             onBack={() => window.location.href = '/'}
           />
         } />
-
+        
         {/* Route 3: Signup Page */}
         <Route path="/signup" element={
           <SignupPage
@@ -36,7 +35,7 @@ function App() {
             onBack={() => window.location.href = '/'}
           />
         } />
-
+        
         {/* Route 4: OTP Verification */}
         <Route path="/otp-verification" element={
           <OtpVerificationPage
@@ -48,7 +47,7 @@ function App() {
             }}
           />
         } />
-
+        
         {/* Route 5: Complete Profile */}
         <Route path="/complete-profile" element={
           <SetPasswordPage
@@ -60,7 +59,7 @@ function App() {
             onLogin={() => window.location.href = '/signin'}
           />
         } />
-
+        
         {/* Route 6: Forgot Password */}
         <Route path="/forgot-password" element={
           <ForgotPasswordPage
@@ -71,10 +70,10 @@ function App() {
             }}
           />
         } />
-
+        
         {/* Route 7: Dashboard */}
         <Route path="/dashboard/*" element={<DashboardLayout />} />
-
+        
         {/* Redirect all other routes to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

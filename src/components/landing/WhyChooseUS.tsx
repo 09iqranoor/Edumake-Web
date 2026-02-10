@@ -53,7 +53,7 @@ const WhyChooseUS: React.FC = () => {
   return (
     <section id="why-choose-us" className="edu-section">
       <div className="edu-header">
-        <SectionBadge text="About Edu-make" logo="/images/edu-make-logo.png" />
+        <SectionBadge text="About Edu-make" logo="/logo.png" />
         <h2>Why Choose Edu-Make</h2>
         <p>
           Empowering educators, students, and parents with tools that truly make a difference.
@@ -88,48 +88,59 @@ const WhyChooseUS: React.FC = () => {
           </div>
         )}
       </div>
+
       {/* Stats Section */}
-      <div className="edu-stats-container">
-        <div className="edu-stat-item">
-          <div className="edu-stat-top">
-            <div className="edu-stat-box blue"></div>
-            <span className="edu-stat-value">2x</span>
+      <div className="edu-stats-wrapper">
+        <div className="edu-stat-box-item">
+          <div className="edu-stat-dot blue"></div>
+          <div className="edu-stat-info">
+            <div className="edu-stat-value-row">
+              <span className="edu-stat-number">2x</span>
+            </div>
+            <p className="edu-stat-desc">Faster Accuracy</p>
           </div>
-          <p className="edu-stat-label">Faster Accuracy</p>
         </div>
 
-        <div className="edu-stat-divider"></div>
+        <div className="edu-stat-box-divider"></div>
 
-        <div className="edu-stat-item">
-          <div className="edu-stat-top">
-            <div className="edu-stat-box orange"></div>
-            <span className="edu-stat-value">70% Increase</span>
+        <div className="edu-stat-box-item">
+          <div className="edu-stat-dot orange"></div>
+          <div className="edu-stat-info">
+            <div className="edu-stat-value-row">
+              <span className="edu-stat-number">70%</span>
+              <span className="edu-stat-sub">Increase</span>
+            </div>
+            <p className="edu-stat-desc">Parent Involvement</p>
           </div>
-          <p className="edu-stat-label">Parent Involvement</p>
         </div>
 
-        <div className="edu-stat-divider"></div>
+        <div className="edu-stat-box-divider"></div>
 
-        <div className="edu-stat-item">
-          <div className="edu-stat-top">
-            <div className="edu-stat-box red"></div>
-            <span className="edu-stat-value">50% Reduction</span>
+        <div className="edu-stat-box-item">
+          <div className="edu-stat-dot red"></div>
+          <div className="edu-stat-info">
+            <div className="edu-stat-value-row">
+              <span className="edu-stat-number">50%</span>
+              <span className="edu-stat-sub">Reduction</span>
+            </div>
+            <p className="edu-stat-desc">Administrative Workload</p>
           </div>
-          <p className="edu-stat-label">Administrative Workload</p>
         </div>
 
-        <div className="edu-stat-divider"></div>
+        <div className="edu-stat-box-divider"></div>
 
-        <div className="edu-stat-item">
-          <div className="edu-stat-top">
-            <div className="edu-stat-box green"></div>
-            <span className="edu-stat-value">35% Improvement</span>
+        <div className="edu-stat-box-item">
+          <div className="edu-stat-dot green"></div>
+          <div className="edu-stat-info">
+            <div className="edu-stat-value-row">
+              <span className="edu-stat-number">35%</span>
+              <span className="edu-stat-sub">Improvement</span>
+            </div>
+            <p className="edu-stat-desc">Staff Productivity</p>
           </div>
-          <p className="edu-stat-label">Staff Productivity</p>
         </div>
       </div>
     </section>
-
   );
 };
 

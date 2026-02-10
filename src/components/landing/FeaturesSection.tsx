@@ -53,10 +53,10 @@ const FeaturesSection: React.FC = () => {
   return (
     <section id="features" className="features-section">
       <div className="features-header">
-      <SectionBadge
-  text="Our Features"
-  logo="/edu-make-logo.png"
-/>
+        <SectionBadge
+          text="Our Features"
+          logo="/logo.png"
+        />
         <h2>Powerful Features Built for Smarter Learning</h2>
         <p>
           Discover tools designed to simplify school management, enhance

@@ -147,14 +147,14 @@ const SchoolManagement: React.FC = () => {
     e.stopPropagation();
     const rect = e.currentTarget.getBoundingClientRect();
     const viewportWidth = window.innerWidth;
-
+    
     // Calculate position - ensure it doesn't go off screen
     let x = rect.right - 163;
     if (x + 163 > viewportWidth) {
       x = viewportWidth - 180;
     }
     if (x < 0) x = 10;
-
+    
     setActionMenu({
       isOpen: true,
       schoolId,
@@ -168,8 +168,8 @@ const SchoolManagement: React.FC = () => {
 
   const handleSuspendSchool = () => {
     if (actionMenu.schoolId) {
-      setSchools(schools.map(school =>
-        school.id === actionMenu.schoolId
+      setSchools(schools.map(school => 
+        school.id === actionMenu.schoolId 
           ? { ...school, status: school.status === 'Active' ? 'Inactive' : 'Active' }
           : school
       ));
@@ -248,10 +248,10 @@ const SchoolManagement: React.FC = () => {
             <div className="search-icon">
               <img src="/icons/search-normal.png" alt="search-icon" />
             </div>
-            <input
-              type="text"
-              className="search-input"
-              placeholder="Search schools..."
+            <input 
+              type="text" 
+              className="search-input" 
+              placeholder="Search schools..." 
             />
           </div>
 
@@ -267,13 +267,13 @@ const SchoolManagement: React.FC = () => {
             <div className="filter-item">
               <span className="filter-label">Status</span>
               <div className="direction-down">
-                <img src="/icons/down-arrow.png" alt="status" />
+                <img src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item">
               <span className="filter-label">Subscription Type</span>
               <div className="direction-down">
-                <img src="/icons/down-arrow.png" alt="status" />
+                <img src="/icons/down-arrow.png" alt="status"/>
               </div>
             </div>
             <div className="filter-item reset-filter">
@@ -288,106 +288,101 @@ const SchoolManagement: React.FC = () => {
 
       {/* Table Container */}
       <div className="table-container">
-        <div className="table-wrapper">
-          {/* Table Header */}
-          <div className="table-header">
-            <div className="header-row">
-              <span className="header-cell col-school">School</span>
-              <span className="header-cell col-admin">Admin</span>
-              <span className="header-cell col-plan">Plan</span>
-              <span className="header-cell col-status">Status</span>
-              <span className="header-cell col-students">Students</span>
-              <span className="header-cell col-join-date">Join Date</span>
-              <span className="header-cell col-last-active">Last Active</span>
-              <span className="header-cell col-actions">Actions</span>
-            </div>
-            <div className="header-line"></div>
+        {/* Table Header */}
+        <div className="table-header">
+          <div className="header-row">
+            <span className="header-cell school-header">School</span>
+            <span className="header-cell admin-header">Admin</span>
+            <span className="header-cell plan-header">Plan</span>
+            <span className="header-cell status-header">Status</span>
+            <span className="header-cell students-header">Students</span>
+            <span className="header-cell join-date-header">Join Date</span>
+            <span className="header-cell last-active-header">Last Active</span>
+            <span className="header-cell actions-header">Actions</span>
           </div>
+          <div className="header-line"></div>
+        </div>
 
-          {/* Table Body */}
-          <div className="table-body">
-            {currentSchools.map((school) => {
-              const planColor = getPlanColor(school.plan);
-              const statusColor = getStatusColor(school.status);
+        {/* Table Body */}
+        <div className="table-body">
+          {currentSchools.map((school) => {
+            const planColor = getPlanColor(school.plan);
+            const statusColor = getStatusColor(school.status);
+            
+            return (
+              <div key={school.id} className="table-row-container">
+                <div className="table-row">
+                  <div className="school-cell">
+                    <div 
+                      className="school-avatar" 
+                      style={{ backgroundColor: school.avatarColor }}
+                    ></div>
+                    <span className="school-name">{school.name}</span>
+                  </div>
 
-              return (
-                <div key={school.id} className="table-row-container">
-                  <div className="table-row">
-                    <div className="school-cell col-school">
-                      <div
-                        className="school-avatar"
-                        style={{ backgroundColor: school.avatarColor }}
-                      ></div>
-                      <span className="school-name">{school.name}</span>
-                    </div>
+                  <div className="admin-cell">
+                    <div className="admin-name">{school.admin.name}</div>
+                    <div className="admin-email">{school.admin.email}</div>
+                  </div>
 
-                    <div className="admin-cell col-admin">
-                      <div className="admin-name">{school.admin.name}</div>
-                      <div className="admin-email">{school.admin.email}</div>
-                    </div>
+                  <div 
+                    className="plan-badge"
+                    style={{
+                      backgroundColor: planColor.bg,
+                      color: planColor.text
+                    }}
+                  >
+                    {school.plan}
+                  </div>
 
-                    <div className="col-plan">
-                      <div
-                        className="plan-badge"
-                        style={{
-                          backgroundColor: planColor.bg,
-                          color: planColor.text
-                        }}
-                      >
-                        {school.plan}
+                  <div 
+                    className="status-badge"
+                    style={{
+                      backgroundColor: statusColor.bg,
+                      color: statusColor.text
+                    }}
+                  >
+                    <div 
+                      className="status-point-circle"
+                      style={{ 
+                        backgroundColor: school.status === 'Active' ? '#11A75C' : '#E82D2D' 
+                      }}
+                    ></div>
+                    <span className="status-text">{school.status}</span>
+                  </div>
+
+                  <div className="students-cell">
+                    {school.students.toLocaleString()}
+                  </div>
+
+                  <div className="join-date-cell">
+                    {school.joinDate}
+                  </div>
+
+                  <div className="last-active-cell">
+                    {school.lastActive}
+                  </div>
+
+                  <div className="actions-cell">
+                    <button 
+                      className="more-button"
+                      onClick={(e) => handleMoreClick(e, school.id)}
+                    >
+                      <div className="more-icon">
+                       <img src="/icons/more.png" alt="more-icon"/>
                       </div>
-                    </div>
-
-                    <div className="col-status">
-                      <div
-                        className="status-badge"
-                        style={{
-                          backgroundColor: statusColor.bg,
-                          color: statusColor.text
-                        }}
-                      >
-                        <div
-                          className="status-point-circle"
-                          style={{
-                            backgroundColor: school.status === 'Active' ? '#11A75C' : '#E82D2D'
-                          }}
-                        ></div>
-                        <span className="status-text">{school.status}</span>
-                      </div>
-                    </div>
-
-                    <div className="students-cell col-students">
-                      {school.students.toLocaleString()}
-                    </div>
-
-                    <div className="join-date-cell col-join-date">
-                      {school.joinDate}
-                    </div>
-
-                    <div className="last-active-cell col-last-active">
-                      {school.lastActive}
-                    </div>
-
-                    <div className="actions-cell col-actions">
-                      <button
-                        className="more-button"
-                        onClick={(e) => handleMoreClick(e, school.id)}
-                      >
-                        <div className="more-icon">
-                          <img src="/icons/more.png" alt="more-icon" />
-                        </div>
-                      </button>
-                    </div>
+                    </button>
                   </div>
                 </div>
-              );
-            })}
-          </div>
+                <div className="row-line"></div>
+              </div>
+            );
+          })}
         </div>
 
         {/* Action Menu */}
         {actionMenu.isOpen && (
-          <div
+          <div 
             ref={actionMenuRef}
             className="action-menu"
             style={{
@@ -413,18 +408,18 @@ const SchoolManagement: React.FC = () => {
         <span className="pagination-text">
           Showing {startIndex + 1}-{Math.min(endIndex, schools.length)} of {schools.length}
         </span>
-
+        
         <div className="pagination-controls">
-          <button
-            className="pagination-btn"
+          <button 
+            className="pagination-btn" 
             onClick={handlePrevPage}
             disabled={currentPage === 1}
           >
             <img src="/icons/arrow-left.png" alt="Previous" />
           </button>
-
-          <button
-            className="pagination-btn"
+          
+          <button 
+            className="pagination-btn" 
             onClick={handleNextPage}
             disabled={currentPage === totalPages}
           >

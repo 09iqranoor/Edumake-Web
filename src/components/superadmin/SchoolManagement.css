@@ -12,7 +12,7 @@
 }
 
 /* Header Section */
-.schools-management-container .header-section {
+.header-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -22,22 +22,19 @@
   height: 68px;
 }
 
-.schools-management-container .title-section {
+.title-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 0px;
   gap: 8px;
-  width: 100%;
-  max-width: 490px;
-  height: auto;
+  width: 490px;
+  height: 68px;
 }
 
-.schools-management-container .title {
-  width: 100%;
-  max-width: 490px;
-  height: auto;
-  min-height: 35px;
+.title {
+  width: 490px;
+  height: 35px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 700;
@@ -47,11 +44,9 @@
   margin: 0;
 }
 
-.schools-management-container .subtitle {
-  width: 100%;
-  max-width: 490px;
-  height: auto;
-  min-height: 25px;
+.subtitle {
+  width: 490px;
+  height: 25px;
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -61,7 +56,7 @@
   margin: 0;
 }
 
-.schools-management-container .export-button {
+.export-button {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -121,9 +116,8 @@
   align-items: flex-start;
   padding: 0px;
   gap: 24px;
-  width: 100%;
-  max-width: 944px;
-  height: auto;
+  width: 944px;
+  height: 70px;
 }
 
 .controls-row {
@@ -133,13 +127,11 @@
   align-items: center;
   padding: 0px;
   gap: 6px;
-  width: 100%;
-  height: auto;
-  min-height: 70px;
-  flex-wrap: wrap;
+  width: 944px;
+  height: 70px;
 }
 
-.schools-management-container .search-container {
+.search-container {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -147,8 +139,7 @@
   padding: 12px;
   gap: 12px;
   width: 340px;
-  min-height: 70px;
-  height: auto;
+  height: 70px;
   background: #F5F5F5;
   border: 1px solid #E1E1E1;
   border-radius: 12px;
@@ -185,22 +176,20 @@
   color: rgba(0, 0, 0, 0.4);
 }
 
-.schools-management-container .filter-container {
+.filter-container {
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 0px;
   gap: 1px;
   width: 570px;
-  min-height: 70px;
-  height: auto;
-  flex-wrap: wrap;
+  height: 70px;
   background: #FFFFFF;
   border-radius: 8px;
   border: 1px solid #E1E1E1;
 }
 
-.schools-management-container .filter-item {
+.filter-item {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -208,23 +197,22 @@
   align-items: center;
   padding: 16px;
   gap: 10px;
-  height: 100%;
-  min-height: 70px;
+  height: 70px;
   border-right: 0.5px solid #888888;
   background: transparent;
   border: none;
   cursor: pointer;
 }
 
-.schools-management-container .filter-item:last-child {
+.filter-item:last-child {
   border-right: none;
 }
 
-.schools-management-container .filter-icon-container {
+.filter-icon-container {
   width: 56px;
 }
 
-.schools-management-container .filter-icon {
+.filter-icon {
   width: 24px;
   height: 24px;
   display: flex;
@@ -238,7 +226,7 @@
   object-fit: contain;
 }
 
-.schools-management-container .filter-label {
+.filter-label {
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -248,7 +236,7 @@
   white-space: nowrap;
 }
 
-.schools-management-container .direction-down {
+.direction-down {
   width: 24px;
   height: 24px;
   display: flex;
@@ -262,11 +250,11 @@
   object-fit: contain;
 }
 
-.schools-management-container .reset-filter {
+.reset-filter {
   width: 133px;
 }
 
-.schools-management-container .reset-icon {
+.reset-icon {
   width: 18px;
   height: 18px;
   display: flex;
@@ -274,13 +262,13 @@
   justify-content: center;
 }
 
-.schools-management-container .reset-icon img {
+.reset-icon img {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
 
-.schools-management-container .reset-text {
+.reset-text {
   font-family: 'Mulish', sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -289,198 +277,353 @@
   color: #EA0234;
 }
 
-/* Table Container */
-.schools-management-container .table-container {
+/* Table Container - Figma के exact measurements के according */
+.table-container {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 32px 20px;
   gap: 24px;
   width: 100%;
+  max-width: 1110px;
+  min-height: 601px;
   background: #FFFFFF;
   border-radius: 12px;
-  box-sizing: border-box;
-}
-
-.table-wrapper {
-  width: 100%;
+  position: relative;
   overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 
 .table-header {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   padding: 0px;
   gap: 20px;
-  min-width: 900px;
-  /* Base width for table content */
+  width: 1070px;
+  height: 43px;
+  min-width: 1070px;
 }
 
+/* Table Header Row - Figma के exact positions के according */
 .header-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0 16px;
+  width: 1055px;
   height: 23px;
+  position: relative;
+  display: block;
 }
 
+/* Header Cells with exact positions */
 .header-cell {
+  position: absolute;
+  height: 23px;
   font-family: 'Mulish', sans-serif;
+  font-style: normal;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 23px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.32px;
   color: #000000;
-  white-space: nowrap;
 }
 
-/* Base flex values for columns */
-.col-school {
-  flex: 2;
-  min-width: 180px;
+.school-header {
+  width: 55px;
+  left: 0px;
+  text-align: left;
 }
 
-.col-admin {
-  flex: 1.5;
-  min-width: 150px;
+.admin-header {
+  width: 55px;
+  left: 181px;
+  text-align: left;
 }
 
-.col-plan {
-  flex: 1;
-  min-width: 100px;
+.plan-header {
+  width: 38px;
+  left: 341px;
+  text-align: left;
 }
 
-.col-status {
-  flex: 1;
-  min-width: 100px;
+.status-header {
+  width: 54px;
+  left: 455px;
+  text-align: left;
 }
 
-.col-students {
-  flex: 1;
-  min-width: 100px;
+.students-header {
+  width: 74px;
+  left: 579px;
+  text-align: left;
 }
 
-.col-join-date {
-  flex: 1.2;
-  min-width: 120px;
+.join-date-header {
+  width: 75px;
+  left: 712px;
+  text-align: left;
 }
 
-.col-last-active {
-  flex: 1.2;
-  min-width: 120px;
+.last-active-header {
+  width: 91px;
+  left: 847px;
+  text-align: left;
 }
 
-.col-actions {
-  width: 50px;
-  text-align: right;
+.actions-header {
+  width: 62px;
+  left: 993px;
+  text-align: left;
 }
 
 .header-line {
-  width: 100%;
+  width: 1070px;
   height: 0px;
-  border-bottom: 1px solid #E1E1E1;
+  border: 1px solid #E1E1E1;
 }
 
 /* Table Body */
 .table-body {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-width: 900px;
+  align-items: center;
+  padding: 0px;
+  gap: 24px;
+  width: 1070px;
+  height: auto;
+  min-width: 1070px;
 }
 
 .table-row-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  padding: 16px 0;
-  border-bottom: 1px solid #F0F0F0;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 24px;
+  width: 1070px;
+  height: 64px;
 }
 
+/* Table Row with exact positioning - Figma के according */
 .table-row {
+  width: 1036px;
+  height: 40px;
+  position: relative;
+  display: block;
+}
+
+/* School Cell */
+.school-cell {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 0 16px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.school-cell {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  padding: 0px;
+  gap: 8px;
+  position: absolute;
+  width: 147px;
+  height: 40px;
+  left: 0px;
+  top: 0px;
 }
 
 .school-avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   background: #D9D9D9;
   border-radius: 50%;
   flex-shrink: 0;
 }
 
 .school-name {
+  width: 111px;
+  height: 40px;
   font-family: 'Mulish', sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: wrap;
 }
 
+/* Admin Cell */
 .admin-cell {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
   gap: 2px;
+  position: absolute;
+  width: 115px;
+  height: 40px;
+  left: 180px;
+  top: 0px;
 }
 
 .admin-name {
+  width: 115px;
+  height: 20px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.7);
 }
 
 .admin-email {
-  font-size: 12px;
+  width: 115px;
+  height: 18px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.5);
-  word-break: break-all;
-  overflow-wrap: anywhere;
 }
 
+/* Plan Badge */
 .plan-badge {
-  display: inline-flex;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 4px 12px;
+  padding: 2px 8px;
+  gap: 10px;
+  position: absolute;
+  height: 19px;
+  left: 341px;
+  top: 11px;
   border-radius: 4px;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 8px;
-  gap: 6px;
-  border-radius: 40px;
-}
-
-.students-cell,
-.join-date-cell,
-.last-active-cell {
   font-family: 'Mulish', sans-serif;
-  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.32px;
+  min-width: 46px;
+}
+
+/* Status Badge */
+.status-badge {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 8px 2px 4px;
+  gap: 9.1px;
+  position: absolute;
+  width: auto;
+  min-width: 62.39px;
+  height: 23px;
+  left: 455px;
+  top: 9px;
+  border-radius: 4px;
+}
+
+.status-point-circle {
+  width: 7.28px;
+  height: 7.28px;
+  border-radius: 50%;
+}
+
+.status-text {
+  height: 19px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: -0.18207px;
+}
+
+/* Students Cell */
+.students-cell {
+  position: absolute;
+  width: 38px;
+  height: 20px;
+  left: 579px;
+  top: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
   color: rgba(0, 0, 0, 0.7);
 }
 
-.actions-cell {
+/* Join Date Cell */
+.join-date-cell {
+  position: absolute;
+  width: 84px;
+  height: 20px;
+  left: 712px;
+  top: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  letter-spacing: -0.32px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Last Active Cell */
+.last-active-cell {
+  position: absolute;
+  width: 86px;
+  height: 20px;
+  left: 847px;
+  top: 10px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.32px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* Actions Cell */
+.actions-cell {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 1012px;
+  top: 8px;
 }
 
 .more-button {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .more-icon {
@@ -503,83 +646,145 @@
   border: 1px solid #E1E1E1;
 }
 
-/* Action Menu */
+/* Action Menu - Figma के exactly according */
 .action-menu {
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 12px;
+  align-items: flex-start;
+  padding: 24px;
+  gap: 16px;
   position: fixed;
-  width: 180px;
+  width: 163px;
+  height: 102px;
   background: #FFFFFF;
-  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-  border-radius: 12px;
+  box-shadow: 0px 13px 61px rgba(0, 0, 0, 0.366);
+  border-radius: 20px;
   z-index: 1000;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 16px;
+  width: 115px;
+  height: 54px;
 }
 
 .menu-item {
   display: flex;
-  align-items: center;
-  padding: 8px;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 115px;
+  height: 19px;
   background: none;
   border: none;
   cursor: pointer;
   text-align: left;
-  width: 100%;
-  border-radius: 6px;
-  transition: background 0.2s;
 }
 
 .menu-item:hover {
-  background: #F5F5F5;
+  opacity: 0.8;
 }
 
 .menu-text {
+  width: 115px;
+  height: 19px;
   font-family: 'Mulish', sans-serif;
-  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 121.2%;
+  letter-spacing: -0.24px;
   color: #000000;
 }
 
+.remove-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 8px;
+  width: 115px;
+  height: 19px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
 .remove-text {
+  width: 111px;
+  height: 19px;
+  font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 121.2%;
+  letter-spacing: -0.24px;
   color: #E82D2D;
 }
 
-/* Pagination */
+/* Pagination - UPDATED with proper alignment */
 .pagination-section {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  
   align-items: center;
+  padding: 0px;
+ 
+  height: 30px;
+  position: relative;
   width: 100%;
-  margin-top: 24px;
+    height: 30px;
+    position: relative;
+    justify-content: space-between
 }
 
 .pagination-text {
+  width: 121px;
+  height: 18px;
   font-family: 'Mulish', sans-serif;
+  font-style: normal;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 18px;
   color: rgba(0, 0, 0, 0.6);
+  mix-blend-mode: normal;
+  opacity: 0.6;
+  flex-shrink: 0;
 }
 
 .pagination-controls {
   display: flex;
-  gap: 12px;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  height: 30px;
+  margin-left: auto;
 }
 
 .pagination-btn {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #E1E1E1;
-  border-radius: 6px;
-  background: #FAFAFA;
-  cursor: pointer;
 }
 
-.pagination-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+
+
+.pagination-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Menu Backdrop */
@@ -597,133 +802,119 @@
 @media screen and (max-width: 1200px) {
   .schools-management-container {
     padding: 24px;
-    gap: 24px;
   }
-
-  .schools-management-container .header-section,
-  .schools-management-container .controls-section,
-  .schools-management-container .table-container,
-  .schools-management-container .pagination-section {
+  
+  .header-section,
+  .controls-section,
+  .table-container,
+  .pagination-section {
     width: 100%;
     max-width: 100%;
   }
-}
-
-@media screen and (max-width: 1024px) {
-  .schools-management-container .header-section {
+  
+  .controls-row {
     flex-direction: column;
-    align-items: flex-start;
     height: auto;
     gap: 16px;
-  }
-
-  .schools-management-container .title-section,
-  .schools-management-container .title,
-  .schools-management-container .subtitle {
     width: 100%;
-    height: auto;
   }
-
-  .schools-management-container .controls-row {
-    flex-direction: column;
+  
+  .search-container {
     width: 100%;
-    height: auto;
-    gap: 16px;
   }
-
-  .schools-management-container .search-container,
-  .schools-management-container .filter-container {
-    width: 100% !important;
-  }
-
-  .schools-management-container .filter-container {
+  
+  .filter-container {
+    width: 100%;
+    justify-content: space-between;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+  }
+  
+  .filter-item {
+    flex-shrink: 0;
   }
 }
 
 @media screen and (max-width: 768px) {
   .schools-management-container {
     padding: 16px;
-    gap: 20px;
+    gap: 24px;
   }
-
-  .schools-management-container .title {
+  
+  .header-section {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+  }
+  
+  .title-section {
+    width: 100%;
+    height: auto;
+  }
+  
+  .title {
+    width: 100%;
     font-size: 24px;
     line-height: 30px;
   }
-
-  .schools-management-container .subtitle {
+  
+  .subtitle {
+    width: 100%;
     font-size: 16px;
     line-height: 20px;
   }
-
-  .schools-management-container .export-button {
+  
+  .export-button {
     align-self: flex-start;
   }
-
-  .schools-management-container .filter-item {
-    padding: 12px;
-  }
-
-  .schools-management-container .table-container {
+  
+  .table-container {
     padding: 16px;
     overflow-x: auto;
   }
-
-  .schools-management-container .table-header,
-  .schools-management-container .table-body {
+  
+  .table-header,
+  .table-body {
     min-width: 800px;
   }
-
-  .schools-management-container .pagination-section {
+  
+  .pagination-section {
     flex-direction: column;
     gap: 16px;
     height: auto;
     align-items: stretch;
   }
-
-  .schools-management-container .pagination-controls {
+  
+  .pagination-controls {
     margin-left: 0;
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 480px) {
-  .schools-management-container .export-button {
-    width: 100%;
-  }
-
-  .schools-management-container .filter-container {
+  .filter-container {
     flex-wrap: wrap;
     height: auto;
     border: none;
     background: transparent;
     gap: 8px;
   }
-
-  .schools-management-container .filter-item {
+  
+  .filter-item {
     border: 1px solid #E1E1E1;
     border-radius: 8px;
     background: #FFFFFF;
     padding: 12px 16px;
-    flex-shrink: 0;
   }
-
-  .schools-management-container .filter-icon-container {
+  
+  .filter-icon-container {
     width: auto;
   }
-
-  .schools-management-container .pagination-controls {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .schools-management-container .table-container {
+  
+  .table-container {
     padding: 12px;
   }
-
-  .schools-management-container .action-menu {
+  
+  .action-menu {
     width: 140px;
     right: 16px;
     left: auto !important;

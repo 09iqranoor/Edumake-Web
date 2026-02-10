@@ -1,10 +1,7 @@
 .testimonials-section {
   background: #f9fafb;
   padding: 80px 20px;
-  overflow-x: hidden;
-  /* Prevent page-level horizontal scroll */
-  overflow-y: visible;
-  /* Allow shadows/cards to breathe vertically */
+  overflow: hidden;
   font-family: "Mulish", sans-serif;
 }
 
@@ -58,8 +55,7 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   height: 520px;
-  overflow: visible;
-  /* Changed from hidden to prevent clipping animated cards */
+  overflow: hidden;
 }
 
 /* Columns */
@@ -67,8 +63,6 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  overflow: visible;
-  /* Prevent clipping of animated cards and shadows */
 }
 
 /* Desktop Scroll animations */
@@ -213,7 +207,7 @@
   }
 }
 
-/* TABLET VIEW */
+/* TABLET & MOBILE VIEW */
 @media (max-width: 992px) {
   .testimonials-section {
     padding: 60px 16px;
@@ -245,22 +239,21 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* 2 rows vertically stacked */
-    gap: 30px;
+    gap: 20px;
     height: auto;
-    overflow: visible;
+    overflow: hidden;
+    padding: 24px 0;
   }
 
   .column {
-    width: 100%;
+    display: flex;
     flex-direction: row;
+    /* Horizontal layout */
+    width: max-content;
+    /* Ensure container spans all cards */
     gap: 20px;
-    overflow-x: visible;
-    /* Changed from auto to prevent horizontal clipping */
-    overflow-y: visible;
-    /* Changed from hidden to prevent clipping of shadows */
-    padding: 24px 0;
-    /* Increased vertical padding for shadows */
+    overflow: visible;
+    padding-bottom: 0;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -269,16 +262,16 @@
     display: none;
   }
 
-
+  /* Horizontal Animations */
   .column-up {
-    animation: scrollLeft 30s linear infinite;
+    animation: scrollHorizontalRight 30s linear infinite;
   }
 
   .column-down {
-    animation: scrollRight 30s linear infinite;
+    animation: scrollHorizontalLeft 30s linear infinite;
   }
 
-  @keyframes scrollLeft {
+  @keyframes scrollHorizontalLeft {
     0% {
       transform: translateX(0);
     }
@@ -288,7 +281,7 @@
     }
   }
 
-  @keyframes scrollRight {
+  @keyframes scrollHorizontalRight {
     0% {
       transform: translateX(-50%);
     }
@@ -298,156 +291,64 @@
     }
   }
 
-  /* Card styling for mobile */
   .testimonial-card {
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 320px;
+    /* Consistent card width on mobile */
+    max-width: 320px;
     min-height: 200px;
     flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
   }
-
 
   .user-info h4,
   .user-info p {
     white-space: normal;
     word-wrap: break-word;
-    overflow-wrap: break-word;
   }
 
   .message {
     white-space: normal;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    line-height: 1.4;
-    font-size: 13.5px;
+    font-size: 14px;
+    line-height: 1.5;
   }
 }
 
-/* MOBILE VIEW */
+/* MOBILE VIEW - Small adjustments */
 @media (max-width: 768px) {
   .testimonials-section {
     padding: 50px 12px;
-  }
-
-  .container {
-    gap: 30px;
-  }
-
-  .left {
-    margin-bottom: 20px;
   }
 
   .left h2 {
     font-size: 24px;
   }
 
-  .left p {
-    font-size: 15px;
-  }
-
-  .grid {
-    gap: 25px;
-  }
-
-  .column {
-    gap: 16px;
-  }
-
   .testimonial-card {
     min-width: 280px;
     max-width: 280px;
     padding: 18px;
-    min-height: 190px;
-  }
-
-  .testimonial-card .quote {
-    width: 32px;
-    height: 32px;
-    top: 10px;
-    right: 10px;
   }
 
   .user img {
     width: 36px;
     height: 36px;
   }
-
-  .message {
-    font-size: 13px;
-  }
-
-  .column-up {
-    animation: scrollLeft 20s linear infinite;
-  }
-
-  .column-down {
-    animation: scrollRight 20s linear infinite;
-  }
 }
 
 /* SMALL MOBILE VIEW */
 @media (max-width: 480px) {
-  .testimonials-section {
-    padding: 40px 10px;
-  }
-
   .left h2 {
     font-size: 22px;
   }
 
-  .left p {
-    font-size: 14px;
-  }
-
-  .grid {
-    gap: 20px;
-  }
-
-  .column {
-    gap: 12px;
-  }
-
   .testimonial-card {
-    min-width: 260px;
-    max-width: 260px;
     padding: 16px;
-    min-height: 180px;
-  }
-
-  .user {
-    gap: 10px;
-  }
-
-  .user img {
-    width: 32px;
-    height: 32px;
   }
 
   .user-info h4 {
-    font-size: 14px;
-  }
-
-  .user-info p {
-    font-size: 12px;
+    font-size: 18px;
   }
 
   .message {
-    font-size: 12.5px;
-    line-height: 1.4;
-  }
-}
-
-/* VERY SMALL SCREENS */
-@media (max-width: 360px) {
-  .testimonial-card {
-    min-width: 240px;
-    max-width: 240px;
-    padding: 14px;
-  }
-
-  .message {
-    font-size: 12px;
+    font-size: 13px;
   }
 }

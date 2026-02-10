@@ -1,13 +1,12 @@
 // components/HeroSection.tsx
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 
 
-// interface HeroSectionProps {
-//   onLoginClick: () => void;
-// }
-const HeroSection: React.FC = () => {
+interface HeroSectionProps {
+  onLoginClick: () => void;
+}
+const HeroSection: React.FC<HeroSectionProps> = ({ onLoginClick }) => {
   const languages = [
     { code: 'US-EN', label: 'US-ENG', flag: '/icons/flag.png' },
     { code: 'UK-EN', label: 'UK-ENG', flag: '/icons/flag.png' },
@@ -17,8 +16,6 @@ const HeroSection: React.FC = () => {
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  // NEW: Use useNavigate hook
-  const navigate = useNavigate();
 
   const handleLanguageSelect = (lang: typeof languages[0]) => {
     setSelectedLanguage(lang);
@@ -94,15 +91,7 @@ const HeroSection: React.FC = () => {
 
             {/* Mobile-only header actions inside the nav */}
             <div className="mobile-nav-actions">
-              <button
-                className="login-link"
-                onClick={() => {
-                  setMobileNavOpen(false);
-                  navigate('/signin');
-                }}
-              >
-                Login
-              </button>
+              <a href="" className="login-link" onClick={(e) => { e.preventDefault(); setMobileNavOpen(false); onLoginClick(); }}>Login</a>
               {/* <button className="get-started-btn mobile-get-started" onClick={() => setMobileNavOpen(false)}>
                 Get Started
               </button> */}
@@ -147,10 +136,7 @@ const HeroSection: React.FC = () => {
           {/* Desktop-only header actions */}
           <div className='header-actions desktop-only'>
 
-            <button
-              className="login-link"
-              onClick={() => navigate('/signin')}
-            >
+            <button className="login-link" onClick={() => { setMobileNavOpen(false); onLoginClick(); }}>
               Login
             </button>
             {/* <a href=""  onClick={onLoginClick} className="login-link">Login</a> */}
@@ -201,21 +187,9 @@ const HeroSection: React.FC = () => {
 
 
           <div className="hero-content">
-            <div className="hero-title-wrapper">
-              {/* <div className="hero-badge hero-badge-students">
-                <span className="hero-badge-text">Students</span>
-                <div className="hero-badge-arrow"></div>
-              </div> */}
-              <h1 className="hero-title">
-                Empowering Schools & <br />
-                Simplifying <span>Educational <br />
-                  Management</span>
-              </h1>
-              {/* <div className="hero-badge hero-badge-parents">
-                <span className="hero-badge-text">Parents</span>
-                <div className="hero-badge-arrow"></div>
-              </div> */}
-            </div>
+            <h1 className="hero-title">
+              Empowering Schools & Simplifying <span>Educational Management</span>
+            </h1>
 
             <p className="hero-subtitle">
               Transform the way your school runs with intuitive tools that reduce administrative stress, improve collaboration, and boost overall efficiency.
