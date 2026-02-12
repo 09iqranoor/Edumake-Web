@@ -112,7 +112,7 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    margin: auto 20px 32px;
+    /* margin: auto 20px 32px; Removed to place below settings */
     transition: all 0.2s ease;
 }
 

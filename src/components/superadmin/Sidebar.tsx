@@ -47,52 +47,52 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
   const location = useLocation();
-  
+
   const menuItems = [
-    { 
-      icon: <DashboardIcon active={location.pathname === '/dashboard'} />, 
-      label: 'Dashboard', 
-      path: '/dashboard' 
+    {
+      icon: <DashboardIcon active={location.pathname === '/dashboard'} />,
+      label: 'Dashboard',
+      path: '/dashboard'
     },
-    { 
-      icon: <SchoolsIcon active={location.pathname.includes('/dashboard/schools')} />, 
-      label: 'Schools', 
-      path: '/dashboard/schools' 
+    {
+      icon: <SchoolsIcon active={location.pathname.includes('/dashboard/schools')} />,
+      label: 'Schools',
+      path: '/dashboard/schools'
     },
-    { 
-      icon: <SubscriptionIcon active={location.pathname.includes('/dashboard/subscription')} />, 
-      label: 'Subscription', 
-      path: '/dashboard/subscription' 
+    {
+      icon: <SubscriptionIcon active={location.pathname.includes('/dashboard/subscription')} />,
+      label: 'Subscription',
+      path: '/dashboard/subscription'
     },
-    { 
-      icon: <CommunicationsIcon active={location.pathname.includes('/dashboard/communications')} />, 
-      label: 'Communications', 
-      path: '/dashboard/communications' 
+    {
+      icon: <CommunicationsIcon active={location.pathname.includes('/dashboard/communications')} />,
+      label: 'Communications',
+      path: '/dashboard/communications'
     },
-    { 
-      icon: <SupportIcon active={location.pathname.includes('/dashboard/support')} />, 
-      label: 'Support', 
-      path: '/dashboard/support' 
+    {
+      icon: <SupportIcon active={location.pathname.includes('/dashboard/support')} />,
+      label: 'Support',
+      path: '/dashboard/support'
     },
-    { 
-      icon: <AuditLogsIcon active={location.pathname.includes('/dashboard/audit-logs')} />, 
-      label: 'Audit Logs', 
-      path: '/dashboard/audit-logs' 
+    {
+      icon: <AuditLogsIcon active={location.pathname.includes('/dashboard/audit-logs')} />,
+      label: 'Audit Logs',
+      path: '/dashboard/audit-logs'
     },
-    { 
-      icon: <AnalyticsIcon active={location.pathname.includes('/dashboard/analytics')} />, 
-      label: 'Analytics', 
-      path: '/dashboard/analytics' 
+    {
+      icon: <AnalyticsIcon active={location.pathname.includes('/dashboard/analytics')} />,
+      label: 'Analytics',
+      path: '/dashboard/analytics'
     },
-    { 
-      icon: <ResourcesIcon active={location.pathname.includes('/dashboard/resources')} />, 
-      label: 'Resources', 
-      path: '/dashboard/resources' 
+    {
+      icon: <ResourcesIcon active={location.pathname.includes('/dashboard/resources')} />,
+      label: 'Resources',
+      path: '/dashboard/resources'
     },
-    { 
-      icon: <SettingsIcon active={location.pathname.includes('/dashboard/settings')} />, 
-      label: 'Settings', 
-      path: '/dashboard/settings' 
+    {
+      icon: <SettingsIcon active={location.pathname.includes('/dashboard/settings')} />,
+      label: 'Settings',
+      path: '/dashboard/settings'
     },
   ];
 
@@ -122,12 +122,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = true, onClose }) => {
               <span className="sidebar__nav-label">{item.label}</span>
             </Link>
           ))}
-        </nav>
 
-        <button className="sidebar__logout" onClick={handleLogout}>
-          <span className="sidebar__logout-icon"><LogoutIcon /></span>
-          <span className="sidebar__logout-label">Log Out</span>
-        </button>
+          <button className="sidebar__logout" onClick={handleLogout}>
+            <span className="sidebar__logout-icon"><LogoutIcon /></span>
+            <span className="sidebar__logout-label">Log Out</span>
+          </button>
+        </nav>
       </aside>
     </>
   );
