@@ -9,6 +9,7 @@
     padding-top: 91px;
     min-height: 100vh;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .dashboard__content {
@@ -46,7 +47,8 @@
 .quick-actions,
 .recent-activities {
     flex: 1;
-    min-width: 0; /* Important for flexbox to work properly */
+    min-width: 0;
+    /* Important for flexbox to work properly */
 }
 
 /* Desktop पर side by side layout */
@@ -54,7 +56,7 @@
     .dashboard__section--bottom {
         flex-direction: row;
     }
-    
+
     .quick-actions,
     .recent-activities {
         width: 50%;
@@ -83,7 +85,7 @@
         flex-direction: column;
         gap: 20px;
     }
-    
+
     .quick-actions,
     .recent-activities {
         width: 100%;

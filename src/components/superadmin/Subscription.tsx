@@ -11,7 +11,7 @@ const Subscription: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState<'basic' | 'standard' | 'premium' | null>(null);
 
-  
+
   useEffect(() => {
     if (isModalOpen) {
       document.body.classList.add('modal-open');
@@ -102,7 +102,7 @@ const Subscription: React.FC = () => {
             <h1 className="page-title">Subscription Plans</h1>
             <p className="page-subtitle">Manage pricing plans and features for schools</p>
           </div>
-          <button className="create-plan-btn">
+          <button className="create-plan-btn" onClick={() => handleEditPlan('premium')}>
             <AddIcon />
             <span>Create New Plan</span>
           </button>
@@ -110,27 +110,27 @@ const Subscription: React.FC = () => {
 
         {/* Pricing Plans Container */}
         <div className="pricing-plans-container">
-          
+
           {/* Basic Plan Card */}
           <div className="plan-card basic-plan">
             <div className="plan-content">
               <h3 className="plan-title">Basic</h3>
               <p className="plan-subtitle">Monthly Charge</p>
               <div className="plan-price">$14.99</div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-features">
                 <div className="feature-item">Free Setup</div>
                 <div className="feature-item">20 User Connection</div>
                 <div className="feature-item">Bandwidth Limit 10 GB</div>
               </div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-footer">
-                <button 
-                  className="edit-plan-btn" 
+                <button
+                  className="edit-plan-btn"
                   onClick={() => handleEditPlan('basic')}
                 >
                   Edit Plan
@@ -149,9 +149,9 @@ const Subscription: React.FC = () => {
               <h3 className="plan-title">Standard</h3>
               <p className="plan-subtitle">Monthly Charge</p>
               <div className="plan-price">$49.99</div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-features">
                 <div className="feature-item">Free Setup</div>
                 <div className="feature-item">20 User Connection</div>
@@ -161,12 +161,12 @@ const Subscription: React.FC = () => {
                 <div className="feature-item disabled">Plugins Integration</div>
                 <div className="feature-item disabled">Custom Content Management</div>
               </div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-footer">
-                <button 
-                  className="edit-plan-btn" 
+                <button
+                  className="edit-plan-btn"
                   onClick={() => handleEditPlan('standard')}
                 >
                   Edit Plan
@@ -185,9 +185,9 @@ const Subscription: React.FC = () => {
               <h3 className="plan-title">Premium</h3>
               <p className="plan-subtitle">Monthly Charge</p>
               <div className="plan-price">$89.99</div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-features">
                 <div className="feature-item">Free Setup</div>
                 <div className="feature-item">20 User Connection</div>
@@ -197,12 +197,12 @@ const Subscription: React.FC = () => {
                 <div className="feature-item">Plugins Integration</div>
                 <div className="feature-item">Custom Content Management</div>
               </div>
-              
+
               <div className="plan-divider"></div>
-              
+
               <div className="plan-footer">
-                <button 
-                  className="edit-plan-btn" 
+                <button
+                  className="edit-plan-btn"
                   onClick={() => handleEditPlan('premium')}
                 >
                   Edit Plan

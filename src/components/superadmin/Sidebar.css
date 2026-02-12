@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     z-index: 100;
+    overflow-x: scroll;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
 }
 
@@ -27,10 +28,12 @@
     width: 58px;
     height: 56.68px;
 }
+
 .sidebar__logo-icon img {
     width: 100%;
     height: 100%;
 }
+
 .sidebar__logo-text {
     font-family: 'Mulish', sans-serif;
     font-weight: 700;

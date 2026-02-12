@@ -149,34 +149,36 @@ const PieChart: React.FC<PieChartProps> = ({ title, subtitle, data, centerValue 
                     >
                         <div className="pie-chart__inner">
                             {centerValue && (
-                                <span className="pie-chart__center-value">{centerValue}</span>
+                                <div className="pie-chart__center-group">
+                                    <span className="pie-chart__center-value">{centerValue}</span>
+                                </div>
                             )}
                         </div>
                     </div>
 
-                    {/* Pie Labels */}
+                    {/* Pie Labels - Inside Slices */}
                     <div className="pie-chart__labels">
                         {slices.map((slice, idx) => {
                             // Calculate label position
                             const midAngle = (slice.startAngle + slice.endAngle) / 2;
-                            const labelRadius = 0.55;
+                            const labelRadius = 0.72; // Positioned within the slice
                             const x = 50 + labelRadius * 50 * Math.sin((midAngle * Math.PI) / 180);
                             const y = 50 - labelRadius * 50 * Math.cos((midAngle * Math.PI) / 180);
 
                             return (
                                 <div
                                     key={idx}
-                                    className="pie-chart__label"
+                                    className="pie-chart__internal-label"
                                     style={{
                                         left: `${x}%`,
                                         top: `${y}%`,
                                         transform: 'translate(-50%, -50%)'
                                     }}
                                 >
-                                    <span className="pie-chart__label-name">{slice.label}</span>
-                                    <div className="pie-chart__label-values">
-                                        <span className="pie-chart__label-value">${slice.value.toFixed(2)}</span>
-                                        <span className="pie-chart__label-percent">({slice.percent.toFixed(1)}%)</span>
+                                    <span className="label-month">{slice.label}</span>
+                                    <div className="label-values-row">
+                                        <span className="label-value">{slice.value.toFixed(2)}</span>
+                                        <span className="label-percent">{slice.percent.toFixed(2)}%</span>
                                     </div>
                                 </div>
                             );
@@ -199,12 +201,12 @@ const Charts: React.FC = () => {
     };
 
     const pieChartData = [
-        { label: 'Sep', value: 58.72, color: '#8979FF' },
-        { label: 'Oct', value: 27.83, color: '#FF928A' },
-        { label: 'Nov', value: 82.89, color: '#3CC3DF' },
-        { label: 'Dec', value: 60.78, color: '#FFAE4C' },
-        { label: 'Jan', value: 53.15, color: '#537FF1' },
-        { label: 'Feb', value: 72.18, color: '#6FD195' }
+        { label: 'Sep', value: 139.4, color: '#8979FF' },
+        { label: 'Oct', value: 117.06, color: '#FF928A' },
+        { label: 'Nov', value: 114.00, color: '#3CC3DF' },
+        { label: 'Dec', value: 251.12, color: '#FFAE4C' },
+        { label: 'Jan', value: 143.14, color: '#537FF1' },
+        { label: 'Feb', value: 196.82, color: '#6FD195' }
     ];
 
     const pieTotal = pieChartData.reduce((sum, item) => sum + item.value, 0);

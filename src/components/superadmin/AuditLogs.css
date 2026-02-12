@@ -1,4 +1,3 @@
-/* AuditLogs.css */
 .audit-logs-container {
     display: flex;
     flex-direction: column;
@@ -12,7 +11,7 @@
 }
 
 /* Header Section */
-.audit-logs-container .header-section {
+.header-section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -22,22 +21,19 @@
     height: 68px;
 }
 
-.audit-logs-container .title-section {
+.title-section {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 8px;
-    width: 100%;
-    max-width: 490px;
-    height: auto;
+    width: 490px;
+    height: 68px;
 }
 
-.audit-logs-container .title {
-    width: 100%;
-    max-width: 490px;
-    height: auto;
-    min-height: 35px;
+.title {
+    width: 490px;
+    height: 35px;
     font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: 700;
@@ -47,11 +43,9 @@
     margin: 0;
 }
 
-.audit-logs-container .subtitle {
-    width: 100%;
-    max-width: 490px;
-    height: auto;
-    min-height: 25px;
+.subtitle {
+    width: 490px;
+    height: 25px;
     font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -61,24 +55,20 @@
     margin: 0;
 }
 
-.audit-logs-container .export-button {
+.export-button-logs {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 12px;
+    padding: 12px 16px;
     gap: 8px;
-    width: 126px;
     height: 48px;
     background: #FAFAFA;
     border: 1px solid #E1E1E1;
     border-radius: 8px;
     cursor: pointer;
-    border: none;
     flex: none;
-    order: 1;
-    flex-grow: 0;
 }
 
 .export-icon {
@@ -96,8 +86,6 @@
 }
 
 .export-text {
-    width: 48px;
-    height: 21px;
     font-family: 'Mulish', sans-serif;
     font-style: normal;
     font-weight: 500;
@@ -108,397 +96,243 @@
     text-align: center;
     letter-spacing: -0.32px;
     color: #000000;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
-}
-
-/* Controls Section */
-.controls-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 24px;
-    width: 100%;
-    max-width: 944px;
-    min-height: 70px;
-    height: auto;
-}
-
-.controls-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px;
-    gap: 6px;
-    width: 100%;
-    height: auto;
-    min-height: 70px;
-    flex-wrap: wrap;
-}
-
-.audit-logs-container .search-container {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 12px;
-    gap: 12px;
-    width: 340px;
-    min-height: 70px;
-    height: auto;
-    background: #F5F5F5;
-    border: 1px solid #E1E1E1;
-    border-radius: 12px;
-}
-
-.search-icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.search-input {
-    flex: 1;
-    border: none;
-    outline: none;
-    background: transparent;
-    font-family: 'Mulish', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 18px;
-    color: rgba(0, 0, 0, 0.7);
-}
-
-.search-input::placeholder {
-    color: rgba(0, 0, 0, 0.4);
-}
-
-.audit-logs-container .filter-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0px;
-    gap: 1px;
-    width: 570px;
-    min-height: 70px;
-    height: auto;
-    flex-wrap: wrap;
-    background: #FFFFFF;
-    border-radius: 8px;
-    border: 1px solid #E1E1E1;
-}
-
-.audit-logs-container .filter-item {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 16px;
-    gap: 10px;
-    height: 100%;
-    min-height: 70px;
-    border-right: 0.5px solid #888888;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.audit-logs-container .filter-item:last-child {
-    border-right: none;
-}
-
-.audit-logs-container .filter-icon-container {
-    width: 56px;
-}
-
-.audit-logs-container .filter-icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.filter-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.audit-logs-container .filter-label {
-    font-family: 'Mulish', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #000000;
-    white-space: nowrap;
-}
-
-.audit-logs-container .direction-down {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.direction-down img {
-    width: 12px;
-    height: 12px;
-    object-fit: contain;
-}
-
-.audit-logs-container .reset-filter {
-    width: 133px;
-}
-
-.audit-logs-container .reset-icon {
-    width: 18px;
-    height: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.audit-logs-container .reset-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.audit-logs-container .reset-text {
-    font-family: 'Mulish', sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 18px;
-    color: #EA0234;
 }
 
 /* Table Container */
-.audit-logs-container .table-container {
+.table-container-logs {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 32px 20px;
     gap: 24px;
     width: 100%;
     background: #FFFFFF;
     border-radius: 12px;
-    box-sizing: border-box;
-}
-
-.table-wrapper {
-    width: 100%;
+    position: relative;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
 }
 
 .table-header {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 0px;
     gap: 20px;
-    min-width: 900px;
-    /* Base width for table content */
+    width: 1070px;
+    height: 43px;
+    min-width: 1070px;
 }
 
-/* Table Header Row */
 .header-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 16px;
+    width: 1055px;
     height: 23px;
+    position: relative;
+    display: block;
 }
 
-/* Header Cells */
 .header-cell {
+    position: absolute;
+    height: 23px;
     font-family: 'Mulish', sans-serif;
+    font-style: normal;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.32px;
     color: #000000;
-    white-space: nowrap;
 }
 
-/* Column specific widths for Audit Logs */
-.col-timestamp {
-    flex: 1.2;
-    min-width: 120px;
+.timestamp-header {
+    width: 100px;
+    left: 0px;
+    text-align: left;
 }
 
-.col-action {
-    flex: 1.5;
-    min-width: 150px;
+.action-header {
+    width: 150px;
+    left: 181px;
+    text-align: left;
 }
 
-.col-actor {
-    flex: 1.5;
-    min-width: 150px;
+.actor-header {
+    width: 150px;
+    left: 381px;
+    text-align: left;
 }
 
-.col-target {
-    flex: 1.2;
-    min-width: 120px;
+.target-header {
+    width: 150px;
+    left: 581px;
+    text-align: left;
 }
 
-.col-status {
-    flex: 1;
-    min-width: 100px;
+.status-header {
+    width: 80px;
+    left: 781px;
+    text-align: left;
 }
 
-.col-ip {
-    flex: 1.2;
-    min-width: 120px;
-}
-
-.col-actions {
-    width: 50px;
-    text-align: right;
+.ip-header {
+    width: 120px;
+    left: 881px;
+    text-align: left;
 }
 
 .header-line {
-    width: 100%;
+    width: 1070px;
     height: 0px;
-    border-bottom: 1px solid #E1E1E1;
+    border: 1px solid #E1E1E1;
 }
 
 /* Table Body */
 .table-body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-width: 900px;
+    align-items: center;
+    padding: 0px;
+    gap: 24px;
+    width: 1070px;
+    min-width: 1070px;
 }
 
 .table-row-container {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    padding: 16px 0;
-    border-bottom: 1px solid #F0F0F0;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+    width: 1070px;
 }
 
-/* Table Row */
 .table-row {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 0 16px;
-    width: 100%;
-    box-sizing: border-box;
+    width: 1036px;
+    height: 48px;
+    position: relative;
+    display: block;
 }
 
 /* Cell Styles */
-.timestamp-cell,
-.action-cell,
-.actor-cell {
+.timestamp-cell {
+    position: absolute;
+    left: 0px;
+    top: 0px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 4px;
 }
 
-.timestamp-date,
-.action-name,
-.actor-name {
+.log-date {
     font-family: 'Mulish', sans-serif;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
 }
 
-.timestamp-time,
-.action-category,
-.actor-email {
+.log-time {
     font-family: 'Mulish', sans-serif;
-    font-size: 12px;
+    font-weight: 400;
+    font-size: 14px;
     color: rgba(0, 0, 0, 0.5);
 }
 
-.target-cell {
+.action-cell {
+    position: absolute;
+    left: 181px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.action-title {
     font-family: 'Mulish', sans-serif;
-    font-size: 14px;
+    font-weight: 500;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
 }
 
-.ip-cell {
-    font-family: 'Roboto Mono', monospace;
+.action-category {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
     font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.actor-cell {
+    position: absolute;
+    left: 381px;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.actor-name {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.actor-email {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.target-cell {
+    position: absolute;
+    left: 581px;
+    top: 14px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
     color: rgba(0, 0, 0, 0.7);
 }
 
 .status-badge {
-    display: inline-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding: 4px 8px;
-    gap: 6px;
-    border-radius: 40px;
+    padding: 4px 10px;
+    gap: 8px;
+    position: absolute;
+    left: 781px;
+    top: 12px;
+    border-radius: 4px;
 }
 
-.actions-cell {
-    display: flex;
-    justify-content: flex-end;
+.status-point-circle {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.status-text {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.ip-cell {
+    position: absolute;
+    left: 881px;
+    top: 14px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .row-line {
-    display: none;
-    /* Handled by container border */
-}
-
-/* Action Menu */
-.action-menu {
-    display: flex;
-    flex-direction: column;
-    padding: 16px;
-    gap: 12px;
-    position: fixed;
-    width: 180px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    z-index: 1000;
-}
-
-.menu-item {
-    display: flex;
-    align-items: center;
-    padding: 8px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    width: 100%;
-    border-radius: 6px;
-    transition: background 0.2s;
-}
-
-.menu-item:hover {
-    background: #F5F5F5;
-}
-
-.menu-text {
-    font-family: 'Mulish', sans-serif;
-    font-size: 14px;
-    color: #000000;
-}
-
-.remove-text {
-    color: #E82D2D;
+    width: 1070px;
+    height: 1px;
+    background: #E1E1E1;
 }
 
 /* Pagination */
@@ -508,11 +342,12 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 24px;
+    margin-top: 16px;
 }
 
 .pagination-text {
     font-family: 'Mulish', sans-serif;
+    font-weight: 500;
     font-size: 14px;
     color: rgba(0, 0, 0, 0.6);
 }
@@ -525,12 +360,12 @@
 .pagination-btn {
     width: 32px;
     height: 32px;
+    border-radius: 4px;
+    border: 1px solid #E1E1E1;
+    background: #FFFFFF;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #E1E1E1;
-    border-radius: 6px;
-    background: #FAFAFA;
     cursor: pointer;
 }
 
@@ -542,170 +377,39 @@
 .pagination-btn img {
     width: 16px;
     height: 16px;
-    object-fit: contain;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-    .audit-logs-container {
-        padding: 24px;
-    }
-
-    .audit-logs-container .header-section,
-    .audit-logs-container .controls-section,
-    .audit-logs-container .table-container,
-    .audit-logs-container .pagination-section {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .audit-logs-container .controls-row {
-        flex-direction: column;
-        height: auto;
-        gap: 16px;
-        width: 100%;
-    }
-
-    .audit-logs-container .search-container {
-        width: 100%;
-    }
-
-    .audit-logs-container .filter-container {
-        width: 100%;
-        justify-content: space-between;
-        overflow-x: auto;
-    }
-
-    .audit-logs-container .filter-item {
-        flex-shrink: 0;
-    }
-}
-
-@media screen and (max-width: 1024px) {
-    .audit-logs-container .header-section {
-        flex-direction: column;
-        align-items: flex-start;
-        height: auto;
-        gap: 16px;
-    }
-
-    .audit-logs-container .title-section,
-    .audit-logs-container .title,
-    .audit-logs-container .subtitle {
-        width: 100%;
-        height: auto;
-    }
-
-    .audit-logs-container .controls-row {
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        gap: 16px;
-    }
-
-    .audit-logs-container .search-container,
-    .audit-logs-container .filter-container {
-        width: 100% !important;
-    }
-
-    .audit-logs-container .filter-container {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
 }
 
 @media screen and (max-width: 768px) {
     .audit-logs-container {
         padding: 16px;
-        gap: 24px;
+        min-height: auto;
     }
 
-    .audit-logs-container .header-section {
+    .header-section {
         flex-direction: column;
+        align-items: flex-start;
+        height: auto;
         gap: 16px;
-        height: auto;
+        margin-bottom: 24px;
     }
 
-    .audit-logs-container .title-section {
+    .title-section {
         width: 100%;
         height: auto;
     }
 
-    .audit-logs-container .title {
+    .title,
+    .subtitle {
         width: 100%;
-        font-size: 24px;
-        line-height: 30px;
+        height: auto;
+        white-space: normal;
     }
 
-    .audit-logs-container .subtitle {
+    .export-button-logs {
         width: 100%;
-        font-size: 16px;
-        line-height: 20px;
     }
 
-    .audit-logs-container .export-button {
-        align-self: flex-start;
-    }
-
-    .audit-logs-container .table-container {
+    .table-container-logs {
         padding: 16px;
-        overflow-x: auto;
-    }
-
-    .audit-logs-container .table-header,
-    .audit-logs-container .table-body {
-        min-width: 800px;
-    }
-
-    .audit-logs-container .pagination-section {
-        flex-direction: column;
-        gap: 16px;
-        height: auto;
-        align-items: stretch;
-    }
-
-    .audit-logs-container .pagination-controls {
-        justify-content: center;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .audit-logs-container .filter-container {
-        flex-wrap: wrap;
-        height: auto;
-        border: none;
-        background: transparent;
-        gap: 8px;
-    }
-
-    .audit-logs-container .filter-item {
-        border: 1px solid #E1E1E1;
-        border-radius: 8px;
-        background: #FFFFFF;
-        padding: 12px 16px;
-        flex-shrink: 0;
-    }
-
-    .audit-logs-container .filter-icon-container {
-        width: auto;
-    }
-
-    .audit-logs-container .table-container {
-        padding: 12px;
-    }
-
-    .audit-logs-container .action-menu {
-        width: 140px;
-        right: 16px;
-        left: auto !important;
-    }
-
-    .audit-logs-container .export-button {
-        width: 100%;
-    }
-
-    .audit-logs-container .pagination-controls {
-        width: 100%;
-        justify-content: space-between;
     }
 }

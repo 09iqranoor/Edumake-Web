@@ -1,0 +1,272 @@
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 24px;
+    background: transparent;
+    padding: 16px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.filter-header__search-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 12px 16px;
+    gap: 12px;
+    width: 440px;
+    height: 56px;
+
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.filter-header__search-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-header__search-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.filter-header__search-input {
+    border: none;
+    background: transparent;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #111827;
+    outline: none;
+}
+
+.filter-header__controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    height: 56px;
+    /* Increased height */
+    /* overflow: hidden; Removed to allow reset button text to be fully visible */
+}
+
+/* Common padding for control items */
+.filter-header__filter-group,
+.filter-header__filter-label-box,
+.filter-header__dropdown-container,
+.filter-header__reset {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-right: 1px solid #E5E7EB;
+}
+
+/* Specifics for the icon box container */
+.filter-header__filter-group {
+    padding: 0 12px;
+    /* Slightly tighter padding for icon */
+    background: #FFFFFF;
+    justify-content: center;
+}
+
+.filter-header__filter-icon-box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-header__filter-icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* New Label Box */
+.filter-header__filter-label-box {
+    background: #FFFFFF;
+}
+
+.filter-header__filter-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #374151;
+    white-space: nowrap;
+}
+
+.filter-header__dropdown-container {
+    position: relative;
+    min-width: 140px;
+    background: #FFFFFF;
+}
+
+.filter-header__dropdown {
+    width: 100%;
+    height: 100%;
+    padding: 0 32px 0 0;
+    /* Space for arrow */
+    background: transparent;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #374151;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.filter-header__dropdown-icon {
+    position: absolute;
+    right: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    pointer-events: none;
+}
+
+.filter-header__dropdown-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.filter-header__reset {
+    gap: 8px;
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+    border: none;
+    flex-shrink: 0;
+    /* Prevent shrinking */
+}
+
+.filter-header__reset-icon {
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.filter-header__reset-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.filter-header__reset-text {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #E82D2D;
+}
+
+/* Response for Mobile - Stacking vertically */
+@media screen and (max-width: 1200px) {
+    .filter-header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .filter-header__search-container {
+        width: 100%;
+    }
+
+    .filter-header__controls {
+        flex-wrap: wrap;
+        width: 100%;
+        height: auto;
+        /* Allow height to grow */
+    }
+
+    .filter-header__dropdown-container {
+        flex: 1;
+        min-width: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .filter-header {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .filter-header__search-container {
+        width: 100%;
+    }
+
+    .filter-header__controls {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        border-radius: 12px;
+        overflow: hidden;
+    }
+
+    /* Make each section full width */
+    .filter-header__filter-group,
+    .filter-header__filter-label-box,
+    .filter-header__dropdown-container,
+    .filter-header__reset {
+        width: 100%;
+        height: 50px;
+        /* Fixed height for consistency */
+        border-right: none;
+        /* Remove side borders */
+        border-bottom: 1px solid #E5E7EB;
+        /* Add bottom borders */
+        padding: 0 16px;
+        justify-content: flex-start;
+        /* Align content to left */
+        box-sizing: border-box;
+    }
+
+    /* Remove bottom border from last item */
+    .filter-header__reset {
+        border-bottom: none;
+        justify-content: flex-start;
+        /* Align reset button to start */
+        color: #E82D2D;
+    }
+
+    .filter-header__filter-group {
+        display: none;
+        /* Optional: Hide the filter icon box on very small screens if needed to save space, or keep it. Let's keep it but make it part of the flow */
+        background-color: #F9FAFB;
+        /* Slight background to distinguish header */
+    }
+
+    /* Adjust the "Filter By" label to be more like a header */
+    .filter-header__filter-label-box {
+        background-color: #F9FAFB;
+        font-weight: 600;
+    }
+
+    .filter-header__dropdown-container {
+        min-width: 100%;
+    }
+
+    .filter-header__reset-text {
+        color: #E82D2D;
+    }
+}

@@ -1,922 +1,317 @@
-/* SchoolsManagement.css */
-.schools-management-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 32px;
+.school-management-container {
+  padding: 24px;
   width: 100%;
-  min-height: 100vh;
-  background: #F5F5F5;
   box-sizing: border-box;
 }
 
-/* Header Section */
-.header-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px;
+.school-management-content {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.02), 0px 2px 4px -1px rgba(0, 0, 0, 0.02);
+}
+
+/* Table Wrapper for Responsiveness */
+.table-responsive-wrapper {
   width: 100%;
-  height: 68px;
-}
-
-.title-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 490px;
-  height: 68px;
-}
-
-.title {
-  width: 490px;
-  height: 35px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 35px;
-  color: #000000;
-  margin: 0;
-}
-
-.subtitle {
-  width: 490px;
-  height: 25px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 25px;
-  color: rgba(0, 0, 0, 0.6);
-  margin: 0;
-}
-
-.export-button {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 12px;
-  gap: 8px;
-  width: 126px;
-  height: 48px;
-  background: #FAFAFA;
-  border: 1px solid #E1E1E1;
-  border-radius: 8px;
-  cursor: pointer;
-  border: none;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-.export-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.export-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.export-text {
-  width: 48px;
-  height: 21px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #000000;
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
-
-/* Controls Section */
-.controls-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-  width: 944px;
-  height: 70px;
-}
-
-.controls-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0px;
-  gap: 6px;
-  width: 944px;
-  height: 70px;
-}
-
-.search-container {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 12px;
-  gap: 12px;
-  width: 340px;
-  height: 70px;
-  background: #F5F5F5;
-  border: 1px solid #E1E1E1;
-  border-radius: 12px;
-}
-
-.search-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.search-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.search-input {
-  flex: 1;
-  border: none;
-  outline: none;
-  background: transparent;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(0, 0, 0, 0.7);
-}
-
-.search-input::placeholder {
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.filter-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 1px;
-  width: 570px;
-  height: 70px;
-  background: #FFFFFF;
-  border-radius: 8px;
-  border: 1px solid #E1E1E1;
-}
-
-.filter-item {
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 16px;
-  gap: 10px;
-  height: 70px;
-  border-right: 0.5px solid #888888;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.filter-item:last-child {
-  border-right: none;
-}
-
-.filter-icon-container {
-  width: 56px;
-}
-
-.filter-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.filter-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.filter-label {
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #000000;
-  white-space: nowrap;
-}
-
-.direction-down {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.direction-down img {
-  width: 12px;
-  height: 12px;
-  object-fit: contain;
-}
-
-.reset-filter {
-  width: 133px;
-}
-
-.reset-icon {
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.reset-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.reset-text {
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: #EA0234;
-}
-
-/* Table Container - Figma के exact measurements के according */
-.table-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 32px 20px;
-  gap: 24px;
-  width: 100%;
-  max-width: 1110px;
-  min-height: 601px;
-  background: #FFFFFF;
-  border-radius: 12px;
-  position: relative;
   overflow-x: auto;
+  margin-top: 24px;
+  /* Hide scrollbar for cleaner look if desired, but keep functionality */
+  scrollbar-width: thin;
 }
 
-.table-header {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 20px;
-  width: 1070px;
-  height: 43px;
-  min-width: 1070px;
+.school-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  min-width: 1000px;
+  /* Ensure table doesn't squish on small screens */
 }
 
-/* Table Header Row - Figma के exact positions के according */
-.header-row {
-  width: 1055px;
-  height: 23px;
-  position: relative;
-  display: block;
-}
-
-/* Header Cells with exact positions */
-.header-cell {
-  position: absolute;
-  height: 23px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
+/* Table Header */
+.school-table th {
+  text-align: left;
+  padding: 16px;
+  font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: -0.32px;
-  color: #000000;
-}
-
-.school-header {
-  width: 55px;
-  left: 0px;
-  text-align: left;
-}
-
-.admin-header {
-  width: 55px;
-  left: 181px;
-  text-align: left;
-}
-
-.plan-header {
-  width: 38px;
-  left: 341px;
-  text-align: left;
-}
-
-.status-header {
-  width: 54px;
-  left: 455px;
-  text-align: left;
-}
-
-.students-header {
-  width: 74px;
-  left: 579px;
-  text-align: left;
-}
-
-.join-date-header {
-  width: 75px;
-  left: 712px;
-  text-align: left;
-}
-
-.last-active-header {
-  width: 91px;
-  left: 847px;
-  text-align: left;
-}
-
-.actions-header {
-  width: 62px;
-  left: 993px;
-  text-align: left;
-}
-
-.header-line {
-  width: 1070px;
-  height: 0px;
-  border: 1px solid #E1E1E1;
+  font-size: 14px;
+  color: #111827;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 /* Table Body */
-.table-body {
+.school-table td {
+  padding: 16px;
+  vertical-align: middle;
+  border-bottom: 1px solid #F3F4F6;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #374151;
+}
+
+.school-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific Columns Styling */
+.school-info {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  padding: 0px;
-  gap: 24px;
-  width: 1070px;
-  height: auto;
-  min-width: 1070px;
-}
-
-.table-row-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 24px;
-  width: 1070px;
-  height: 64px;
-}
-
-/* Table Row with exact positioning - Figma के according */
-.table-row {
-  width: 1036px;
-  height: 40px;
-  position: relative;
-  display: block;
-}
-
-/* School Cell */
-.school-cell {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 0px;
-  gap: 8px;
-  position: absolute;
-  width: 147px;
-  height: 40px;
-  left: 0px;
-  top: 0px;
+  gap: 12px;
 }
 
 .school-avatar {
-  width: 28px;
-  height: 28px;
-  background: #D9D9D9;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background-color: #D1D5DB;
+  /* Placeholder grey */
   flex-shrink: 0;
 }
 
 .school-name {
-  width: 111px;
-  height: 40px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: wrap;
+  color: #111827;
+  white-space: normal;
+  word-wrap: break-word;
+  /* Wrap long names */
 }
 
-/* Admin Cell */
-.admin-cell {
+.admin-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 2px;
-  position: absolute;
-  width: 115px;
-  height: 40px;
-  left: 180px;
-  top: 0px;
 }
 
 .admin-name {
-  width: 115px;
-  height: 20px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
   font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
+  color: #374151;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 .admin-email {
-  width: 115px;
-  height: 18px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.5);
+  font-size: 12px;
+  color: #6B7280;
+  white-space: normal;
+  word-wrap: break-word;
+  /* Wrap long emails */
 }
 
-/* Plan Badge */
-.plan-badge {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 2px 8px;
-  gap: 10px;
-  position: absolute;
-  height: 19px;
-  left: 341px;
-  top: 11px;
-  border-radius: 4px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
+/* Plan Badges */
+.school-plan-badge {
+  padding: 4px 12px;
+  border-radius: 6px;
   font-size: 12px;
-  line-height: 15px;
-  display: flex;
-  align-items: center;
+  font-weight: 500;
+  display: inline-block;
   text-align: center;
-  letter-spacing: -0.32px;
-  min-width: 46px;
+  min-width: 80px;
 }
 
-/* Status Badge */
-.status-badge {
+.school-plan-badge-basic {
+  background-color: #F3F4F6;
+  color: #374151;
+}
+
+.school-plan-badge-standard {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.school-plan-badge-premium {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+/* Status Badges */
+.school-status-badge {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  padding: 2px 8px 2px 4px;
-  gap: 9.1px;
-  position: absolute;
-  width: auto;
-  min-width: 62.39px;
-  height: 23px;
-  left: 455px;
-  top: 9px;
-  border-radius: 4px;
-}
-
-.status-point-circle {
-  width: 7.28px;
-  height: 7.28px;
-  border-radius: 50%;
-}
-
-.status-text {
-  height: 19px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
+  gap: 6px;
+  /* Reduced gap slightly for smaller font */
+  padding: 4px 12px;
+  /* Match plan badge */
+  border-radius: 6px;
+  /* Match plan badge */
   font-size: 12px;
-  line-height: 18px;
-  letter-spacing: -0.18207px;
+  /* Match plan badge */
+  font-weight: 600;
+  min-width: 80px;
+  /* Match plan badge */
 }
 
-/* Students Cell */
-.students-cell {
-  position: absolute;
-  width: 38px;
-  height: 20px;
-  left: 579px;
-  top: 10px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
+.school-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: block;
+  content: " ";
 }
 
-/* Join Date Cell */
-.join-date-cell {
-  position: absolute;
-  width: 84px;
-  height: 20px;
-  left: 712px;
-  top: 10px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
+/* Explicit Coloring */
+.school-status-active {
+  background-color: #DCFCE7 !important;
+  color: #166534 !important;
 }
 
-/* Last Active Cell */
-.last-active-cell {
-  position: absolute;
-  width: 86px;
-  height: 20px;
-  left: 847px;
-  top: 10px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  letter-spacing: -0.32px;
-  color: rgba(0, 0, 0, 0.7);
+.school-status-active .school-status-dot {
+  background-color: #16A34A !important;
 }
 
-/* Actions Cell */
-.actions-cell {
-  position: absolute;
-  width: 24px;
-  height: 24px;
-  left: 1012px;
-  top: 8px;
+.school-status-inactive {
+  background-color: #FEE2E2 !important;
+  color: #991B1B !important;
 }
 
-.more-button {
+.school-status-inactive .school-status-dot {
+  background-color: #DC2626 !important;
+}
+
+/* Actions */
+.action-btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0;
-  width: 24px;
-  height: 24px;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.more-icon {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.action-btn:hover {
+  background-color: #F3F4F6;
 }
 
-.more-icon img {
-  width: 100%;
-  height: 100%;
+.action-btn img {
+  width: 20px;
+  height: 20px;
   object-fit: contain;
 }
 
-.row-line {
-  width: 1070px;
-  height: 0px;
-  border: 1px solid #E1E1E1;
-}
-
-/* Action Menu - Figma के exactly according */
-.action-menu {
+/* Dropdown Menu Styles */
+.action-dropdown-menu {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   padding: 24px;
   gap: 16px;
-  position: fixed;
+  position: absolute;
   width: 163px;
-  height: 102px;
+  /* height: 102px; */
+  /* Let height be auto to fit content naturally */
+  right: 40px;
+  /* Position to the left of the button */
+  top: 50%;
+  transform: translateY(-50%);
+  /* Center vertical relative to button, or top aligned */
   background: #FFFFFF;
   box-shadow: 0px 13px 61px rgba(0, 0, 0, 0.366);
   border-radius: 20px;
-  z-index: 1000;
+  z-index: 100;
+  /* High z-index */
+  box-sizing: border-box;
 }
 
-.menu-items {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 16px;
-  width: 115px;
-  height: 54px;
-}
-
-.menu-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 115px;
-  height: 19px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.menu-item:hover {
-  opacity: 0.8;
-}
-
-.menu-text {
-  width: 115px;
-  height: 19px;
-  font-family: 'Mulish', sans-serif;
+.dropdown-item {
+  font-family: 'Mulish', 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 121.2%;
   letter-spacing: -0.24px;
-  color: #000000;
-}
 
-.remove-item {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0px;
-  gap: 8px;
-  width: 115px;
-  height: 19px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.remove-text {
-  width: 111px;
-  height: 19px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 121.2%;
-  letter-spacing: -0.24px;
-  color: #E82D2D;
-}
-
-/* Pagination - UPDATED with proper alignment */
-.pagination-section {
-  display: flex;
-  flex-direction: row;
-  
-  align-items: center;
-  padding: 0px;
- 
-  height: 30px;
-  position: relative;
-  width: 100%;
-    height: 30px;
-    position: relative;
-    justify-content: space-between
-}
-
-.pagination-text {
-  width: 121px;
-  height: 18px;
-  font-family: 'Mulish', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
-  color: rgba(0, 0, 0, 0.6);
-  mix-blend-mode: normal;
-  opacity: 0.6;
-  flex-shrink: 0;
-}
-
-.pagination-controls {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 16px;
-  height: 30px;
-  margin-left: auto;
-}
-
-.pagination-btn {
-  width: 24px;
-  height: 24px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
 }
 
+.dropdown-item.suspend {
+  color: #000000;
+}
 
+.dropdown-item.remove {
+  color: #E82D2D;
+}
+
+.dropdown-item:hover {
+  opacity: 0.8;
+}
+
+/* Pagination Info */
+.pagination-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 24px;
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #E5E7EB;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-btn:hover {
+  background-color: #F9FAFB;
+  border-color: #D1D5DB;
+}
 
 .pagination-btn img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 16px;
+  height: 16px;
 }
 
-/* Menu Backdrop */
-.menu-backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
-  z-index: 999;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 1200px) {
-  .schools-management-container {
-    padding: 24px;
-  }
-  
-  .header-section,
-  .controls-section,
-  .table-container,
-  .pagination-section {
-    width: 100%;
-    max-width: 100%;
-  }
-  
-  .controls-row {
-    flex-direction: column;
-    height: auto;
-    gap: 16px;
-    width: 100%;
-  }
-  
-  .search-container {
-    width: 100%;
-  }
-  
-  .filter-container {
-    width: 100%;
-    justify-content: space-between;
-    overflow-x: auto;
-  }
-  
-  .filter-item {
-    flex-shrink: 0;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .schools-management-container {
+/* Responsive specific adjustments */
+@media (max-width: 768px) {
+  .school-management-container {
     padding: 16px;
-    gap: 24px;
-  }
-  
-  .header-section {
-    flex-direction: column;
-    gap: 16px;
-    height: auto;
-  }
-  
-  .title-section {
     width: 100%;
-    height: auto;
+    overflow: hidden;
+    /* Prevent horizontal scroll on body */
   }
-  
-  .title {
-    width: 100%;
-    font-size: 24px;
-    line-height: 30px;
-  }
-  
-  .subtitle {
-    width: 100%;
-    font-size: 16px;
-    line-height: 20px;
-  }
-  
-  .export-button {
-    align-self: flex-start;
-  }
-  
-  .table-container {
-    padding: 16px;
-    overflow-x: auto;
-  }
-  
-  .table-header,
-  .table-body {
-    min-width: 800px;
-  }
-  
-  .pagination-section {
-    flex-direction: column;
-    gap: 16px;
-    height: auto;
-    align-items: stretch;
-  }
-  
-  .pagination-controls {
-    margin-left: 0;
-    justify-content: center;
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .filter-container {
-    flex-wrap: wrap;
-    height: auto;
-    border: none;
-    background: transparent;
-    gap: 8px;
+  .school-management-content {
+    padding: 16px;
+    margin-top: 16px;
+    width: 100%;
+    box-sizing: border-box;
   }
-  
-  .filter-item {
-    border: 1px solid #E1E1E1;
-    border-radius: 8px;
-    background: #FFFFFF;
-    padding: 12px 16px;
+
+  /* Force table wrapper to be contained */
+  .table-responsive-wrapper {
+    width: 100%;
+    margin-top: 16px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    /* Space for scrollbar */
   }
-  
-  .filter-icon-container {
-    width: auto;
-  }
-  
-  .table-container {
-    padding: 12px;
-  }
-  
-  .action-menu {
-    width: 140px;
-    right: 16px;
-    left: auto !important;
+
+  .plan-badge {
+    min-width: auto;
   }
 }

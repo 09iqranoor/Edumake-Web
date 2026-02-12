@@ -1,6 +1,7 @@
 .charts {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start;
     gap: 26px;
     width: 100%;
@@ -10,12 +11,21 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 20px;
+    padding: 24px;
     gap: 24px;
-    flex: 1;
+    flex: 1 1 300px;
+    min-width: 300px;
     background: #FFFFFF;
     border-radius: 12px;
     min-height: 527px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+@media screen and (max-width: 768px) {
+    .chart-card {
+        min-width: 100%;
+        padding: 16px;
+    }
 }
 
 .chart-card__header {
@@ -220,26 +230,25 @@
 /* Pie Chart Styles */
 .pie-chart {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 24px 8px 8px;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background: #FFFFFF;
-    box-sizing: border-box;
+    padding: 20px 0;
 }
 
 .pie-chart__container {
     position: relative;
     width: 100%;
-    height: 350px;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .pie-chart__circle {
-    width: 280px;
-    height: 280px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
     position: relative;
     display: flex;
@@ -248,105 +257,92 @@
 }
 
 .pie-chart__inner {
-    width: 40%;
-    height: 40%;
+    width: 44%;
+    height: 44%;
     background: #FFFFFF;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 2;
 }
 
 .pie-chart__center-value {
-    font-family: 'Mulish', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 24px;
-    line-height: 29px;
-    color: rgba(0, 0, 0, 0.9);
+    font-size: 42px;
+    color: #000000;
 }
 
 .pie-chart__labels {
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
 }
 
-.pie-chart__label {
+.pie-chart__internal-label {
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-}
-
-.pie-chart__label-name {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
+    text-align: center;
     color: #FFFFFF;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    font-family: 'Inter', sans-serif;
 }
 
-.pie-chart__label-values {
+.label-month {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+.label-values-row {
     display: flex;
     flex-direction: row;
-    gap: 4px;
+    align-items: baseline;
+    gap: 6px;
 }
 
-.pie-chart__label-value {
-    font-family: 'Mulish', sans-serif;
-    font-weight: 600;
+.label-value {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.label-percent {
     font-size: 12px;
-    line-height: 15px;
-    color: #FFFFFF;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-}
-
-.pie-chart__label-percent {
-    font-family: 'Mulish', sans-serif;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 15px;
-    color: #FFFFFF;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
 }
 
-/* Mobile Responsive Styles */
-@media screen and (max-width: 1100px) {
-    .charts {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .chart-card {
-        width: 100%;
-        min-height: auto;
-    }
-}
-
-@media screen and (max-width: 600px) {
+/* Response for Tablets and Small Screens */
+@media screen and (max-width: 1024px) {
     .chart-card__title {
         font-size: 20px;
-        line-height: 26px;
     }
 
     .chart-card__subtitle {
         font-size: 16px;
-        line-height: 20px;
     }
+}
 
-    .pie-chart__circle {
-        width: 220px;
-        height: 220px;
-    }
-
+@media screen and (max-width: 600px) {
     .pie-chart__center-value {
-        font-size: 18px;
-        line-height: 22px;
+        font-size: 28px;
+    }
+
+    .label-month {
+        font-size: 12px;
+    }
+
+    .label-value {
+        font-size: 14px;
+    }
+
+    .label-percent {
+        font-size: 10px;
     }
 
     .bar-chart__bar-group {

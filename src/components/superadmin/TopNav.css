@@ -138,7 +138,7 @@
     border-radius: 50%;
     overflow: hidden;
     flex-shrink: 0;
-    
+
 }
 
 .topnav__avatar img {
@@ -190,10 +190,13 @@
 @media screen and (max-width: 1024px) {
     .topnav {
         left: 0;
+        padding-left: 0;
+        /* Ensure no extra padding */
     }
 
     .topnav__menu-btn {
         display: flex;
+        flex-shrink: 0;
     }
 
     .topnav__content {
@@ -202,13 +205,23 @@
     }
 
     .topnav__title {
-        display: none;
+        font-size: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-shrink: 1;
+        /* Allow title to shrink */
     }
 }
 
 @media screen and (max-width: 768px) {
     .topnav__search {
         display: none;
+    }
+
+    .topnav__title {
+        display: none;
+        /* Hide title on very small screens to save space */
     }
 
     .topnav__icons {
@@ -223,5 +236,10 @@
 
     .topnav__user-details {
         display: none;
+    }
+
+    /* Ensure actions pushed to right */
+    .topnav__actions {
+        margin-left: auto;
     }
 }

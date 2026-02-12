@@ -32,8 +32,18 @@ const Resources: React.FC = () => {
   );
   const showEmptyState = filtered.length === 0;
 
+  const fileInputRef = React.useRef<HTMLInputElement>(null);
+
   const handleUpload = () => {
-    alert('Upload functionality will be implemented!');
+    fileInputRef.current?.click();
+  };
+
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      alert(`Selected file: ${file.name}`);
+      // Here you would typically upload the file to a server
+    }
   };
 
 
@@ -57,6 +67,12 @@ const Resources: React.FC = () => {
           <h1 className="resources-title">Resources</h1>
           <p className="resources-subtitle">Documentation and training materials</p>
         </div>
+        <input
+          type="file"
+          ref={fileInputRef}
+          style={{ display: 'none' }}
+          onChange={handleFileChange}
+        />
         <button type="button" className="resources-upload-btn" onClick={handleUpload}>
           <span className="resources-upload-icon">
             <img src="/icons/upload-icon.png" alt="" />
